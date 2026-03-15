@@ -1,6 +1,7 @@
 ---
-import TextTile from "./tiles/TextTile.astro";
+import TextTile from "./tiles/TextBoxTile.astro";
 import ImageTile from "./tiles/ImageTile.astro";
+import "../styles/global.css";
 ---
 
 <div class="bento-grid">
@@ -17,8 +18,14 @@ import ImageTile from "./tiles/ImageTile.astro";
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-      "text-tile text-tile image-tile image-tile"
-      "text-tile text-tile image-tile image-tile"
-      "text-tile text-tile image-tile image-tile";
+      "textbox textbox image image"
+      "textbox textbox image image"
+      "textbox textbox image image";
+  }
+
+  .bento-grid :global(.tile) {
+    background: var(--tile-bg);
+    border-radius: var(--tile-border-radius);
+    overflow: hidden;
   }
 </style>

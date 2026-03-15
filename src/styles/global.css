@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+:root {
+    --main-bg: #2f3136;
+    --tile-bg: #8A8B8E;
+    --tile-border: #e5e5e5;
+    --primary: #153c90;
+    --accent: #2764f3;
+
+    --tile-border-radius: 16px;
+}
