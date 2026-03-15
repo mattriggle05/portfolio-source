@@ -1,71 +1,33 @@
 ---
 import "../styles/global.css";
-import panorama from "../images/panoramaL.png";
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>mriggle.dev</title>
-  </head>
-  <body>
-    <div class="panorama" aria-hidden="true">
-      <div class="panorama__track">
-        <img src={panorama.src} alt="" />
-        <img src={panorama.src} alt="" />
-      </div>
-    </div>
-    <slot />
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <title>mriggle.dev</title>
+    </head>
+    <body>
+        <slot />
+    </body>
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    .panorama {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .panorama__track {
-      display: flex;
-      width: max-content;
-      height: 100%;
-      animation: panorama-scroll 240s linear infinite;
-      will-change: transform;
-    }
-
-    .panorama__track img {
-      height: 100%;
-      width: auto;
-      flex-shrink: 0;
-      user-select: none;
-      -webkit-user-drag: none;
-    }
-
-    @keyframes panorama-scroll {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-25%);
-      }
-    }
-  </style>
+            background-color: var(--main-bg);
+        }
+    </style>
 </html>

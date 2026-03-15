@@ -6,43 +6,47 @@ import LocationTile from "./tiles/LocationTile.astro";
 ---
 
 <div class="bento-grid">
-  <TextTile />
-  <ImageTile />
-  <LocationTile />
+  <TextTile gridArea="tx" className="tile" />
+  <ImageTile gridArea="im" className="tile" />
+  <LocationTile gridArea="lo" className="tile" />
 </div>
 
 <style>
   .bento-grid {
     display: grid;
-    width: 70vw;
+    width: calc(300px + 50vw);
     height: 60vh;
     gap: 12px;
     grid-template-columns: repeat(14, 1fr);
     grid-template-rows: repeat(12, 1fr);
     grid-template-areas:
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
-      "textbox textbox textbox textbox textbox textbox textbox textbox location location location location location location";
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx im im im im im im"
+      "tx tx tx tx tx tx tx tx .  .  lo lo lo lo";
   }
 
   .bento-grid :global(.tile) {
-    background: rgba(88, 88, 88, 0.076);
+    background: var(--main-bg);
     border-radius: var(--tile-border-radius);
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* border: 1px var(--tile-border) solid; */
     overflow: hidden;
-    padding: var(--tile-padding);
-    backdrop-filter: blur(8px);
+
+    font-weight: bold;
+    font-family: Arial;
+    border-width: 1px;
+    border-color: #599bb3;
+    border-radius: 8px;
+    box-shadow: 0px 10px 14px -7px #276873;
+    text-shadow: 0px 1px 0px #3d768a;
+    background: linear-gradient(#599bb3, #408c99);
   }
 </style>

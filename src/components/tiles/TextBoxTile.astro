@@ -1,7 +1,7 @@
-<div class="tile">This is some text</div>
+---
+const { gridArea, className } = Astro.props;
+---
 
-<style>
-  .tile {
-    grid-area: textbox;
-  }
-</style>
+<div style={`grid-area: ${gridArea}`} class={className}>This is some text</div>
+
+<style></style>
