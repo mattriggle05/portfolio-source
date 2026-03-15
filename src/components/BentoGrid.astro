@@ -1,31 +1,48 @@
 ---
+import "../styles/global.css";
 import TextTile from "./tiles/TextBoxTile.astro";
 import ImageTile from "./tiles/ImageTile.astro";
-import "../styles/global.css";
+import LocationTile from "./tiles/LocationTile.astro";
 ---
 
 <div class="bento-grid">
   <TextTile />
   <ImageTile />
+  <LocationTile />
 </div>
 
 <style>
   .bento-grid {
     display: grid;
-    width: 40vw;
-    height: 30vh;
+    width: 70vw;
+    height: 60vh;
     gap: 12px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     grid-template-areas:
-      "textbox textbox image image"
-      "textbox textbox image image"
-      "textbox textbox image image";
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox image image image image image image"
+      "textbox textbox textbox textbox textbox textbox textbox textbox location location location location location location";
   }
 
   .bento-grid :global(.tile) {
-    background: var(--tile-bg);
+    background: rgba(88, 88, 88, 0.076);
     border-radius: var(--tile-border-radius);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
+    padding: var(--tile-padding);
+    backdrop-filter: blur(8px);
   }
 </style>

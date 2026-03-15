@@ -2,10 +2,11 @@
 
 :root {
     --main-bg: #2f3136;
-    --tile-bg: #8A8B8E;
-    --tile-border: #e5e5e5;
+    --tile-bg: #8f8f8f2a;
+    --tile-border: #e9e9e958;
     --primary: #153c90;
     --accent: #2764f3;
 
     --tile-border-radius: 16px;
+    --tile-padding: 16px;
 }
