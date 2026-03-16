@@ -7,15 +7,30 @@
     --tile-shadow: #276873;
     --text-shadow: #3D768A; */
 
-    --tile-bg: #2764f3;
+    /* --tile-bg: rgb(114, 106, 117);
     --main-bg: color-mix(in srgb, var(--tile-bg) 20%, white);
     --tile-bg-2: color-mix(in srgb, var(--tile-bg) 76%, black);
     --tile-shadow: color-mix(in srgb, var(--tile-bg) 46%, black);
-    --text-shadow: color-mix(in srgb, var(--tile-bg) 73%, black);
+    --text-shadow: color-mix(in srgb, var(--tile-bg) 73%, black); */
 
+    --main-bg: #0C1E35;
+    --tile-bg: #1A2942;
+    --tile-bg-2: #1E293B;
+    --tile-border: #0a0a0a;
+    --tile-shadow: #276873;
+    --text-shadow: #3D768A;
+    --text-color: #E0F2FE;
+    
+
+    /* Background: #0F172A (darkest) 
+    Surface: #1E293B (cards, panels)
+    Elevated: #334155 (hover states) 
+    Border: #475569 (dividers) 
+    Text Subtle: #94A3B8 (secondary text) 
+    Text Primary: #F1F5F9 (main content) */
+
+    
     --tile-border-radius: 16px;
-
-    --text-color: #FFFFFF;
     --border-radius: 10px;
     --font: Sans-serif;
 }

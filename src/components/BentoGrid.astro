@@ -38,13 +38,23 @@ import LocationTile from "./tiles/LocationTile.astro";
     background: var(--main-bg);
 
     border-radius: var(--tile-border-radius);
-    border-top: 1px var(--tile-bg-2) solid;
-    border-bottom: 1px var(--tile-bg) solid;
+    /* border: 1px var(--tile-border) solid; */
 
-    box-shadow: 0px 10px 14px -7px var(--tile-shadow);
+    box-shadow:
+      0 0px 10px 2px rgba(0, 0, 0, 0.5),
+      inset 0px 0px 10px 2px var(--tile-border);
+
+    /* box-shadow:
+      0px 0px 10px 0px var(--tile-shadow),
+      inset 0px 0px 5px 0px var(--tile-shadow); */
     text-shadow: 0px 1px 0px var(--text-shadow);
     background: linear-gradient(var(--tile-bg), var(--tile-bg-2));
 
     overflow: hidden;
+
+    font-family: var(--font);
+    text-align: center;
+    color: var(--text-color);
+    font-weight: bold;
   }
 </style>
