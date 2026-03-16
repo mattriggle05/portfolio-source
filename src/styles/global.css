@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 :root {
-    --main-bg: #F5F5F5;
+    /* --main-bg: #F5F5F5;
     --tile-bg: #599BB3;
     --tile-bg-2: #408C99;
-    --tile-border: #599BB3;
     --tile-shadow: #276873;
+    --text-shadow: #3D768A; */
 
-    --primary: #153c90;
-    --accent: #2764f3;
+    --tile-bg: #2764f3;
+    --main-bg: color-mix(in srgb, var(--tile-bg) 20%, white);
+    --tile-bg-2: color-mix(in srgb, var(--tile-bg) 76%, black);
+    --tile-shadow: color-mix(in srgb, var(--tile-bg) 46%, black);
+    --text-shadow: color-mix(in srgb, var(--tile-bg) 73%, black);
 
     --tile-border-radius: 16px;
 
     --text-color: #FFFFFF;
-    --text-shadow: #3D768A;
     --border-radius: 10px;
     --font: Sans-serif;
 }

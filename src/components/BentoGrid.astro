@@ -36,17 +36,15 @@ import LocationTile from "./tiles/LocationTile.astro";
 
   .bento-grid :global(.tile) {
     background: var(--main-bg);
-    border-radius: var(--tile-border-radius);
-    /* border: 1px var(--tile-border) solid; */
-    overflow: hidden;
 
-    font-weight: bold;
-    font-family: Arial;
-    border-width: 1px;
-    border-color: #599bb3;
-    border-radius: 8px;
-    box-shadow: 0px 10px 14px -7px #276873;
-    text-shadow: 0px 1px 0px #3d768a;
-    background: linear-gradient(#599bb3, #408c99);
+    border-radius: var(--tile-border-radius);
+    border-top: 1px var(--tile-bg-2) solid;
+    border-bottom: 1px var(--tile-bg) solid;
+
+    box-shadow: 0px 10px 14px -7px var(--tile-shadow);
+    text-shadow: 0px 1px 0px var(--text-shadow);
+    background: linear-gradient(var(--tile-bg), var(--tile-bg-2));
+
+    overflow: hidden;
   }
 </style>
