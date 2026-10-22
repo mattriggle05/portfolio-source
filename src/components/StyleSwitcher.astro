@@ -3,9 +3,11 @@ import { themes } from "../themes/registry";
 ---
 <nav class="style-switcher" aria-label="Portfolio style comparison">
   <label for="portfolio-style">Style concept</label>
+  <button id="previous-style" type="button" aria-label="Previous theme" title="Previous theme">←</button>
   <select id="portfolio-style">
     {themes.map(theme => <option value={theme.id}>{theme.label}</option>)}
   </select>
+  <button id="next-style" type="button" aria-label="Next theme" title="Next theme">→</button>
 </nav>
 
 <script>
@@ -25,12 +27,20 @@ import { themes } from "../themes/registry";
   }
   const defaultStyle = sheets[0]?.dataset.style || '';
   applyStyle(document.documentElement.dataset.style || defaultStyle);
-  select?.addEventListener('change', () => {
-    applyStyle(select.value);
+  function selectStyle(id: string) {
+    applyStyle(id);
     const url = new URL(window.location.href);
-    url.searchParams.set('style', select.value);
+    url.searchParams.set('style', id);
     history.replaceState(null, '', url);
-  });
+  }
+  select?.addEventListener('change', () => selectStyle(select.value));
+  function stepStyle(direction: number) {
+    if (!select || !select.options.length) return;
+    const index = (select.selectedIndex + direction + select.options.length) % select.options.length;
+    selectStyle(select.options[index]!.value);
+  }
+  document.querySelector('#previous-style')?.addEventListener('click', () => stepStyle(-1));
+  document.querySelector('#next-style')?.addEventListener('click', () => stepStyle(1));
   window.addEventListener('popstate', () => {
     const id = new URLSearchParams(location.search).get('style');
     applyStyle(id && Array.from(sheets).some(sheet => sheet.dataset.style === id) ? id : defaultStyle);
@@ -66,5 +76,22 @@ import { themes } from "../themes/registry";
     font: inherit;
     cursor: pointer;
   }
+  .style-switcher button {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid #aab2bd;
+    border-radius: 4px;
+    background: #f3f5f7;
+    color: #20252c;
+    font: 18px/1 Arial, sans-serif;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .style-switcher button:hover { background: #dce7f5; border-color: #6d8fb8; }
+  .style-switcher button:active { background: #bdcfe5; }
+  .style-switcher button:focus-visible,
   select:focus-visible { outline: 2px solid #2458ac; outline-offset: 2px; }
 </style>
