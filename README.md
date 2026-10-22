@@ -1,15 +1,19 @@
 # Portfolio style comparison
 
-This branch (`codex/style-switcher`) combines the four style concepts with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme and portrait without reloading; the URL records the choice (`?style=01` through `?style=04`) and restores it on reload. Invalid or missing choices default to Field Atlas.
+This branch (`codex/style-switcher`) contains all six registered themes with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme and portrait without reloading; the URL records the choice (for example, `?style=01`, `?style=nocturne`, or `?style=vector`) and restores it on reload. Invalid or missing choices default to Field Atlas.
 
-| Style | Source branch | Theme file |
-| --- | --- | --- |
-| 01 · Field Atlas | `codex/style-concept-01` | `src/styles/themes/01.css` |
-| 02 · Blue Hour | `codex/style-concept-02` | `src/styles/themes/02.css` |
-| 03 · Signal Studio | `codex/style-concept-03` | `src/styles/themes/03.css` |
-| 04 · Porcelain / Oxblood | `codex/style-concept-04` | `src/styles/themes/04.css` |
+| Style | Theme file |
+| --- | --- |
+| 01 · Field Atlas | `src/styles/themes/01.css` |
+| 02 · Blue Hour | `src/styles/themes/02.css` |
+| 03 · Signal Studio | `src/styles/themes/03.css` |
+| 04 · Porcelain / Oxblood | `src/styles/themes/04.css` |
+| Nocturne | `src/styles/themes/nocturne.css` |
+| Vector | `src/styles/themes/vector.css` |
 
-Themes and assets were copied from their source branches, with image paths namespaced under `public/images/themes/01`–`04` to preserve branch-specific artwork. These are snapshots; later edits on the source branches do not synchronize automatically. Only one theme stylesheet is active at a time. The selector lives outside the bento grid and does not change its geometry.
+All themes live together on `codex/style-switcher`. Work directly on that branch when adding or editing themes: **stay on the same branch; do not create another branch, worktree, or separate checkout.** Commit each addition to `codex/style-switcher`.
+
+Artwork is namespaced under `public/images/themes/<id>/`. Only one theme stylesheet is active at a time. The selector lives outside the bento grid and does not change its geometry.
 
 ## Adding a theme
 
