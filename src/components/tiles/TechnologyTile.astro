@@ -1,0 +1,15 @@
+---
+import type { TileProps } from "./types";
+
+interface Props extends TileProps {}
+const { gridArea, className = "tile" } = Astro.props;
+---
+<article class:list={[className, "new-feature-tile"]} style={{ gridArea }} aria-label="Technology experience and favorites">
+      <table class="technology-table" aria-label="Technology experience and preferences">
+        <thead><tr><td></td><th scope="col">Language</th><th scope="col">IDE</th><th scope="col">Framework</th><th scope="col">AI model</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Experienced</th><td><button class="technology-logo" type="button" aria-label="Experienced Language: not selected"><span aria-hidden="true">&lt;/&gt;</span><span class="technology-tooltip">Language: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Experienced IDE: not selected"><span aria-hidden="true">⌘</span><span class="technology-tooltip">IDE: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Experienced Web framework: not selected"><span aria-hidden="true">◇</span><span class="technology-tooltip">Web framework: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Experienced AI model: not selected"><span aria-hidden="true">✳</span><span class="technology-tooltip">AI model: to choose</span></button></td></tr>
+          <tr><th scope="row">Favorite</th><td><button class="technology-logo" type="button" aria-label="Favorite Language: not selected"><span aria-hidden="true">&lt;/&gt;</span><span class="technology-tooltip">Language: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Favorite IDE: not selected"><span aria-hidden="true">⌘</span><span class="technology-tooltip">IDE: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Favorite Web framework: not selected"><span aria-hidden="true">◇</span><span class="technology-tooltip">Web framework: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Favorite AI model: not selected"><span aria-hidden="true">✳</span><span class="technology-tooltip">AI model: to choose</span></button></td></tr>
+        </tbody>
+      </table>
+    </article>

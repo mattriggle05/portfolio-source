@@ -1,22 +1,10 @@
 ---
-const { gridArea, className } = Astro.props;
+import type { TileProps } from "./types";
+
+interface Props extends TileProps {}
+const { gridArea, className = "tile" } = Astro.props;
 ---
-
-<div style={`grid-area: ${gridArea}`} class={className}>
-  <h1>This is also some text</h1>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex
-    sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
-    convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus
-    fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada
-    lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
-    sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem
-    ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien
-    vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
-    convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus
-    fringilla lacus nec metus bibendum egestas.
-  </p>
-</div>
-
-<style>
-</style>
+<figure class:list={[className, "photo-tile"]} style={{ gridArea }}>
+      <img src="/images/portrait-placeholder.svg" alt="Illustrative placeholder landscape with layered mountains beneath a pale moon" width="460" height="800" />
+      <figcaption><span class="eyebrow">02 / VERTICAL IMAGE</span><span>Somewhere, someday.</span></figcaption>
+    </figure>

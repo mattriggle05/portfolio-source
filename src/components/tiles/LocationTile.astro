@@ -1,10 +1,10 @@
 ---
-const { gridArea, className } = Astro.props;
+import type { TileProps } from "./types";
+
+interface Props extends TileProps {}
+const { gridArea, className = "tile" } = Astro.props;
 ---
-
-<div style={`grid-area: ${gridArea}`} class={`${className}`}>
-  <p>Based in: Madison, WI</p>
-</div>
-
-<style>
-</style>
+<article class:list={[className, "location-tile"]} style={{ gridArea }} aria-label="Location: Madison, Wisconsin">
+      <div class="location-globe-space" aria-hidden="true"></div>
+      <div class="location-caption"><span class="eyebrow">BASED IN</span><p>Madison, WI</p></div>
+    </article>

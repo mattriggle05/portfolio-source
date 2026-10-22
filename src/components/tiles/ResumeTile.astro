@@ -1,0 +1,10 @@
+---
+import type { TileProps } from "./types";
+
+interface Props extends TileProps {}
+const { gridArea, className = "tile" } = Astro.props;
+---
+<article class:list={[className, "resume-tile"]} style={{ gridArea }} aria-label="Résumé download">
+      <button class="resume-icon" type="button" aria-label="Download Resume.pdf (placeholder)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4" /></svg></button>
+      <span class="resume-details"><span class="resume-filename">Resume.pdf</span><span class="resume-updated">Last updated: date</span></span>
+    </article>
