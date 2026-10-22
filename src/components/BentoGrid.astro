@@ -1,51 +1,83 @@
 ---
-const buttons = ['01', '02', '03', '04'];
-const stack = ['Design', 'Build', 'Learn', 'Repeat'];
+const buttons = [
+  { label: 'Phone', filled: false, path: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.79a2 2 0 0 1-.45 2.11L8.08 9.89a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.33 1.83.56 2.79.69A2 2 0 0 1 22 16.92Z' },
+  { label: 'GitHub', filled: true, path: 'M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.29-5.13-1.25-5.13-5.57 0-1.23.44-2.23 1.16-3.01-.12-.29-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.15 3.1-1.15.61 1.55.23 2.69.11 2.98.72.78 1.16 1.78 1.16 3.01 0 4.33-2.64 5.28-5.15 5.56.4.35.76 1.03.76 2.08v3.11c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z' },
+  { label: 'LinkedIn', filled: true, path: 'M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.36-1.52 2.79-1.52 2.99 0 3.58 1.97 3.58 4.52v5.25Z' },
+  { label: 'Email', filled: false, path: 'M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm-1 2 9 7 9-7' },
+];
+const projects = ['portfolio-source', 'Project placeholder 02', 'Project placeholder 03', 'Project placeholder 04'];
 ---
 <main class="concept">
-  <header class="masthead">
-    <a class="wordmark" href="#" aria-label="Home">m<span>®</span></a>
-    <span class="eyebrow">PERSONAL SPACE / LAYOUT STUDY 002</span>
-    <span class="edition">A quieter kind of collection.</span>
-  </header>
-
-  <section class="intro" aria-labelledby="page-title">
-    <div><p class="eyebrow">A FEW THINGS, IN ONE PLACE</p><h1 id="page-title">Room for possibility<span>.</span></h1></div>
-    <span class="concept-label">BENTO CONCEPT / 02</span>
-  </section>
-
   <section class="bento-grid" aria-label="Bento concept with placeholder content">
     <article class="tile paragraph-tile">
       <div class="tile-top"><span class="eyebrow">01 / INTRODUCTION</span><span class="accent" aria-hidden="true">✳</span></div>
-      <h2>A place for a few words.</h2>
-      <p>This is a paragraph tile. It gives an introduction, a thought, or a short story enough room to breathe. The heading sets the tone, while the smaller text carries the detail. For now, it is simply a little space for whatever comes next.</p>
+      <h1>A place for a few words.</h1>
+      <p>A space for an introduction, a thought, or a short story. A few words about the person behind the work, and whatever comes next.</p>
     </article>
+
 
     <figure class="tile photo-tile">
       <img src="/images/portrait-placeholder.svg" alt="Illustrative placeholder landscape with layered mountains beneath a pale moon" width="460" height="800" />
       <figcaption><span class="eyebrow">02 / VERTICAL IMAGE</span><span>Somewhere, someday.</span></figcaption>
     </figure>
 
+
     <article class="tile stack-tile" aria-labelledby="stack-title">
-      <h2 class="eyebrow" id="stack-title">03 / THE STACK</h2>
-      <ul>{stack.map((word, i) => <li><span class="stack-icon" aria-hidden="true">{['✳', '⌘', '+', '↗'][i]}</span><span>{word}</span></li>)}</ul>
-      <p class="stack-caption">ONE THING AT A TIME</p>
+      <h2 class="eyebrow" id="stack-title">03 / PROJECTS</h2>
+      <ul>{projects.map((project) => <li><button class="project-button" type="button" aria-label={`${project} (placeholder)`}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6a2 2 0 0 1 0-4h14M8 7h8M8 10h5" /></svg><span>{project}</span><span class="project-arrow" aria-hidden="true">↗</span></button></li>)}</ul>
+      <p class="stack-caption">SELECTED REPOSITORIES</p>
     </article>
 
-    <article class="tile buttons-tile" aria-label="Four placeholder buttons">
-      <div class="button-grid">{buttons.map((number) => <button type="button" aria-label={`Placeholder button ${number}`}><span aria-hidden="true">{['↗', '✳', '⌘', '+'][Number(number) - 1]}</span><span>Button {number}</span></button>)}</div>
+    <article class="tile location-tile" aria-label="Location: Madison, Wisconsin">
+      <div class="location-globe-space" aria-hidden="true"></div>
+      <div class="location-caption"><span class="eyebrow">BASED IN</span><p>Madison, WI</p></div>
     </article>
 
-    <article class="tile blank-tile blank-large" aria-label="Blank tile for future content"><span class="eyebrow">05 / OPEN SPACE</span><div class="line-study" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="blank-caption">Something to come.</span></article>
+    <article class="tile contact-compact-tile" aria-label="Compact social and contact buttons">
+      <div class="button-grid">{[...buttons.slice(1), buttons[0]].map(({ label, filled, path }) => (
+        <button type="button" aria-label={label}>
+          <span aria-hidden="true"><svg viewBox="0 0 24 24" fill={filled ? 'currentColor' : 'none'} stroke={filled ? 'none' : 'currentColor'} stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d={path} /></svg></span>
+          <span>{label}</span>
+        </button>
+      ))}</div>
+    </article>
 
-    <article class="tile blank-tile blank-small" aria-label="Small blank tile"><span class="eyebrow">06 / UNWRITTEN</span><span class="tiny-cross" aria-hidden="true">+</span></article>
 
-    <article class="tile blank-tile blank-strip" aria-label="Wide blank tile"><span class="eyebrow">07 / A LITTLE EXTRA ROOM</span><span aria-hidden="true">···</span></article>
 
-    <article class="tile location-tile" aria-label="Placeholder location">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-      <div><span class="eyebrow">BASED SOMEWHERE</span><p>City, Planet Earth</p></div><span class="location-coordinate">00° N / 00° E</span>
+
+    <article class="tile new-feature-tile" aria-label="Technology experience and favorites">
+      <table class="technology-table" aria-label="Technology experience and preferences">
+        <thead><tr><td></td><th scope="col">Language</th><th scope="col">IDE</th><th scope="col">Framework</th><th scope="col">AI model</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Experienced</th><td><button class="technology-logo" type="button" aria-label="Experienced Language: not selected"><span aria-hidden="true">&lt;/&gt;</span><span class="technology-tooltip">Language: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Experienced IDE: not selected"><span aria-hidden="true">⌘</span><span class="technology-tooltip">IDE: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Experienced Web framework: not selected"><span aria-hidden="true">◇</span><span class="technology-tooltip">Web framework: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Experienced AI model: not selected"><span aria-hidden="true">✳</span><span class="technology-tooltip">AI model: to choose</span></button></td></tr>
+          <tr><th scope="row">Favorite</th><td><button class="technology-logo" type="button" aria-label="Favorite Language: not selected"><span aria-hidden="true">&lt;/&gt;</span><span class="technology-tooltip">Language: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Favorite IDE: not selected"><span aria-hidden="true">⌘</span><span class="technology-tooltip">IDE: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Favorite Web framework: not selected"><span aria-hidden="true">◇</span><span class="technology-tooltip">Web framework: to choose</span></button></td><td><button class="technology-logo" type="button" aria-label="Favorite AI model: not selected"><span aria-hidden="true">✳</span><span class="technology-tooltip">AI model: to choose</span></button></td></tr>
+        </tbody>
+      </table>
+    </article>
+
+
+    <article class="tile resume-tile" aria-label="Résumé download">
+      <button class="resume-icon" type="button" aria-label="Download Resume.pdf (placeholder)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4" /></svg></button>
+      <span class="resume-details"><span class="resume-filename">Resume.pdf</span><span class="resume-updated">Last updated: date</span></span>
+    </article>
+
+
+    <article class="tile signature-project" aria-labelledby="signature-title">
+      <div class="signature-preview" aria-label="Illustrative project preview placeholder">
+        <span class="eyebrow signature-label">SIGNATURE PROJECT</span>
+        <svg viewBox="0 0 310 175" fill="none" aria-hidden="true">
+          <defs><radialGradient id="project-glow"><stop stop-color="#9fc6ff" stop-opacity=".18"/><stop offset="1" stop-color="#9fc6ff" stop-opacity="0"/></radialGradient><linearGradient id="project-core" x2="1" y2="1"><stop stop-color="#b6d6ff"/><stop offset="1" stop-color="#4f78b1"/></linearGradient></defs>
+          <circle cx="155" cy="96" r="88" fill="url(#project-glow)"/>
+          <g stroke="#506f97" stroke-width="1"><ellipse cx="155" cy="96" rx="94" ry="32" transform="rotate(-24 155 96)"/><ellipse cx="155" cy="96" rx="94" ry="32" transform="rotate(35 155 96)"/><ellipse cx="155" cy="96" rx="32" ry="71" transform="rotate(12 155 96)"/></g>
+          <path d="m155 68 25 14v28l-25 14-25-14V82Z" fill="url(#project-core)"/><path d="m130 82 25 14 25-14m-25 14v28" stroke="#d4e6ff" stroke-opacity=".6"/>
+          <circle cx="72" cy="116" r="4" fill="#b8d7ff"/><circle cx="218" cy="137" r="3" fill="#83a9db"/><circle cx="166" cy="27" r="3" fill="#b8d7ff"/>
+        </svg>
+        <span class="signature-preview-note">PREVIEW PLACEHOLDER</span>
+      </div>
+      <div class="signature-copy">
+        <div class="signature-heading"><h2 id="signature-title">Something worth exploring.</h2><button class="signature-open" type="button" aria-label="Open signature project (placeholder)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div>
+        <p>A space for a project, what it does, and the interesting part of building it.</p>
+      </div>
     </article>
   </section>
-  <footer><span>m® / A PERSONAL COLLECTION</span><span>PLACEHOLDER CONTENT · A STUDY IN SHAPES</span></footer>
 </main>
