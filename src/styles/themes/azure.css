@@ -29,8 +29,7 @@ html[data-style="azure"] body { background: radial-gradient(ellipse at 20% 10%, 
   button:hover { background: #d5e7ff; border-color: #6197ed; box-shadow: inset 0 0 0 1px #6197ed; }
   button:active { background: #bcd7ff; }
   button:focus-visible, a:focus-visible { outline: 3px solid #083ca3; outline-offset: 2px; }
-  button.project-button { padding: 8px; border-radius: 14px; background: #edf5ff; }
-  button.project-button:hover { background: #d5e7ff; }
+  .project-card { padding: 8px; border-radius: 14px; background: #edf5ff; }
   .project-button svg, .project-arrow { color: #1c57d1; }
   .contact-compact-tile { padding: 10px; background: #c9e2ff; }
   .contact-compact-tile button { background: #f8fcff; border-color: #b0cff4; }
@@ -65,7 +64,7 @@ html[data-style="azure"] body { background: radial-gradient(ellipse at 20% 10%, 
   .paragraph-tile p { font-size: 10px; line-height: 1.6; }
   .stack-tile { padding: 12px 9px; }
   .stack-tile ul { gap: 5px; margin: 8px 0; }
-  button.project-button { min-height: 30px; padding: 5px; gap: 5px; }
+  .project-card { min-height: 30px; padding: 5px; gap: 5px; }
   .project-button > span:first-of-type { font-size: 8px; }
   .project-button svg { width: 13px; height: 13px; }
   .stack-caption { font-size: 6px; }
@@ -107,7 +106,7 @@ html[data-style="azure"] body { background: radial-gradient(ellipse at 20% 10%, 
   .accent { font-size: 18px; }
   .stack-tile { padding: 10px 8px; }
   .stack-tile ul { gap: 4px; margin: 7px 0; }
-  button.project-button { min-height: 25px; padding: 4px; gap: 3px; }
+  .project-card { min-height: 25px; padding: 4px; gap: 3px; }
   .project-button > span:first-of-type { font-size: 7px; }
   .project-button svg { width: 10px; height: 10px; }
   .project-button .project-arrow { font-size: 11px; }
@@ -137,7 +136,7 @@ html[data-style="azure"] body { background: radial-gradient(ellipse at 20% 10%, 
 .technology-logo:hover .technology-tooltip,
 .technology-logo:focus .technology-tooltip { display: block; }
 @media (max-width: 700px) {
-  button.project-button { line-height: 1.2; }
+  .project-card { line-height: 1.2; }
   .project-button .project-arrow { line-height: 1; }
 }
 @media (max-width: 700px) {
@@ -147,7 +146,7 @@ html[data-style="azure"] body { background: radial-gradient(ellipse at 20% 10%, 
 @media (max-width: 900px) { .tile { border-radius: 20px; } }
 @media (max-width: 700px) {
   .tile { border-radius: 16px; }
-  button.project-button { border-radius: 9px; }
+  .project-card { border-radius: 9px; }
   .contact-compact-tile button { border-radius: 9px; }
   .location-tile .location-caption p { font-size: 15px; }
 }

@@ -47,7 +47,7 @@ button > span:last-child { letter-spacing: .02em; }
 button:hover { background: #96bff323; border-color: #b8d7ff65; color: #fff; }
 button:active { background: #96bff337; }
 button:focus-visible, a:focus-visible { outline: 2px solid #bedcff; }
-button.project-button { padding: 10px; border-radius: 11px; }
+.project-card { padding: 10px; border-radius: 11px; }
 .project-button svg, .project-button .project-arrow { color: #a1bfe8; }
 .project-button > span:first-of-type { color: #d3e1f4; letter-spacing: -.015em; }
 .contact-compact-tile { padding: 10px; background: #17273b; }
@@ -85,7 +85,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
   .paragraph-tile p { font-size: 10px; line-height: 1.65; }
   .stack-tile { padding: 14px 10px; }
   .stack-tile ul { gap: 5px; margin: 10px 0; }
-  button.project-button { min-height: 32px; padding: 6px; gap: 5px; }
+  .project-card { min-height: 32px; padding: 6px; gap: 5px; }
   .project-button > span:first-of-type { font-size: 8px; }
   .signature-copy { padding: 12px; }
   .signature-heading h2 { font-size: 15px; }
@@ -114,7 +114,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
   .paragraph-tile p { font-size: 8px; line-height: 1.5; }
   .stack-tile { padding: 10px 8px; }
   .stack-tile ul { gap: 4px; margin: 7px 0; }
-  button.project-button { min-height: 29px; padding: 4px; gap: 4px; }
+  .project-card { min-height: 29px; padding: 4px; gap: 4px; }
   .project-button svg { width: 12px; height: 12px; }
   .project-button > span:first-of-type { font-size: 6px; }
   .project-button .project-arrow { font-size: 10px; }
@@ -149,7 +149,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
 .technology-logo:hover .technology-tooltip,
 .technology-logo:focus .technology-tooltip { display: block; }
 @media (max-width: 700px) {
-  button.project-button { min-height: 26px; }
+  .project-card { min-height: 26px; }
 }
 
 /* The final treatments apply at every breakpoint unless explicitly sized below. */
@@ -165,8 +165,7 @@ button > span:first-child { color: inherit; }
 button:hover { background: #bfd5e8; color: #182b3c; border-color: #dbe9f4; }
 button:active { background: #9fbcd3; }
 button:focus-visible, a:focus-visible { outline: 2px solid #d8e9f5; outline-offset: 3px; }
-button.project-button { border: 1px solid #91abc050; border-radius: 7px; background: #15263840; padding: 8px; }
-button.project-button:hover { background: #bfd5e8; border-color: #dbe9f4; }
+.project-card { border: 1px solid #91abc050; border-radius: 7px; background: #15263840; padding: 8px; }
 .project-button > span:first-of-type, .project-button svg, .project-button .project-arrow { color: inherit; }
 .contact-compact-tile { background: #203246; }
 .contact-compact-tile .button-grid button { border-radius: 9px; }
@@ -189,7 +188,7 @@ button.signature-open:hover { background: #edf5fc; border-color: #edf5fc; }
 @media (max-width: 900px) {
   .paragraph-tile h1 { font-size: 25px; margin: 13px 0 8px; }
   .paragraph-tile p { font-size: 10px; line-height: 1.6; }
-  button.project-button { padding: 5px; }
+  .project-card { padding: 5px; }
   .signature-copy { padding: 10px 12px; }
   .signature-heading h2 { font-size: 16px; }
   .signature-copy p { font-size: 8px; margin-top: 6px; }
@@ -197,7 +196,7 @@ button.signature-open:hover { background: #edf5fc; border-color: #edf5fc; }
 @media (max-width: 700px) {
   .paragraph-tile h1 { font-size: 21px; margin: 10px 0 6px; }
   .paragraph-tile p { font-size: 9px; line-height: 1.45; }
-  button.project-button { padding: 4px; }
+  .project-card { padding: 4px; }
   .signature-copy { padding: 8px 10px; }
   .signature-heading h2 { font-size: 15px; }
   .signature-copy p { font-size: 7px; line-height: 1.5; }

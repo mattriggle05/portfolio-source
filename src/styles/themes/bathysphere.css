@@ -27,8 +27,7 @@ html[data-style="bathysphere"] body { background: radial-gradient(ellipse at 75%
   button:hover { background: #284c72; border-color: #6dbbff; box-shadow: inset 0 1px #caedff40, 0 0 14px #258bff30; }
   button:active { background: #122b46; box-shadow: inset 0 3px 5px #00000050; }
   button:focus-visible, a:focus-visible { outline: 3px solid #82d4ff; outline-offset: 2px; }
-  button.project-button { padding: 8px; border-radius: 14px; background: linear-gradient(120deg, #20334d, #17273d); }
-  button.project-button:hover { background: #284c72; }
+  .project-card { padding: 8px; border-radius: 14px; background: linear-gradient(120deg, #20334d, #17273d); }
   .project-button svg, .project-arrow { color: #7ac9ff; }
   .contact-compact-tile { padding: 10px; background: #101b2c; box-shadow: inset 0 2px 8px #00000060, 0 1px #b4d2ff20; }
   .contact-compact-tile button { color: #9fdbff; border-radius: 19px; }
@@ -63,7 +62,7 @@ html[data-style="bathysphere"] body { background: radial-gradient(ellipse at 75%
   .paragraph-tile p { font-size: 10px; line-height: 1.6; }
   .stack-tile { padding: 12px 9px; }
   .stack-tile ul { gap: 5px; margin: 8px 0; }
-  button.project-button { min-height: 30px; padding: 5px; gap: 5px; }
+  .project-card { min-height: 30px; padding: 5px; gap: 5px; }
   .project-button > span:first-of-type { font-size: 8px; }
   .project-button svg { width: 13px; height: 13px; }
   .stack-caption { font-size: 6px; }
@@ -105,7 +104,7 @@ html[data-style="bathysphere"] body { background: radial-gradient(ellipse at 75%
   .accent { font-size: 18px; }
   .stack-tile { padding: 10px 8px; }
   .stack-tile ul { gap: 4px; margin: 7px 0; }
-  button.project-button { min-height: 25px; padding: 4px; gap: 3px; }
+  .project-card { min-height: 25px; padding: 4px; gap: 3px; }
   .project-button > span:first-of-type { font-size: 7px; }
   .project-button svg { width: 10px; height: 10px; }
   .project-button .project-arrow { font-size: 11px; }
@@ -135,7 +134,7 @@ html[data-style="bathysphere"] body { background: radial-gradient(ellipse at 75%
 .technology-logo:hover .technology-tooltip,
 .technology-logo:focus .technology-tooltip { display: block; }
 @media (max-width: 700px) {
-  button.project-button { line-height: 1.2; }
+  .project-card { line-height: 1.2; }
   .project-button .project-arrow { line-height: 1; }
 }
 @media (max-width: 700px) {
@@ -145,7 +144,7 @@ html[data-style="bathysphere"] body { background: radial-gradient(ellipse at 75%
 @media (max-width: 900px) { .tile { border-radius: 20px; } }
 @media (max-width: 700px) {
   .tile { border-radius: 16px; }
-  button.project-button { border-radius: 9px; }
+  .project-card { border-radius: 9px; }
   .contact-compact-tile button { border-radius: 9px; }
   .location-tile .location-caption p { font-size: 15px; }
 }

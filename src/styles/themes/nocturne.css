@@ -32,7 +32,7 @@ html[data-style="nocturne"] body { background: radial-gradient(ellipse at 50% 0,
   button:hover { background: #edb78420; border-color: #edb784; }
   button:active { background: #edb78435; }
   button:focus-visible, a:focus-visible { outline: 2px solid #ffd3a5; outline-offset: 2px; }
-  button.project-button { padding: 10px 8px; border-width: 0 0 1px; border-radius: 0; }
+  .project-card { padding: 10px 8px; border-width: 0 0 1px; border-radius: 0; }
   .project-button svg, .project-arrow { color: var(--copper); }
   .contact-compact-tile { padding: 10px; background: #2e2921; }
   .resume-tile { padding: 10px 14px; background: #dfb58a; color: #211b14; border-color: #dfb58a; }
@@ -63,7 +63,7 @@ html[data-style="nocturne"] body { background: radial-gradient(ellipse at 50% 0,
   .paragraph-tile p { font-size: 10px; line-height: 1.65; }
   .stack-tile { padding: 14px 10px; }
   .stack-tile ul { gap: 5px; margin: 10px 0; }
-  button.project-button { min-height: 32px; padding: 6px; gap: 5px; }
+  .project-card { min-height: 32px; padding: 6px; gap: 5px; }
   .project-button > span:first-of-type { font-size: 8px; }
   .signature-copy { padding: 12px; }
   .signature-heading h2 { font-size: 15px; }
@@ -92,7 +92,7 @@ html[data-style="nocturne"] body { background: radial-gradient(ellipse at 50% 0,
   .paragraph-tile p { font-size: 8px; line-height: 1.5; }
   .stack-tile { padding: 10px 8px; }
   .stack-tile ul { gap: 4px; margin: 7px 0; }
-  button.project-button { min-height: 29px; padding: 4px; gap: 4px; }
+  .project-card { min-height: 29px; padding: 4px; gap: 4px; }
   .project-button svg { width: 12px; height: 12px; }
   .project-button > span:first-of-type { font-size: 6px; }
   .project-button .project-arrow { font-size: 10px; }
@@ -127,7 +127,7 @@ html[data-style="nocturne"] body { background: radial-gradient(ellipse at 50% 0,
 .technology-logo:hover .technology-tooltip,
 .technology-logo:focus .technology-tooltip { display: block; }
 @media (max-width: 700px) {
-  button.project-button { min-height: 26px; }
+  .project-card { min-height: 26px; }
 }
 
 }

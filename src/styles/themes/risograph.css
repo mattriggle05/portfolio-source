@@ -28,7 +28,7 @@ html[data-style="risograph"], html[data-style="risograph"] body { background: #e
   button:hover { background: #f5d9bb; border-color: #b33422; }
   button:active { background: #edbd97; }
   button:focus-visible, a:focus-visible { outline: 3px solid #b33422; outline-offset: 2px; }
-  button.project-button { padding: 8px; border-width: 0 0 1px; }
+  .project-card { padding: 8px; border-width: 0 0 1px; }
   .project-arrow, .project-button svg { color: #b33422; }
   .contact-compact-tile { padding: 10px; background: #193e8f; }
   .contact-compact-tile button { color: #fff8e6; border-color: #fff8e670; }
@@ -64,7 +64,7 @@ html[data-style="risograph"], html[data-style="risograph"] body { background: #e
   .paragraph-tile p { font-size: 10px; line-height: 1.6; }
   .stack-tile { padding: 12px 9px; }
   .stack-tile ul { gap: 5px; margin: 8px 0; }
-  button.project-button { min-height: 30px; padding: 5px; gap: 5px; }
+  .project-card { min-height: 30px; padding: 5px; gap: 5px; }
   .project-button > span:first-of-type { font-size: 8px; }
   .project-button svg { width: 13px; height: 13px; }
   .stack-caption { font-size: 6px; }
@@ -106,7 +106,7 @@ html[data-style="risograph"], html[data-style="risograph"] body { background: #e
   .accent { font-size: 18px; }
   .stack-tile { padding: 10px 8px; }
   .stack-tile ul { gap: 4px; margin: 7px 0; }
-  button.project-button { min-height: 25px; padding: 4px; gap: 3px; }
+  .project-card { min-height: 25px; padding: 4px; gap: 3px; }
   .project-button > span:first-of-type { font-size: 7px; }
   .project-button svg { width: 10px; height: 10px; }
   .project-button .project-arrow { font-size: 11px; }
@@ -136,7 +136,7 @@ html[data-style="risograph"], html[data-style="risograph"] body { background: #e
 .technology-logo:hover .technology-tooltip,
 .technology-logo:focus .technology-tooltip { display: block; }
 @media (max-width: 700px) {
-  button.project-button { line-height: 1.2; }
+  .project-card { line-height: 1.2; }
   .project-button .project-arrow { line-height: 1; }
 }
 @media (max-width: 700px) {

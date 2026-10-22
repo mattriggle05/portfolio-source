@@ -59,8 +59,7 @@ button:hover { background: #dfe6d2; border-color: #78927e; }
 button:active { background: #cddbc0; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--orange); }
 button > span:last-child { letter-spacing: .02em; }
-button.project-button { padding: 8px; border-radius: 4px; background: transparent; border-color: var(--line); }
-button.project-button:hover { background: #e7ebdc; border-color: #78927e; }
+.project-card { padding: 8px; border-radius: 4px; background: transparent; border-color: var(--line); }
 .project-button svg { color: #6b8065; }
 .project-button .project-arrow { color: var(--orange); }
 .contact-compact-tile { padding: 10px; background: #243f35; border-color: #243f35; }
@@ -106,7 +105,7 @@ button.signature-open:hover { background: #903619; }
   .paragraph-tile p { font-size: 10px; line-height: 1.6; }
   .stack-tile { padding: 12px 9px; }
   .stack-tile ul { gap: 5px; margin: 8px 0; }
-  button.project-button { min-height: 30px; padding: 5px; gap: 5px; }
+  .project-card { min-height: 30px; padding: 5px; gap: 5px; }
   .project-button > span:first-of-type { font-size: 8px; }
   .project-button svg { width: 13px; height: 13px; }
   .stack-caption { font-size: 6px; }
@@ -148,7 +147,7 @@ button.signature-open:hover { background: #903619; }
   .accent { font-size: 18px; }
   .stack-tile { padding: 10px 8px; }
   .stack-tile ul { gap: 4px; margin: 7px 0; }
-  button.project-button { min-height: 25px; padding: 4px; gap: 3px; }
+  .project-card { min-height: 25px; padding: 4px; gap: 3px; }
   .project-button > span:first-of-type { font-size: 7px; }
   .project-button svg { width: 10px; height: 10px; }
   .project-button .project-arrow { font-size: 11px; }
@@ -178,7 +177,7 @@ button.signature-open:hover { background: #903619; }
 .technology-logo:hover .technology-tooltip,
 .technology-logo:focus .technology-tooltip { display: block; }
 @media (max-width: 700px) {
-  button.project-button { line-height: 1.2; }
+  .project-card { line-height: 1.2; }
   .project-button .project-arrow { line-height: 1; }
 }
 @media (max-width: 700px) {
