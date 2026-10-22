@@ -1,11 +1,12 @@
 ---
-import { defaultTheme } from "../../themes/registry";
 import type { TileProps } from "./types";
 
 interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
 ---
-<figure class:list={[className, "photo-tile"]} style={{ gridArea }}>
-      <img src={defaultTheme.portrait} alt={defaultTheme.portraitAlt} width="460" height="800" />
-      <figcaption><span class="eyebrow">02 / VERTICAL IMAGE</span><span>Somewhere, someday.</span></figcaption>
-    </figure>
+<figure class:list={[className, "photo-tile"]} style={{ gridArea }} aria-label="Reserved portrait image area"></figure>
+
+<style>
+  figure.photo-tile { background: transparent; }
+  figure.photo-tile::after { content: none; }
+</style>

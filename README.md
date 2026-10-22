@@ -1,6 +1,6 @@
 # Portfolio style comparison
 
-This branch (`codex/style-switcher`) contains all ten registered themes with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme and portrait without reloading; the URL records the choice (for example, `?style=01`, `?style=nocturne`, or `?style=vector`) and restores it on reload. Invalid or missing choices default to Field Atlas.
+This branch (`codex/style-switcher`) contains all ten registered themes with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme without reloading; the URL records the choice (for example, `?style=01`, `?style=nocturne`, or `?style=vector`) and restores it on reload. Invalid or missing choices default to Field Atlas.
 
 | Style | Theme file |
 | --- | --- |
@@ -55,7 +55,7 @@ Preserve the component tree, content, order, and these grid areas in `src/compon
 | ResumeTile | 5 / 7 / 6 / 10 |
 | SignatureProjectTile | 4 / 1 / 8 / 5 |
 
-Each theme controls its decorative artwork and preview visibility while preserving the reserved slots. Buttons retain their existing placeholder behavior.
+Portrait and featured-project slots are empty across all themes, ready for actual images; placeholder artwork and image captions are not rendered. Existing portrait metadata and asset files are retained for later replacement. Location globes are also suppressed across all themes; their reserved space and location text remain. Buttons retain their existing placeholder behavior.
 
 Suggested model instruction:
 

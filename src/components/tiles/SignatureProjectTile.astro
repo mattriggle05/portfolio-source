@@ -5,19 +5,13 @@ interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
 ---
 <article class:list={[className, "signature-project"]} style={{ gridArea }} aria-labelledby="signature-title">
-      <div class="signature-preview" aria-label="Illustrative project preview placeholder">
-        <span class="eyebrow signature-label">SIGNATURE PROJECT</span>
-        <svg viewBox="0 0 310 175" fill="none" aria-hidden="true">
-          <defs><radialGradient id="project-glow"><stop stop-color="#9fc6ff" stop-opacity=".18"/><stop offset="1" stop-color="#9fc6ff" stop-opacity="0"/></radialGradient><linearGradient id="project-core" x2="1" y2="1"><stop stop-color="#b6d6ff"/><stop offset="1" stop-color="#4f78b1"/></linearGradient></defs>
-          <circle cx="155" cy="96" r="88" fill="url(#project-glow)"/>
-          <g stroke="#506f97" stroke-width="1"><ellipse cx="155" cy="96" rx="94" ry="32" transform="rotate(-24 155 96)"/><ellipse cx="155" cy="96" rx="94" ry="32" transform="rotate(35 155 96)"/><ellipse cx="155" cy="96" rx="32" ry="71" transform="rotate(12 155 96)"/></g>
-          <path d="m155 68 25 14v28l-25 14-25-14V82Z" fill="url(#project-core)"/><path d="m130 82 25 14 25-14m-25 14v28" stroke="#d4e6ff" stroke-opacity=".6"/>
-          <circle cx="72" cy="116" r="4" fill="#b8d7ff"/><circle cx="218" cy="137" r="3" fill="#83a9db"/><circle cx="166" cy="27" r="3" fill="#b8d7ff"/>
-        </svg>
-        <span class="signature-preview-note">PREVIEW PLACEHOLDER</span>
-      </div>
+      <div class="signature-preview" aria-label="Reserved project image area"></div>
       <div class="signature-copy">
         <div class="signature-heading"><h2 id="signature-title">Something worth exploring.</h2><button class="signature-open" type="button" aria-label="Open signature project (placeholder)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div>
         <p>A space for a project, what it does, and the interesting part of building it.</p>
       </div>
     </article>
+
+<style>
+  .signature-project .signature-preview { background: transparent; }
+</style>
