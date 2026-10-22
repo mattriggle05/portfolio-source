@@ -1,0 +1,133 @@
+/* Nocturne — charcoal instrument panels, copper light, and eclipse geometry.
+   All component rules are confined to the portfolio; the selector stays neutral. */
+html[data-style="nocturne"] { background: #10100f; }
+html[data-style="nocturne"] body { background: radial-gradient(ellipse at 50% 0, #30251c80, transparent 70%), #10100f; }
+.concept {
+  --muted: #b6afa4;
+  --edge: #81715a55;
+  --copper: #edb784;
+  color: #f2eadc;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-synthesis: none;
+  padding: 56px 0;
+  & ::selection { background: #edb784; color: #191713; }
+  & a { color: inherit; }
+  .eyebrow, .stack-caption, .resume-updated, .signature-preview-note, .technology-table thead th, .technology-table tbody th {
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    color: var(--muted);
+  }
+  .eyebrow { letter-spacing: .1em; font-weight: 500; }
+  .tile { border: 1px solid var(--edge); border-radius: 8px; background: #1d1c19; box-shadow: inset 0 1px #ffffff08, 0 12px 24px #00000025; }
+  .paragraph-tile { padding: 26px; background: linear-gradient(125deg, #2c2821, #1d1c19); }
+  .accent { color: var(--copper); }
+  .paragraph-tile h1 { font-family: Georgia, serif; font-weight: 400; font-size: 35px; letter-spacing: -.045em; }
+  .paragraph-tile p { color: #c6bfb2; }
+  .photo-tile::after { background: linear-gradient(transparent, #100f0ce8); }
+  .photo-tile .eyebrow { color: #dfc7aa; }
+  .photo-tile figcaption > span:last-child { font-family: Georgia, serif; font-style: italic; color: #fff1db; }
+  .stack-tile { padding: 22px 18px; }
+  .stack-tile ul { padding: 0; }
+  .stack-caption { letter-spacing: .08em; }
+  button { border: 1px solid #81715a60; border-radius: 4px; padding: 8px; font-family: inherit; color: #f2eadc; background: #ffffff03; transition: background-color .16s, border-color .16s; }
+  button:hover { background: #edb78420; border-color: #edb784; }
+  button:active { background: #edb78435; }
+  button:focus-visible, a:focus-visible { outline: 2px solid #ffd3a5; outline-offset: 2px; }
+  button.project-button { padding: 10px 8px; border-width: 0 0 1px; border-radius: 0; }
+  .project-button svg, .project-arrow { color: var(--copper); }
+  .contact-compact-tile { padding: 10px; background: #2e2921; }
+  .resume-tile { padding: 10px 14px; background: #dfb58a; color: #211b14; border-color: #dfb58a; }
+  .resume-tile .resume-icon { background: #211b14; color: #f7d7ae; border-radius: 50%; border-color: #211b14; }
+  .resume-filename { font-weight: 600; letter-spacing: -.035em; }
+  .resume-updated { color: #4a3623; }
+  .location-tile { padding: 22px; background: #22211c; }
+  .location-globe-space { background: url('/images/themes/nocturne/globe.svg') center / contain no-repeat; }
+  .location-caption p { margin-top: 5px; font-family: Georgia, serif; }
+  .new-feature-tile { padding: 14px 18px; }
+  .technology-table thead th { padding-bottom: 6px; font-weight: 400; }
+  .technology-table tbody th { padding: 3px 0; font-weight: 400; }
+  .technology-table tbody td { padding: 3px 0; }
+  .technology-table tbody tr { border-top: 1px solid #81715a40; }
+  button.technology-logo { padding: 0; border-color: transparent; color: var(--copper); }
+  .technology-logo .technology-tooltip { display: none; padding: 7px 10px; border: 1px solid #edb784; background: #211c16; color: #fff1db; border-radius: 3px; }
+  .technology-logo:hover .technology-tooltip, .technology-logo:focus .technology-tooltip { display: block; }
+  .signature-preview { background: #171613 url('/images/themes/nocturne/eclipse.svg') center / cover no-repeat; border-bottom: 1px solid var(--edge); }
+  .signature-preview > svg { opacity: 0; }
+  .signature-label, .signature-preview-note { color: #ddc5a6; letter-spacing: .08em; }
+  .signature-copy { padding: 20px; }
+  .signature-heading h2 { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.035em; }
+  .signature-copy p { margin-top: 9px; color: #c6bfb2; }
+  button.signature-open { padding: 6px; border-radius: 50%; color: var(--copper); }
+@media (max-width: 900px) {
+  .paragraph-tile { padding: 16px; }
+  .paragraph-tile h1 { font-size: 23px; margin: 14px 0 9px; }
+  .paragraph-tile p { font-size: 10px; line-height: 1.65; }
+  .stack-tile { padding: 14px 10px; }
+  .stack-tile ul { gap: 5px; margin: 10px 0; }
+  button.project-button { min-height: 32px; padding: 6px; gap: 5px; }
+  .project-button > span:first-of-type { font-size: 8px; }
+  .signature-copy { padding: 12px; }
+  .signature-heading h2 { font-size: 15px; }
+  .signature-copy p { font-size: 9px; }
+  .new-feature-tile { padding: 8px; }
+  .technology-table thead td { width: 60px; }
+  .technology-table thead th { font-size: 6px; }
+  .technology-table tbody th { font-size: 7px; }
+  button.technology-logo { width: 27px; height: 27px; }
+  .resume-tile { padding: 6px; gap: 7px; }
+  .resume-tile .resume-icon { width: 28px; height: 28px; }
+  .resume-tile .resume-filename { font-size: 12px; }
+  .resume-updated { font-size: 7px; }
+  .contact-compact-tile { padding: 6px; }
+  .contact-compact-tile .button-grid button { padding: 3px; gap: 3px; }
+  .contact-compact-tile .button-grid svg { width: 15px; height: 15px; }
+  .contact-compact-tile .button-grid button > span:last-child { font-size: 6px; }
+  .location-tile { padding: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
+@media (max-width: 700px) {
+  .tile { border-radius: 16px; }
+  .eyebrow { font-size: 7px; }
+  .paragraph-tile { padding: 12px; }
+  .paragraph-tile h1 { font-size: 19px; margin: 10px 0 7px; }
+  .paragraph-tile p { font-size: 8px; line-height: 1.5; }
+  .stack-tile { padding: 10px 8px; }
+  .stack-tile ul { gap: 4px; margin: 7px 0; }
+  button.project-button { min-height: 29px; padding: 4px; gap: 4px; }
+  .project-button svg { width: 12px; height: 12px; }
+  .project-button > span:first-of-type { font-size: 6px; }
+  .project-button .project-arrow { font-size: 10px; }
+  .stack-caption { font-size: 5px; }
+  .new-feature-tile { padding: 6px; }
+  .technology-table thead td { width: 49px; }
+  .technology-table thead th { font-size: 5px; padding-bottom: 3px; letter-spacing: 0; }
+  .technology-table tbody th { font-size: 6px; }
+  .technology-table tbody td { padding: 1px 0; }
+  button.technology-logo { width: 21px; height: 21px; border-radius: 7px; }
+  .technology-logo > span:first-child { font-size: 14px; }
+  .resume-tile { padding: 3px 6px; gap: 5px; }
+  .resume-tile .resume-icon { width: 23px; height: 23px; border-radius: 8px; }
+  .resume-icon svg { width: 16px; height: 16px; }
+  .resume-tile .resume-filename { font-size: 10px; }
+  .resume-tile .resume-details { gap: 3px; }
+  .resume-updated { font-size: 6px; }
+  .signature-copy { padding: 10px; }
+  .signature-heading h2 { font-size: 13px; }
+  .signature-copy p { font-size: 7px; line-height: 1.5; margin-top: 6px; }
+  button.signature-open { width: 23px; height: 23px; }
+  .signature-label { font-size: 6px; top: 12px; left: 12px; }
+  .signature-preview-note { font-size: 5px; left: 12px; bottom: 7px; }
+  .photo-tile figcaption { bottom: 16px; left: 12px; }
+  .photo-tile .eyebrow { font-size: 6px; }
+  .photo-tile figcaption > span:last-child { font-size: 11px; }
+  .location-tile { padding: 12px; }
+  .location-tile .location-caption p { font-size: 12px; }
+}
+/* Hidden tooltip text must not enlarge the table's scrollable bounds. */
+.technology-logo .technology-tooltip { display: none; }
+.technology-logo:hover .technology-tooltip,
+.technology-logo:focus .technology-tooltip { display: block; }
+@media (max-width: 700px) {
+  button.project-button { min-height: 26px; }
+}
+
+}
