@@ -1,6 +1,6 @@
 # Portfolio style comparison
 
-This branch (`codex/style-switcher`) contains all nine registered themes with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme and portrait without reloading; the URL records the choice (for example, `?style=01`, `?style=nocturne`, or `?style=vector`) and restores it on reload. Invalid or missing choices default to Field Atlas.
+This branch (`codex/style-switcher`) contains all ten registered themes with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme and portrait without reloading; the URL records the choice (for example, `?style=01`, `?style=nocturne`, or `?style=vector`) and restores it on reload. Invalid or missing choices default to Field Atlas.
 
 | Style | Theme file |
 | --- | --- |
@@ -13,6 +13,7 @@ This branch (`codex/style-switcher`) contains all nine registered themes with on
 | Risograph | `src/styles/themes/risograph.css` |
 | Azure Soft | `src/styles/themes/azure.css` |
 | Bathysphere | `src/styles/themes/bathysphere.css` |
+| Stillwater | `src/styles/themes/stillwater.css` |
 
 All themes live together on `codex/style-switcher`. Work directly on that branch when adding or editing themes: **stay on the same branch; do not create another branch, worktree, or separate checkout.** Commit each addition to `codex/style-switcher`.
 
@@ -61,3 +62,5 @@ Suggested model instruction:
 > Develop a new visual style using the selected theme file and its decorative assets. Preserve every component, its content and order, all eight grid areas, the outer grid dimensions, and the internal component arrangement. You may change padding, typography, colors, rounding, borders, shadows, and decorative SVGs/backgrounds. Do not add, remove, reorder, or resize tile spans.
 
 Validate changes with `npm run build` and `npx astro check`, then inspect the rendered page.
+
+Stillwater (`?style=stillwater`) combines Blue Hour’s mountain artwork and muted blues, Field Atlas’s editorial introduction and circular technology hovers, Porcelain / Oxblood’s 18px card corners and featured-project spacing, and subtle inset highlights. Its introduction and projects numbering labels are hidden only within this theme; shared markup and grid geometry are preserved.
