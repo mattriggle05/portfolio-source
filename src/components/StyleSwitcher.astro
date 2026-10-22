@@ -1,10 +1,10 @@
+---
+import { themes } from "../themes/registry";
+---
 <nav class="style-switcher" aria-label="Portfolio style comparison">
   <label for="portfolio-style">Style concept</label>
   <select id="portfolio-style">
-    <option value="01">01 · Field Atlas</option>
-    <option value="02">02 · Blue Hour</option>
-    <option value="03">03 · Signal Studio</option>
-    <option value="04">04 · Porcelain / Oxblood</option>
+    {themes.map(theme => <option value={theme.id}>{theme.label}</option>)}
   </select>
 </nav>
 
@@ -16,10 +16,15 @@
     if (!Array.from(sheets).some(sheet => sheet.dataset.style === id)) return;
     document.documentElement.dataset.style = id;
     sheets.forEach(sheet => { sheet.media = sheet.dataset.style === id ? 'all' : 'not all'; });
-    if (portrait) portrait.src = `/images/themes/${id}/portrait-placeholder.svg`;
+    const sheet = Array.from(sheets).find(sheet => sheet.dataset.style === id)!;
+    if (portrait) {
+      portrait.src = sheet.dataset.portrait!;
+      portrait.alt = sheet.dataset.portraitAlt!;
+    }
     if (select) select.value = id;
   }
-  applyStyle(document.documentElement.dataset.style || '01');
+  const defaultStyle = sheets[0]?.dataset.style || '';
+  applyStyle(document.documentElement.dataset.style || defaultStyle);
   select?.addEventListener('change', () => {
     applyStyle(select.value);
     const url = new URL(window.location.href);
@@ -28,7 +33,7 @@
   });
   window.addEventListener('popstate', () => {
     const id = new URLSearchParams(location.search).get('style');
-    applyStyle(id && ['01', '02', '03', '04'].includes(id) ? id : '01');
+    applyStyle(id && Array.from(sheets).some(sheet => sheet.dataset.style === id) ? id : defaultStyle);
   });
 </script>
 

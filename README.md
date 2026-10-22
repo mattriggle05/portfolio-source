@@ -11,19 +11,28 @@ This branch (`codex/style-switcher`) combines the four style concepts with one s
 
 Themes and assets were copied from their source branches, with image paths namespaced under `public/images/themes/01`–`04` to preserve branch-specific artwork. These are snapshots; later edits on the source branches do not synchronize automatically. Only one theme stylesheet is active at a time. The selector lives outside the bento grid and does not change its geometry.
 
-## Creating a style experiment
+## Adding a theme
 
-Create a branch from this baseline, for example:
+`src/themes/registry.ts` is the single source for theme IDs, labels, stylesheet URLs, portrait URLs, and alternative text. The first entry is the default. IDs are stable bookmark keys, independent of file names or numeric ordering. Invalid URL keys fall back to the first entry. Duplicate IDs and incomplete metadata fail the build.
 
-```sh
-git switch -c codex/style-experiment
-npm install
-npm run dev
+1. Create an independent stylesheet in `src/styles/themes/<id>.css`. It runs over the shared layout defaults, without any other theme active.
+2. Add artwork to `public/images/themes/<id>/` and reference it with absolute `/images/themes/<id>/...` URLs. Provide a portrait file even if the theme hides it.
+3. Import the stylesheet using `?url` in `src/themes/registry.ts` and append a `{ id, label, stylesheet, portrait, portraitAlt }` entry. Keep existing IDs stable. No switcher, layout, or image-component edits are required.
+4. Build, run Astro checks, and inspect the new theme in the browser. Verify selection, switching back, bookmarked URLs, invalid URL fallback, and responsive fit.
+
+An entry looks like this (with a matching stylesheet import):
+
+```ts
+import example from '../styles/themes/example.css?url';
+// Append inside themes:
+{ id: 'example', label: 'Example', stylesheet: example,
+  portrait: '/images/themes/example/portrait.svg',
+  portraitAlt: 'An accurate description of the new portrait artwork' },
 ```
 
-Edit the corresponding file in `src/styles/themes/` for colors, padding, rounding, borders, shadows, typography, and decorative backgrounds.
+Use [the ready-to-send agent prompt](docs/add-theme-prompt.md) to commission another theme.
 
-`src/styles/global.css` imports structural defaults into a lower-priority CSS layer; `BaseLayout.astro` loads the four independently selectable theme stylesheets. Keep `src/styles/layout.css` intact during visual experiments: it defines the page dimensions, 12-column / 7-row grid, aspect ratio, gaps, component alignment, and reserved visual slots. The existing 640px minimum viewport width is retained.
+`src/styles/global.css` imports structural defaults into a lower-priority CSS layer; `BaseLayout.astro` renders the registered theme stylesheet links. Keep `src/styles/layout.css` intact: it defines page dimensions, the 12-column / 7-row grid, aspect ratio, gaps, component alignment, and reserved visual slots. The existing 640px minimum viewport width is retained. The selector derives its options from the registry and stays outside the grid.
 
 Preserve the component tree, content, order, and these grid areas in `src/components/BentoGrid.astro`:
 

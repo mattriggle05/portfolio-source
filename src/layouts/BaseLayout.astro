@@ -1,10 +1,7 @@
 ---
 import "../styles/global.css";
 import StyleSwitcher from "../components/StyleSwitcher.astro";
-import atlas from "../styles/themes/01.css?url";
-import blue from "../styles/themes/02.css?url";
-import signal from "../styles/themes/03.css?url";
-import porcelain from "../styles/themes/04.css?url";
+import { themes } from "../themes/registry";
 ---
 <!doctype html>
 <html lang="en">
@@ -13,12 +10,13 @@ import porcelain from "../styles/themes/04.css?url";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A visual study in modular layouts. A fresh bento concept for mriggle.dev." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    {[atlas, blue, signal, porcelain].map((href, index) => (
-      <link rel="stylesheet" href={href} data-style={`0${index + 1}`} media={index === 0 ? "all" : "not all"} />
+    {themes.map((theme, index) => (
+      <link rel="stylesheet" href={theme.stylesheet} data-style={theme.id} data-portrait={theme.portrait} data-portrait-alt={theme.portraitAlt} media={index === 0 ? "all" : "not all"} />
     ))}
     <script is:inline>
       const requestedStyle = new URLSearchParams(location.search).get('style');
-      const initialStyle = ['01', '02', '03', '04'].includes(requestedStyle) ? requestedStyle : '01';
+      const themeSheets = Array.from(document.querySelectorAll('link[data-style]'));
+      const initialStyle = themeSheets.find(sheet => sheet.dataset.style === requestedStyle)?.dataset.style || themeSheets[0].dataset.style;
       document.documentElement.dataset.style = initialStyle;
       document.querySelectorAll('link[data-style]').forEach(sheet => {
         sheet.media = sheet.dataset.style === initialStyle ? 'all' : 'not all';
