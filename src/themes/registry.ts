@@ -1,3 +1,4 @@
+import azure from '../styles/themes/azure.css?url';
 import atlas from '../styles/themes/01.css?url';
 import blue from '../styles/themes/02.css?url';
 import signal from '../styles/themes/03.css?url';
@@ -25,6 +26,7 @@ export const themes: readonly Theme[] = [
   { id: 'nocturne', label: 'Nocturne', stylesheet: nocturne, portrait: '/images/themes/nocturne/portrait.svg', portraitAlt: 'Illustrated copper crescent moon above layered desert dunes in a charcoal night sky' },
   { id: 'vector', label: 'Vector', stylesheet: vector, portrait: '/images/themes/vector/portrait.svg', portraitAlt: 'Green wireframe towers on a black coordinate grid with surveying marks' },
   { id: 'risograph', label: 'Risograph', stylesheet: risograph, portrait: '/images/themes/risograph/portrait.svg', portraitAlt: 'Two-color geometric print of vermilion sun discs and cobalt architectural arches on warm cream paper' },
+  { id: 'azure', label: 'Azure Soft', stylesheet: azure, portrait: '/images/themes/azure/portrait.svg', portraitAlt: 'Sculptural blue ribbon looping through a pale blue sky beneath a white sun' },
 ];
 
 if (!themes.length || new Set(themes.map(theme => theme.id)).size !== themes.length ||
