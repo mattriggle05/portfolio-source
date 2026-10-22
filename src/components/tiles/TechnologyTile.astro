@@ -13,3 +13,10 @@ const { gridArea, className = "tile" } = Astro.props;
         </tbody>
       </table>
     </article>
+
+<style>
+  .technology-table thead th { text-align: center; font-size: 9px; }
+  .technology-table button.technology-logo { margin-inline: auto; }
+  @media (max-width: 900px) { .technology-table thead th { font-size: 8px; } }
+  @media (max-width: 700px) { .technology-table thead th { font-size: 6px; } }
+</style>
