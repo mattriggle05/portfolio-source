@@ -1,60 +1,51 @@
 ---
-import "../styles/global.css";
-import TextTile from "./tiles/TextBoxTile.astro";
-import ImageTile from "./tiles/ImageTile.astro";
-import LocationTile from "./tiles/LocationTile.astro";
+const buttons = ['01', '02', '03', '04'];
+const stack = ['Design', 'Build', 'Learn', 'Repeat'];
 ---
+<main class="concept">
+  <header class="masthead">
+    <a class="wordmark" href="#" aria-label="Home">m<span>®</span></a>
+    <span class="eyebrow">PERSONAL SPACE / LAYOUT STUDY 002</span>
+    <span class="edition">A quieter kind of collection.</span>
+  </header>
 
-<div class="bento-grid">
-  <TextTile gridArea="tx" className="tile" />
-  <ImageTile gridArea="im" className="tile" />
-  <LocationTile gridArea="lo" className="tile" />
-</div>
+  <section class="intro" aria-labelledby="page-title">
+    <div><p class="eyebrow">A FEW THINGS, IN ONE PLACE</p><h1 id="page-title">Room for possibility<span>.</span></h1></div>
+    <span class="concept-label">BENTO CONCEPT / 02</span>
+  </section>
 
-<style>
-  .bento-grid {
-    display: grid;
-    width: calc(300px + 50vw);
-    height: 60vh;
-    gap: 12px;
-    grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    grid-template-areas:
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx .  .  lo lo lo lo";
-  }
+  <section class="bento-grid" aria-label="Bento concept with placeholder content">
+    <article class="tile paragraph-tile">
+      <div class="tile-top"><span class="eyebrow">01 / INTRODUCTION</span><span class="accent" aria-hidden="true">✳</span></div>
+      <h2>A place for a few words.</h2>
+      <p>This is a paragraph tile. It gives an introduction, a thought, or a short story enough room to breathe. The heading sets the tone, while the smaller text carries the detail. For now, it is simply a little space for whatever comes next.</p>
+    </article>
 
-  .bento-grid :global(.tile) {
-    background: var(--main-bg);
+    <figure class="tile photo-tile">
+      <img src="/images/portrait-placeholder.svg" alt="Illustrative placeholder landscape with layered mountains beneath a pale moon" width="460" height="800" />
+      <figcaption><span class="eyebrow">02 / VERTICAL IMAGE</span><span>Somewhere, someday.</span></figcaption>
+    </figure>
 
-    border-radius: var(--tile-border-radius);
-    /* border: 1px var(--tile-border) solid; */
+    <article class="tile stack-tile" aria-labelledby="stack-title">
+      <h2 class="eyebrow" id="stack-title">03 / THE STACK</h2>
+      <ul>{stack.map((word, i) => <li><span class="stack-icon" aria-hidden="true">{['✳', '⌘', '+', '↗'][i]}</span><span>{word}</span></li>)}</ul>
+      <p class="stack-caption">ONE THING AT A TIME</p>
+    </article>
 
-    box-shadow:
-      0 0px 10px 2px rgba(0, 0, 0, 0.5),
-      inset 0px 0px 10px 2px var(--tile-border);
+    <article class="tile buttons-tile" aria-label="Four placeholder buttons">
+      <div class="button-grid">{buttons.map((number) => <button type="button" aria-label={`Placeholder button ${number}`}><span aria-hidden="true">{['↗', '✳', '⌘', '+'][Number(number) - 1]}</span><span>Button {number}</span></button>)}</div>
+    </article>
 
-    /* box-shadow:
-      0px 0px 10px 0px var(--tile-shadow),
-      inset 0px 0px 5px 0px var(--tile-shadow); */
-    text-shadow: 0px 1px 0px var(--text-shadow);
-    background: linear-gradient(var(--tile-bg), var(--tile-bg-2));
+    <article class="tile blank-tile blank-large" aria-label="Blank tile for future content"><span class="eyebrow">05 / OPEN SPACE</span><div class="line-study" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="blank-caption">Something to come.</span></article>
 
-    overflow: hidden;
+    <article class="tile blank-tile blank-small" aria-label="Small blank tile"><span class="eyebrow">06 / UNWRITTEN</span><span class="tiny-cross" aria-hidden="true">+</span></article>
 
-    font-family: var(--font);
-    text-align: center;
-    color: var(--text-color);
-    font-weight: bold;
-  }
-</style>
+    <article class="tile blank-tile blank-strip" aria-label="Wide blank tile"><span class="eyebrow">07 / A LITTLE EXTRA ROOM</span><span aria-hidden="true">···</span></article>
+
+    <article class="tile location-tile" aria-label="Placeholder location">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <div><span class="eyebrow">BASED SOMEWHERE</span><p>City, Planet Earth</p></div><span class="location-coordinate">00° N / 00° E</span>
+    </article>
+  </section>
+  <footer><span>m® / A PERSONAL COLLECTION</span><span>PLACEHOLDER CONTENT · A STUDY IN SHAPES</span></footer>
+</main>
