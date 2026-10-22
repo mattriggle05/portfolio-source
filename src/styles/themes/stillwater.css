@@ -204,3 +204,6 @@ button.signature-open:hover { background: #edf5fc; border-color: #edf5fc; }
   .location-tile .location-caption p { font-size: 15px; }
 }
 }
+
+/* Solid backing remains when placeholder imagery is absent. */
+.concept .photo-tile { background-color: #213143; }

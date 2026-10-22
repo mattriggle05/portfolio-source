@@ -154,3 +154,6 @@ button.signature-open { padding: 6px; border-radius: 50%; }
 @media (max-width: 700px) {
   button.project-button { min-height: 26px; }
 }
+
+/* Solid backing remains when placeholder imagery is absent. */
+.concept .photo-tile { background-color: #19283d; }
