@@ -1,6 +1,7 @@
 import atlas from '../styles/themes/01.css?url';
 import blue from '../styles/themes/02.css?url';
 import signal from '../styles/themes/03.css?url';
+import vector from '../styles/themes/vector.css?url';
 import nocturne from '../styles/themes/nocturne.css?url';
 import porcelain from '../styles/themes/04.css?url';
 
@@ -20,6 +21,7 @@ export const themes: readonly Theme[] = [
   { id: '03', label: '03 · Signal Studio', stylesheet: signal, portrait: '/images/themes/03/portrait-placeholder.svg', portraitAlt: 'Illustrated mountain landscape in violet and acid yellow' },
   { id: '04', label: '04 · Porcelain / Oxblood', stylesheet: porcelain, portrait: '/images/themes/04/portrait-placeholder.svg', portraitAlt: 'Illustrated placeholder landscape; decorative porcelain artwork is supplied by the theme' },
   { id: 'nocturne', label: 'Nocturne', stylesheet: nocturne, portrait: '/images/themes/nocturne/portrait.svg', portraitAlt: 'Illustrated copper crescent moon above layered desert dunes in a charcoal night sky' },
+  { id: 'vector', label: 'Vector', stylesheet: vector, portrait: '/images/themes/vector/portrait.svg', portraitAlt: 'Green wireframe towers on a black coordinate grid with surveying marks' },
 ];
 
 if (!themes.length || new Set(themes.map(theme => theme.id)).size !== themes.length ||
