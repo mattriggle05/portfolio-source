@@ -5,7 +5,11 @@ interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
 ---
 <article class:list={[className, "paragraph-tile"]} style={{ gridArea }}>
-      <div class="tile-top"><span class="eyebrow">01 / INTRODUCTION</span><span class="accent" aria-hidden="true">✳</span></div>
+      <div class="tile-top"><span class="accent" aria-hidden="true">✳</span></div>
       <h1>A place for a few words.</h1>
       <p>A space for an introduction, a thought, or a short story. A few words about the person behind the work, and whatever comes next.</p>
     </article>
+
+<style>
+  .tile-top { justify-content: flex-end; }
+</style>

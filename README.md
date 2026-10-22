@@ -63,4 +63,4 @@ Suggested model instruction:
 
 Validate changes with `npm run build` and `npx astro check`, then inspect the rendered page.
 
-Stillwater (`?style=stillwater`) combines Blue Hour’s mountain artwork and muted blues, Field Atlas’s editorial introduction and circular technology hovers, Porcelain / Oxblood’s 18px card corners and featured-project spacing, and subtle inset highlights. Its introduction and projects numbering labels are hidden only within this theme; shared markup and grid geometry are preserved.
+Stillwater (`?style=stillwater`) combines Blue Hour’s mountain artwork and muted blues, Field Atlas’s editorial introduction and circular technology hovers, Porcelain / Oxblood’s 18px card corners and featured-project spacing, and subtle inset highlights. All themes omit the introduction/projects numbering labels and repository caption, and show six evenly spaced repository placeholders within the unchanged grid geometry.

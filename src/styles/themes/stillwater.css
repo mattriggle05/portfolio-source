@@ -155,8 +155,6 @@ button.signature-open { padding: 6px; border-radius: 50%; }
 /* The final treatments apply at every breakpoint unless explicitly sized below. */
 .tile { border-radius: 18px; background: linear-gradient(145deg, #2c3d50, #213143); box-shadow: inset 0 1px 0 #e5f0ff20, 0 8px 24px #030b1528; }
 .paragraph-tile { background: radial-gradient(ellipse at 100% 0, #6b89a020, transparent 70%), #293b4d; }
-.paragraph-tile .tile-top .eyebrow, .stack-tile > h2 { display: none; }
-.paragraph-tile .tile-top { justify-content: flex-end; }
 .paragraph-tile h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 34px; font-weight: 400; line-height: 1.15; letter-spacing: -.045em; margin: 23px 0 13px; }
 .paragraph-tile p { font-size: 12px; line-height: 1.75; color: #c0ced9; }
 .photo-tile img { filter: saturate(.65); }
@@ -205,15 +203,4 @@ button.signature-open:hover { background: #edf5fc; border-color: #edf5fc; }
   .signature-copy p { font-size: 7px; line-height: 1.5; }
   .location-tile .location-caption p { font-size: 15px; }
 }
-/* Six equal repository rows fill the existing tile at every breakpoint. */
-.stack-tile .stack-caption { display: none; }
-.stack-tile ul { height: 100%; margin: 0; grid-template-rows: repeat(6, minmax(0, 1fr)); gap: 8px; }
-.stack-tile li { min-height: 0; }
-.stack-tile button.project-button { height: 100%; min-height: 0; }
-@media (max-width: 900px) { .stack-tile ul { gap: 5px; } }
-@media (max-width: 700px) {
-  .stack-tile ul { gap: 4px; }
-  .stack-tile button.project-button { padding: 2px 4px; }
-}
-
 }
