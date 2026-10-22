@@ -1,0 +1,65 @@
+<nav class="style-switcher" aria-label="Portfolio style comparison">
+  <label for="portfolio-style">Style concept</label>
+  <select id="portfolio-style">
+    <option value="01">01 · Field Atlas</option>
+    <option value="02">02 · Blue Hour</option>
+    <option value="03">03 · Signal Studio</option>
+    <option value="04">04 · Porcelain / Oxblood</option>
+  </select>
+</nav>
+
+<script>
+  const select = document.querySelector<HTMLSelectElement>('#portfolio-style');
+  const sheets = document.querySelectorAll<HTMLLinkElement>('link[data-style]');
+  const portrait = document.querySelector<HTMLImageElement>('.photo-tile img');
+  function applyStyle(id: string) {
+    if (!Array.from(sheets).some(sheet => sheet.dataset.style === id)) return;
+    document.documentElement.dataset.style = id;
+    sheets.forEach(sheet => { sheet.media = sheet.dataset.style === id ? 'all' : 'not all'; });
+    if (portrait) portrait.src = `/images/themes/${id}/portrait-placeholder.svg`;
+    if (select) select.value = id;
+  }
+  applyStyle(document.documentElement.dataset.style || '01');
+  select?.addEventListener('change', () => {
+    applyStyle(select.value);
+    const url = new URL(window.location.href);
+    url.searchParams.set('style', select.value);
+    history.replaceState(null, '', url);
+  });
+  window.addEventListener('popstate', () => {
+    const id = new URLSearchParams(location.search).get('style');
+    applyStyle(id && ['01', '02', '03', '04'].includes(id) ? id : '01');
+  });
+</script>
+
+<style>
+  .style-switcher {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border: 1px solid #cbd0d6;
+    border-radius: 8px;
+    background: #fff;
+    color: #20252c;
+    font: 12px/1.4 Arial, sans-serif;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px #00000010;
+  }
+  select {
+    min-height: 30px;
+    padding: 4px 8px;
+    border: 1px solid #aab2bd;
+    border-radius: 4px;
+    background: #fff;
+    color: #20252c;
+    font: inherit;
+    cursor: pointer;
+  }
+  select:focus-visible { outline: 2px solid #2458ac; outline-offset: 2px; }
+</style>

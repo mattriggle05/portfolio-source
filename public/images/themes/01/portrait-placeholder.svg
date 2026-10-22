@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="800" viewBox="0 0 460 800">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#ccd7b5"/><stop offset="1" stop-color="#e9d7a4"/></linearGradient><pattern id="lines" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 12 12 0" stroke="#faf3d5" stroke-opacity=".09"/></pattern></defs>
+<path fill="url(#sky)" d="M0 0h460v800H0z"/>
+<circle cx="329" cy="177" r="51" fill="#fff4cf"/><circle cx="329" cy="177" r="67" fill="none" stroke="#fff4cf" stroke-opacity=".55"/>
+<path d="M0 449 100 274 186 400 270 315 460 502V800H0Z" fill="#899b73"/>
+<path d="m0 504 144-157 103 163 95-80 118 90v280H0Z" fill="#526e53"/>
+<path d="m0 613 103-126 109 96 141-105 107 156v166H0Z" fill="#315443"/>
+<path d="m0 725 167-124 118 80 175-60v179H0Z" fill="#203f34"/>
+<path d="m144 347-31 81 31-16 28 21Z" fill="#d2d7b8"/>
+<path fill="url(#lines)" d="M0 0h460v800H0z"/>
+<g fill="none" stroke="#f1e6c0" stroke-opacity=".5"><path d="M28 29h35M28 29v35M432 29h-35M432 29v35"/><path d="M25 240h30m-15-15v30"/></g>
+<circle cx="40" cy="240" r="6" fill="#b84420"/>
+</svg>

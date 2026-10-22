@@ -1,0 +1,157 @@
+/* Signal Studio — graphic violet, acid yellow, and warm white. */
+:root {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-synthesis: none;
+  color: #24133f;
+  background: #eeeaf4;
+  --ink: #24133f;
+  --muted: #655772;
+  --line: #c8bed3;
+  --violet: #5933b2;
+  --acid: #e4f657;
+}
+body { background: linear-gradient(90deg, transparent calc(50% - .5px), #24133f08 50%, transparent calc(50% + .5px)), #eeeaf4; }
+a { color: inherit; }
+::selection { background: var(--acid); color: var(--ink); }
+.concept { padding: 56px 0; }
+.eyebrow, .stack-caption, .resume-updated, .signature-preview-note, .technology-table thead th, .technology-table tbody th {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+}
+.eyebrow { font-weight: 500; letter-spacing: .08em; color: var(--muted); }
+.tile { border: 1px solid var(--ink); border-radius: 2px; background: #fffdf7; box-shadow: 3px 3px 0 #24133f; }
+.paragraph-tile { padding: 25px; background: var(--acid); }
+.paragraph-tile .eyebrow { color: #4b4925; }
+.accent { color: var(--violet); font-size: 30px; }
+.paragraph-tile h1 { font-size: 36px; line-height: 1.05; font-weight: 750; letter-spacing: -.055em; margin-top: 21px; }
+.paragraph-tile p { color: #424027; line-height: 1.7; }
+.photo-tile { background: var(--violet); }
+.photo-tile img { opacity: 1; }
+.photo-tile::after { background: linear-gradient(transparent, #24133fe8); }
+.photo-tile .eyebrow { color: #e4dbf9; }
+.photo-tile figcaption > span:last-child { color: #fffdf7; font-weight: 650; letter-spacing: -.03em; }
+.stack-tile { padding: 21px 16px; }
+.stack-tile ul { padding: 0; }
+.stack-caption { color: var(--muted); letter-spacing: .06em; }
+button { font-family: inherit; color: var(--ink); border: 1px solid var(--line); border-radius: 0; padding: 8px; background: transparent; transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease; }
+button:hover { background: var(--acid); border-color: var(--ink); }
+button:active { background: #cbdc44; }
+button:focus-visible, a:focus-visible { outline: 3px solid #bd38a7; }
+button.project-button { padding: 8px; border: 0; border-bottom: 1px solid var(--line); }
+.project-button > span:first-of-type { font-weight: 550; letter-spacing: -.02em; }
+.project-button svg { color: var(--violet); }
+.project-button .project-arrow { color: var(--violet); }
+.contact-compact-tile { padding: 9px; background: var(--violet); }
+.contact-compact-tile .button-grid button { color: #fffdf7; border-color: #ffffff45; }
+.contact-compact-tile .button-grid button:hover { color: var(--ink); background: var(--acid); border-color: var(--acid); }
+.resume-tile { padding: 9px 13px; background: var(--acid); }
+.resume-tile .resume-icon { color: #fffdf7; background: var(--ink); border-color: var(--ink); }
+.resume-tile .resume-icon:hover { background: var(--violet); }
+.resume-tile .resume-filename { font-size: 15px; font-weight: 700; letter-spacing: -.04em; }
+.resume-updated { font-size: 8px; color: #504e29; }
+.new-feature-tile { padding: 12px 14px; }
+.technology-table thead th { padding: 0 0 6px; font-weight: 400; color: var(--muted); }
+.technology-table tbody th { padding: 3px 0; font-size: 8px; font-weight: 400; }
+.technology-table tbody td { padding: 3px; }
+.technology-table tbody tr { border-top: 1px solid var(--line); }
+button.technology-logo { padding: 0; border-color: transparent; color: var(--violet); }
+button.technology-logo:hover { border-color: var(--ink); }
+.technology-logo .technology-tooltip { display: none; padding: 7px 9px; border: 1px solid var(--ink); background: var(--ink); color: #fffdf7; }
+.technology-logo:hover .technology-tooltip, .technology-logo:focus .technology-tooltip { display: block; }
+.location-tile { padding: 20px; background: #dacdf4; }
+.location-globe-space { background: url('/images/themes/03/signal-globe.svg') center / contain no-repeat; margin-bottom: 8px; }
+.location-tile .location-caption .eyebrow { color: #57436f; }
+.location-tile .location-caption p { margin-top: 5px; font-size: 21px; font-weight: 700; letter-spacing: -.05em; }
+.signature-preview { background: #5933b2 url('/images/themes/03/signal-orbit.svg') center / cover no-repeat; border-bottom: 1px solid var(--ink); }
+.signature-preview > svg { opacity: 0; }
+.signature-label { color: #f1eaff; letter-spacing: .08em; }
+.signature-preview-note { color: #f1eaff; letter-spacing: .08em; }
+.signature-copy { padding: 17px 19px; }
+.signature-heading h2 { font-size: 22px; font-weight: 700; letter-spacing: -.055em; }
+.signature-copy p { color: var(--muted); margin-top: 9px; }
+button.signature-open { padding: 6px; background: var(--acid); border-color: var(--ink); }
+button.signature-open:hover { background: var(--violet); color: #fffdf7; }
+/* Compact typography and padding keep the fixed geometry legible at its minimum width. */
+@media (max-width: 900px) {
+  .paragraph-tile { padding: 15px; }
+  .paragraph-tile h1 { font-size: 25px; margin: 13px 0 8px; }
+  .paragraph-tile p { font-size: 10px; line-height: 1.6; }
+  .stack-tile { padding: 12px 9px; }
+  .stack-tile ul { gap: 5px; margin: 8px 0; }
+  button.project-button { min-height: 30px; padding: 5px; gap: 5px; }
+  .project-button > span:first-of-type { font-size: 8px; }
+  .project-button svg { width: 13px; height: 13px; }
+  .stack-caption { font-size: 6px; }
+  .resume-tile { padding: 5px 8px; gap: 7px; }
+  .resume-tile .resume-icon { width: 26px; height: 26px; }
+  .resume-icon svg { width: 16px; height: 16px; }
+  .resume-tile .resume-filename { font-size: 11px; }
+  .resume-updated { font-size: 6px; }
+  .new-feature-tile { padding: 7px; }
+  .technology-table thead td { width: 61px; }
+  .technology-table thead th { font-size: 6px; }
+  .technology-table tbody th { font-size: 7px; }
+  .technology-table tbody td { padding: 1px; }
+  button.technology-logo { width: 26px; height: 26px; }
+  .technology-logo > span:first-child { font-size: 15px; }
+  .contact-compact-tile { padding: 6px; }
+  .contact-compact-tile .button-grid button { padding: 3px; gap: 3px; }
+  .contact-compact-tile .button-grid svg { width: 15px; height: 15px; }
+  .contact-compact-tile .button-grid button > span:last-child { font-size: 6px; }
+  .signature-copy { padding: 10px 12px; }
+  .signature-heading { gap: 5px; }
+  .signature-heading h2 { font-size: 16px; }
+  .signature-copy p { font-size: 8px; margin-top: 6px; }
+  button.signature-open { width: 24px; height: 24px; }
+  .signature-label { top: 10px; left: 12px; font-size: 6px; }
+  .signature-preview-note { left: 12px; font-size: 5px; }
+  .location-tile { padding: 12px; }
+  .location-tile .location-caption p { font-size: 17px; }
+  .photo-tile figcaption { bottom: 15px; left: 12px; gap: 6px; }
+  .photo-tile figcaption > span:last-child { font-size: 12px; }
+  .photo-tile .eyebrow { font-size: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
+@media (max-width: 700px) {
+  .paragraph-tile { padding: 10px 13px; }
+  .paragraph-tile h1 { font-size: 21px; margin: 10px 0 6px; }
+  .paragraph-tile p { font-size: 9px; line-height: 1.45; }
+  .eyebrow { font-size: 7px; }
+  .accent { font-size: 18px; }
+  .stack-tile { padding: 10px 8px; }
+  .stack-tile ul { gap: 4px; margin: 7px 0; }
+  button.project-button { min-height: 25px; padding: 4px; gap: 3px; }
+  .project-button > span:first-of-type { font-size: 7px; }
+  .project-button svg { width: 10px; height: 10px; }
+  .project-button .project-arrow { font-size: 11px; }
+  .stack-caption { font-size: 5px; letter-spacing: 0; }
+  .new-feature-tile { padding: 5px; }
+  .technology-table thead td { width: 48px; }
+  .technology-table thead th { font-size: 5px; padding: 0 0 3px; letter-spacing: -.04em; }
+  .technology-table tbody th { font-size: 6px; letter-spacing: -.05em; padding: 0; }
+  .technology-table tbody td { padding: 0; }
+  button.technology-logo { width: 22px; height: 22px; }
+  .technology-logo > span:first-child { font-size: 13px; }
+  .contact-compact-tile .button-grid { gap: 3px; }
+  .contact-compact-tile .button-grid button { gap: 2px; padding: 2px; }
+  .contact-compact-tile .button-grid button > span:last-child { font-size: 5px; }
+  .contact-compact-tile .button-grid svg { width: 12px; height: 12px; }
+  .resume-tile .resume-icon { width: 22px; height: 22px; }
+  .resume-tile .resume-filename { font-size: 10px; }
+  .resume-tile .resume-details { gap: 2px; }
+  .resume-updated { font-size: 5px; }
+  .signature-copy { padding: 8px 10px; }
+  .signature-heading h2 { font-size: 15px; }
+  .signature-copy p { font-size: 7px; line-height: 1.5; }
+  .location-tile { padding: 10px; }
+}
+/* Hidden tooltips must not contribute to the compact table's overflow area. */
+.technology-logo .technology-tooltip { display: none; }
+.technology-logo:hover .technology-tooltip,
+.technology-logo:focus .technology-tooltip { display: block; }
+@media (max-width: 700px) {
+  button.project-button { line-height: 1.2; }
+  .project-button .project-arrow { line-height: 1; }
+}
+@media (max-width: 700px) {
+  .stack-tile ul { margin: 5px 0; }
+}

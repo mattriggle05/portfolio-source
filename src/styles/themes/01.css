@@ -1,0 +1,186 @@
+/* Field Atlas — paper, evergreen ink, and survey-orange annotations. */
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  color: #233e35;
+  background: #e9e5d9;
+  --ink: #233e35;
+  --muted: #667267;
+  --paper: #faf7ee;
+  --line: #c9cec0;
+  --orange: #b84420;
+}
+body {
+  background-image: radial-gradient(#69746026 .6px, transparent .6px);
+  background-size: 6px 6px;
+}
+a { color: inherit; }
+::selection { color: #fffaf0; background: #b84420; }
+.concept { padding: 56px 0; }
+.eyebrow, .stack-caption, .technology-table thead th, .resume-updated,
+.signature-preview-note, .technology-table tbody th {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+}
+.eyebrow { font-weight: 500; letter-spacing: .11em; color: var(--muted); }
+.tile {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 7px;
+  box-shadow: 0 2px 2px #233e3505, 0 7px 18px #233e3507;
+}
+.paragraph-tile { padding: 26px; background: #f7f3e7; }
+.accent { color: var(--orange); }
+.paragraph-tile h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -.045em;
+  margin-top: 23px;
+}
+.paragraph-tile p { color: #4c5e53; line-height: 1.75; }
+.photo-tile { border-color: #23483d; background: #23483d; }
+.photo-tile img { opacity: 1; }
+.photo-tile::after { background: linear-gradient(transparent, #122e28e6); }
+.photo-tile .eyebrow { color: #d9e2c8; }
+.photo-tile figcaption > span:last-child { color: #fff7df; font-family: Georgia, serif; font-style: italic; }
+.stack-tile { padding: 20px 17px; }
+.stack-tile ul { padding: 0; }
+.stack-caption { color: var(--muted); letter-spacing: .08em; }
+button {
+  font-family: inherit;
+  color: var(--ink);
+  background: #edeedf;
+  border: 1px solid #d4d8c7;
+  border-radius: 4px;
+  padding: 8px;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+button:hover { background: #dfe6d2; border-color: #78927e; }
+button:active { background: #cddbc0; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--orange); }
+button > span:last-child { letter-spacing: .02em; }
+button.project-button { padding: 8px; border-radius: 4px; background: transparent; border-color: var(--line); }
+button.project-button:hover { background: #e7ebdc; border-color: #78927e; }
+.project-button svg { color: #6b8065; }
+.project-button .project-arrow { color: var(--orange); }
+.contact-compact-tile { padding: 10px; background: #243f35; border-color: #243f35; }
+.contact-compact-tile .button-grid button { border-radius: 4px; background: #ffffff08; color: #f1efda; border-color: #ffffff26; }
+.contact-compact-tile .button-grid button:hover { background: #ffffff20; border-color: #e5d8a9; }
+.resume-tile { padding: 10px 14px; background: #e5e9d7; }
+.resume-tile .resume-icon { border-radius: 50%; background: #233e35; color: #faf7ee; border-color: #233e35; }
+.resume-tile .resume-icon:hover { background: #b84420; border-color: #b84420; }
+.resume-tile .resume-filename { font-size: 15px; font-weight: 600; letter-spacing: -.03em; }
+.resume-updated { color: #56664e; font-size: 8px; }
+.new-feature-tile { padding: 12px 15px; }
+.technology-table thead th { padding: 0 2px 6px; color: var(--muted); font-weight: 400; }
+.technology-table tbody th { padding: 3px 0; font-weight: 400; font-size: 8px; }
+.technology-table tbody td { padding: 3px; }
+.technology-table tbody tr { border-top: 1px solid #dce0d2; }
+button.technology-logo { padding: 0; border-radius: 50%; background: transparent; border-color: transparent; }
+button.technology-logo:hover { background: #e4e9d8; border-color: #b7c4ab; color: var(--orange); }
+.technology-logo .technology-tooltip { padding: 7px 9px; border: 1px solid #475f4e; border-radius: 4px; background: #233e35; color: #fff8e5; box-shadow: 0 3px 10px #233e3520; }
+.location-tile { padding: 18px 20px; background: #e8eadb; }
+.location-globe-space {
+  background: url('/images/themes/01/atlas-globe.svg') center center / contain no-repeat;
+  margin-bottom: 10px;
+}
+.location-tile .location-caption .eyebrow { letter-spacing: .14em; }
+.location-tile .location-caption p { margin-top: 5px; font-family: Georgia, serif; font-size: 20px; letter-spacing: -.03em; }
+.signature-project { background: #f7f3e7; }
+.signature-preview {
+  border-bottom: 1px solid var(--line);
+  background: #dce4cd url('/images/themes/01/contours.svg') center / cover;
+}
+.signature-label { color: #294d3b; letter-spacing: .1em; }
+.signature-preview > svg { opacity: 1; filter: sepia(1) saturate(.65) hue-rotate(40deg); }
+.signature-preview-note { color: #45634b; letter-spacing: .08em; }
+.signature-copy { padding: 16px 19px; }
+.signature-heading h2 { font-family: Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: -.035em; }
+.signature-copy p { margin-top: 9px; color: #52634f; }
+button.signature-open { padding: 6px; border-radius: 50%; background: #b84420; color: #fff7e5; border-color: #b84420; }
+button.signature-open:hover { background: #903619; }
+/* Compact typography and padding keep the fixed geometry legible at its minimum width. */
+@media (max-width: 900px) {
+  .paragraph-tile { padding: 15px; }
+  .paragraph-tile h1 { font-size: 25px; margin: 13px 0 8px; }
+  .paragraph-tile p { font-size: 10px; line-height: 1.6; }
+  .stack-tile { padding: 12px 9px; }
+  .stack-tile ul { gap: 5px; margin: 8px 0; }
+  button.project-button { min-height: 30px; padding: 5px; gap: 5px; }
+  .project-button > span:first-of-type { font-size: 8px; }
+  .project-button svg { width: 13px; height: 13px; }
+  .stack-caption { font-size: 6px; }
+  .resume-tile { padding: 5px 8px; gap: 7px; }
+  .resume-tile .resume-icon { width: 26px; height: 26px; }
+  .resume-icon svg { width: 16px; height: 16px; }
+  .resume-tile .resume-filename { font-size: 11px; }
+  .resume-updated { font-size: 6px; }
+  .new-feature-tile { padding: 7px; }
+  .technology-table thead td { width: 61px; }
+  .technology-table thead th { font-size: 6px; }
+  .technology-table tbody th { font-size: 7px; }
+  .technology-table tbody td { padding: 1px; }
+  button.technology-logo { width: 26px; height: 26px; }
+  .technology-logo > span:first-child { font-size: 15px; }
+  .contact-compact-tile { padding: 6px; }
+  .contact-compact-tile .button-grid button { padding: 3px; gap: 3px; }
+  .contact-compact-tile .button-grid svg { width: 15px; height: 15px; }
+  .contact-compact-tile .button-grid button > span:last-child { font-size: 6px; }
+  .signature-copy { padding: 10px 12px; }
+  .signature-heading { gap: 5px; }
+  .signature-heading h2 { font-size: 16px; }
+  .signature-copy p { font-size: 8px; margin-top: 6px; }
+  button.signature-open { width: 24px; height: 24px; }
+  .signature-label { top: 10px; left: 12px; font-size: 6px; }
+  .signature-preview-note { left: 12px; font-size: 5px; }
+  .location-tile { padding: 12px; }
+  .location-tile .location-caption p { font-size: 17px; }
+  .photo-tile figcaption { bottom: 15px; left: 12px; gap: 6px; }
+  .photo-tile figcaption > span:last-child { font-size: 12px; }
+  .photo-tile .eyebrow { font-size: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
+@media (max-width: 700px) {
+  .paragraph-tile { padding: 10px 13px; }
+  .paragraph-tile h1 { font-size: 21px; margin: 10px 0 6px; }
+  .paragraph-tile p { font-size: 9px; line-height: 1.45; }
+  .eyebrow { font-size: 7px; }
+  .accent { font-size: 18px; }
+  .stack-tile { padding: 10px 8px; }
+  .stack-tile ul { gap: 4px; margin: 7px 0; }
+  button.project-button { min-height: 25px; padding: 4px; gap: 3px; }
+  .project-button > span:first-of-type { font-size: 7px; }
+  .project-button svg { width: 10px; height: 10px; }
+  .project-button .project-arrow { font-size: 11px; }
+  .stack-caption { font-size: 5px; letter-spacing: 0; }
+  .new-feature-tile { padding: 5px; }
+  .technology-table thead td { width: 48px; }
+  .technology-table thead th { font-size: 5px; padding: 0 0 3px; letter-spacing: -.04em; }
+  .technology-table tbody th { font-size: 6px; letter-spacing: -.05em; padding: 0; }
+  .technology-table tbody td { padding: 0; }
+  button.technology-logo { width: 22px; height: 22px; }
+  .technology-logo > span:first-child { font-size: 13px; }
+  .contact-compact-tile .button-grid { gap: 3px; }
+  .contact-compact-tile .button-grid button { gap: 2px; padding: 2px; }
+  .contact-compact-tile .button-grid button > span:last-child { font-size: 5px; }
+  .contact-compact-tile .button-grid svg { width: 12px; height: 12px; }
+  .resume-tile .resume-icon { width: 22px; height: 22px; }
+  .resume-tile .resume-filename { font-size: 10px; }
+  .resume-tile .resume-details { gap: 2px; }
+  .resume-updated { font-size: 5px; }
+  .signature-copy { padding: 8px 10px; }
+  .signature-heading h2 { font-size: 15px; }
+  .signature-copy p { font-size: 7px; line-height: 1.5; }
+  .location-tile { padding: 10px; }
+}
+/* Hidden tooltips must not contribute to the compact table's overflow area. */
+.technology-logo .technology-tooltip { display: none; }
+.technology-logo:hover .technology-tooltip,
+.technology-logo:focus .technology-tooltip { display: block; }
+@media (max-width: 700px) {
+  button.project-button { line-height: 1.2; }
+  .project-button .project-arrow { line-height: 1; }
+}
+@media (max-width: 700px) {
+  .stack-tile ul { margin: 5px 0; }
+}

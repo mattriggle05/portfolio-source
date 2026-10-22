@@ -58,10 +58,10 @@ button.technology-logo:hover { border-color: var(--ink); }
 .technology-logo .technology-tooltip { display: none; padding: 7px 9px; border: 1px solid var(--ink); background: var(--ink); color: #fffaf4; }
 .technology-logo:hover .technology-tooltip, .technology-logo:focus .technology-tooltip { display: block; }
 .location-tile { padding: 20px; background: #e8c8bc; }
-.location-globe-space { background: url('/images/porcelain-globe.svg') center / contain no-repeat; margin-bottom: 8px; }
+.location-globe-space { background: url('/images/themes/04/porcelain-globe.svg') center / contain no-repeat; margin-bottom: 8px; }
 .location-tile .location-caption .eyebrow { color: #71494b; }
 .location-tile .location-caption p { margin-top: 5px; font-size: 21px; font-weight: 700; letter-spacing: -.05em; }
-.signature-preview { background: #843a46 url('/images/porcelain-sunset.svg') center / cover no-repeat; border-bottom: 1px solid var(--ink); }
+.signature-preview { background: #843a46 url('/images/themes/04/porcelain-sunset.svg') center / cover no-repeat; border-bottom: 1px solid var(--ink); }
 .signature-preview > svg { opacity: 0; }
 .signature-label { color: #fff0e3; letter-spacing: .08em; }
 .signature-preview-note { color: #fff0e3; letter-spacing: .08em; }
@@ -168,10 +168,10 @@ button { border-radius: 9px; }
 button.project-button { border-radius: 0; }
 .contact-compact-tile { background: #843a46; }
 .resume-tile { background: #f1c7ac; }
-.signature-preview { background: #843a46 url('/images/porcelain-sunset.svg') center / cover; }
-.location-globe-space { background: url('/images/porcelain-globe.svg') center / contain no-repeat; }
+.signature-preview { background: #843a46 url('/images/themes/04/porcelain-sunset.svg') center / cover; }
+.location-globe-space { background: url('/images/themes/04/porcelain-globe.svg') center / contain no-repeat; }
 .photo-tile img { opacity: 0; }
-.photo-tile { background: #bc7669 url('/images/porcelain-landscape.svg') center / cover; }
+.photo-tile { background: #bc7669 url('/images/themes/04/porcelain-landscape.svg') center / cover; }
 .photo-tile::after { background: linear-gradient(transparent, #492329e8); }
 @media(max-width:900px) { .paragraph-tile h1 { font-size: 27px; } }
 @media(max-width:700px) { .paragraph-tile h1 { font-size: 22px; } }
