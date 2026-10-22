@@ -3,19 +3,47 @@ import type { TileProps } from "./types";
 
 interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
-const projects = ['portfolio-source', 'Project placeholder 02', 'Project placeholder 03', 'Project placeholder 04', 'Project placeholder 05', 'Project placeholder 06'];
+const projects = [
+  { name: 'portfolio-source', description: 'The source behind this portfolio and its visual themes.' },
+  { name: 'Project placeholder 02', description: 'A short overview of the project and the problem it solves.' },
+  { name: 'Project placeholder 03', description: 'A few words about the idea and how it works.' },
+  { name: 'Project placeholder 04', description: 'An introduction to the tools and thinking behind the build.' },
+  { name: 'Project placeholder 05', description: 'A quick look at the goal and what makes it useful.' },
+  { name: 'Project placeholder 06', description: 'A brief summary of the work and what came from it.' },
+];
 ---
 <article class:list={[className, "stack-tile"]} style={{ gridArea }} aria-label="Projects">
-      <ul>{projects.map((project) => <li><button class="project-button" type="button" aria-label={`${project} (placeholder)`}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6a2 2 0 0 1 0-4h14M8 7h8M8 10h5" /></svg><span>{project}</span><span class="project-arrow" aria-hidden="true">↗</span></button></li>)}</ul>
+      <ul>{projects.map((project) => <li><button class="project-button" type="button" aria-label={`${project.name} (placeholder): ${project.description}`}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6a2 2 0 0 1 0-4h14M8 7h8M8 10h5" /></svg><span class="project-copy"><span class="project-name">{project.name}</span><span class="project-description">{project.description}</span></span><span class="project-arrow" aria-hidden="true">↗</span></button></li>)}</ul>
     </article>
 
 <style>
-  .stack-tile ul { height: 100%; margin: 0; grid-template-rows: repeat(6, minmax(0, 1fr)); gap: 8px; }
+  .stack-tile { padding: 12px 10px; }
+  .stack-tile ul {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    grid-template-rows: repeat(6, minmax(44px, 1fr));
+    gap: 4px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
   .stack-tile li { min-height: 0; }
-  .stack-tile button.project-button { height: 100%; min-height: 0; padding-block: 4px; }
-  @media (max-width: 900px) { .stack-tile ul { gap: 5px; } }
+  .stack-tile button.project-button { height: 100%; min-height: 44px; padding: 4px 6px; gap: 6px; }
+  .stack-tile .project-button .project-copy { display: grid; gap: 2px; min-width: 0; flex: 1; letter-spacing: normal; }
+  .stack-tile .project-name { font-size: 9px; line-height: 1.25; }
+  .stack-tile .project-description { font-size: 8px; line-height: 1.3; font-weight: 400; letter-spacing: normal; }
+  @media (max-width: 900px) {
+    .stack-tile ul { grid-template-rows: repeat(6, minmax(64px, 1fr)); }
+    .stack-tile { padding: 9px 7px; }
+    .stack-tile button.project-button { padding: 4px; gap: 4px; }
+    .stack-tile .project-name { font-size: 8px; }
+    .stack-tile .project-description { font-size: 7px; }
+  }
   @media (max-width: 700px) {
-    .stack-tile ul { gap: 4px; }
-    .stack-tile button.project-button { padding-block: 2px; }
+    .stack-tile ul { grid-template-rows: repeat(6, minmax(80px, 1fr)); }
+    .stack-tile .project-button svg { width: 10px; height: 10px; }
+    .stack-tile .project-name { font-size: 7px; }
+    .stack-tile .project-description { font-size: 7px; }
   }
 </style>
