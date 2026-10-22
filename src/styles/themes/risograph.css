@@ -1,0 +1,151 @@
+/* Risograph — two spot inks, uncoated stock, and offset geometric printwork. */
+html[data-style="risograph"], html[data-style="risograph"] body { background: #e9e1cf; }
+.concept {
+  --ink: #193e8f;
+  --muted: #525b6d;
+  --line: #b9bdc4;
+  color: var(--ink);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-synthesis: none;
+  padding: 56px 0;
+  & ::selection { background: #b33422; color: #fff8e6; }
+  & a { color: inherit; }
+  .eyebrow, .stack-caption, .resume-updated, .signature-preview-note, .technology-table thead th, .technology-table tbody th { font-family: 'SFMono-Regular', Consolas, monospace; }
+  .eyebrow { color: var(--muted); letter-spacing: .08em; font-weight: 500; }
+  .tile { border: 1px solid var(--ink); border-radius: 0; background: #fff8e6; box-shadow: 2px 2px 0 #193e8f30; }
+  .paragraph-tile { padding: 26px; background: radial-gradient(#193e8f12 .6px, transparent .8px) 0 0 / 4px 4px, #fff8e6; }
+  .accent { color: #b33422; font-size: 30px; }
+  .paragraph-tile h1 { font-family: Georgia, serif; font-size: 37px; font-weight: 700; letter-spacing: -.055em; line-height: 1.05; margin-top: 22px; text-shadow: 1px 1px #df634a45; }
+  .paragraph-tile p { color: #394867; line-height: 1.7; }
+  .photo-tile { background: #193e8f; }
+  .photo-tile::after { background: linear-gradient(transparent, #102858f5); }
+  .photo-tile .eyebrow { color: #fff0cb; }
+  .photo-tile figcaption > span:last-child { color: #fff8e6; font-family: Georgia, serif; font-style: italic; }
+  .stack-tile { padding: 20px 17px; }
+  .stack-tile ul { padding: 0; }
+  .stack-caption { color: var(--muted); letter-spacing: .04em; }
+  button { font-family: inherit; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 0; padding: 8px; transition: background-color 140ms, color 140ms; }
+  button:hover { background: #f5d9bb; border-color: #b33422; }
+  button:active { background: #edbd97; }
+  button:focus-visible, a:focus-visible { outline: 3px solid #b33422; outline-offset: 2px; }
+  button.project-button { padding: 8px; border-width: 0 0 1px; }
+  .project-arrow, .project-button svg { color: #b33422; }
+  .contact-compact-tile { padding: 10px; background: #193e8f; }
+  .contact-compact-tile button { color: #fff8e6; border-color: #fff8e670; }
+  .contact-compact-tile button:hover { background: #fff8e6; color: #193e8f; }
+  .contact-compact-tile button:focus-visible { outline-color: #ffe09e; }
+  .resume-tile { padding: 10px 14px; background: #f5d9bb; }
+  .resume-icon { background: #b33422; border-color: #b33422; color: #fff8e6; }
+  .resume-icon:hover { color: #193e8f; }
+  .resume-filename { font-weight: 700; letter-spacing: -.04em; }
+  .resume-updated { color: #674632; font-size: 8px; }
+  .new-feature-tile { padding: 12px 15px; }
+  .technology-table thead th { padding: 0 2px 6px; color: var(--muted); font-weight: 400; }
+  .technology-table tbody th { padding: 3px 0; font-size: 8px; font-weight: 400; }
+  .technology-table tbody td { padding: 3px; }
+  .technology-table tbody tr { border-top: 1px dotted var(--line); }
+  button.technology-logo { padding: 0; border-color: transparent; }
+  .technology-logo .technology-tooltip { display: none; padding: 7px 9px; background: #193e8f; color: #fff8e6; border: 1px solid #fff8e6; }
+  .technology-logo:hover .technology-tooltip, .technology-logo:focus .technology-tooltip { display: block; }
+  .location-tile { padding: 18px 20px; background: #f5d9bb; }
+  .location-globe-space { background: url('/images/themes/risograph/globe.svg') center / contain no-repeat; margin-bottom: 10px; }
+  .location-caption p { margin-top: 5px; font-family: Georgia, serif; font-size: 21px; font-weight: 700; }
+  .signature-preview { background: #193e8f url('/images/themes/risograph/press.svg') center / cover no-repeat; border-bottom: 1px solid var(--ink); }
+  .signature-preview > svg { opacity: 0; }
+  .signature-label, .signature-preview-note { color: #fff8e6; letter-spacing: .08em; }
+  .signature-copy { padding: 16px 19px; }
+  .signature-heading h2 { font-family: Georgia, serif; font-size: 21px; font-weight: 700; letter-spacing: -.04em; }
+  .signature-copy p { color: #394867; margin-top: 9px; }
+  button.signature-open { padding: 6px; color: #b33422; border-color: #b33422; }
+/* Compact typography and padding keep the fixed geometry legible at its minimum width. */
+@media (max-width: 900px) {
+  .paragraph-tile { padding: 15px; }
+  .paragraph-tile h1 { font-size: 25px; margin: 13px 0 8px; }
+  .paragraph-tile p { font-size: 10px; line-height: 1.6; }
+  .stack-tile { padding: 12px 9px; }
+  .stack-tile ul { gap: 5px; margin: 8px 0; }
+  button.project-button { min-height: 30px; padding: 5px; gap: 5px; }
+  .project-button > span:first-of-type { font-size: 8px; }
+  .project-button svg { width: 13px; height: 13px; }
+  .stack-caption { font-size: 6px; }
+  .resume-tile { padding: 5px 8px; gap: 7px; }
+  .resume-tile .resume-icon { width: 26px; height: 26px; }
+  .resume-icon svg { width: 16px; height: 16px; }
+  .resume-tile .resume-filename { font-size: 11px; }
+  .resume-updated { font-size: 6px; }
+  .new-feature-tile { padding: 7px; }
+  .technology-table thead td { width: 61px; }
+  .technology-table thead th { font-size: 6px; }
+  .technology-table tbody th { font-size: 7px; }
+  .technology-table tbody td { padding: 1px; }
+  button.technology-logo { width: 26px; height: 26px; }
+  .technology-logo > span:first-child { font-size: 15px; }
+  .contact-compact-tile { padding: 6px; }
+  .contact-compact-tile .button-grid button { padding: 3px; gap: 3px; }
+  .contact-compact-tile .button-grid svg { width: 15px; height: 15px; }
+  .contact-compact-tile .button-grid button > span:last-child { font-size: 6px; }
+  .signature-copy { padding: 10px 12px; }
+  .signature-heading { gap: 5px; }
+  .signature-heading h2 { font-size: 16px; }
+  .signature-copy p { font-size: 8px; margin-top: 6px; }
+  button.signature-open { width: 24px; height: 24px; }
+  .signature-label { top: 10px; left: 12px; font-size: 6px; }
+  .signature-preview-note { left: 12px; font-size: 5px; }
+  .location-tile { padding: 12px; }
+  .location-tile .location-caption p { font-size: 17px; }
+  .photo-tile figcaption { bottom: 15px; left: 12px; gap: 6px; }
+  .photo-tile figcaption > span:last-child { font-size: 12px; }
+  .photo-tile .eyebrow { font-size: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
+@media (max-width: 700px) {
+  .paragraph-tile { padding: 10px 13px; }
+  .paragraph-tile h1 { font-size: 21px; margin: 10px 0 6px; }
+  .paragraph-tile p { font-size: 9px; line-height: 1.45; }
+  .eyebrow { font-size: 7px; }
+  .accent { font-size: 18px; }
+  .stack-tile { padding: 10px 8px; }
+  .stack-tile ul { gap: 4px; margin: 7px 0; }
+  button.project-button { min-height: 25px; padding: 4px; gap: 3px; }
+  .project-button > span:first-of-type { font-size: 7px; }
+  .project-button svg { width: 10px; height: 10px; }
+  .project-button .project-arrow { font-size: 11px; }
+  .stack-caption { font-size: 5px; letter-spacing: 0; }
+  .new-feature-tile { padding: 5px; }
+  .technology-table thead td { width: 48px; }
+  .technology-table thead th { font-size: 5px; padding: 0 0 3px; letter-spacing: -.04em; }
+  .technology-table tbody th { font-size: 6px; letter-spacing: -.05em; padding: 0; }
+  .technology-table tbody td { padding: 0; }
+  button.technology-logo { width: 22px; height: 22px; }
+  .technology-logo > span:first-child { font-size: 13px; }
+  .contact-compact-tile .button-grid { gap: 3px; }
+  .contact-compact-tile .button-grid button { gap: 2px; padding: 2px; }
+  .contact-compact-tile .button-grid button > span:last-child { font-size: 5px; }
+  .contact-compact-tile .button-grid svg { width: 12px; height: 12px; }
+  .resume-tile .resume-icon { width: 22px; height: 22px; }
+  .resume-tile .resume-filename { font-size: 10px; }
+  .resume-tile .resume-details { gap: 2px; }
+  .resume-updated { font-size: 5px; }
+  .signature-copy { padding: 8px 10px; }
+  .signature-heading h2 { font-size: 15px; }
+  .signature-copy p { font-size: 7px; line-height: 1.5; }
+  .location-tile { padding: 10px; }
+}
+/* Hidden tooltips must not contribute to the compact table's overflow area. */
+.technology-logo .technology-tooltip { display: none; }
+.technology-logo:hover .technology-tooltip,
+.technology-logo:focus .technology-tooltip { display: block; }
+@media (max-width: 700px) {
+  button.project-button { line-height: 1.2; }
+  .project-button .project-arrow { line-height: 1; }
+}
+@media (max-width: 700px) {
+  .stack-tile ul { margin: 5px 0; }
+}
+
+/* Keep the location caption on one line within its reserved narrow slot. */
+@media (max-width: 700px) {
+  .location-tile .location-caption p { font-size: 15px; }
+}
+
+}

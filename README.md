@@ -1,6 +1,6 @@
 # Portfolio style comparison
 
-This branch (`codex/style-switcher`) contains all six registered themes with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme and portrait without reloading; the URL records the choice (for example, `?style=01`, `?style=nocturne`, or `?style=vector`) and restores it on reload. Invalid or missing choices default to Field Atlas.
+This branch (`codex/style-switcher`) contains all seven registered themes with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme and portrait without reloading; the URL records the choice (for example, `?style=01`, `?style=nocturne`, or `?style=vector`) and restores it on reload. Invalid or missing choices default to Field Atlas.
 
 | Style | Theme file |
 | --- | --- |
@@ -10,6 +10,7 @@ This branch (`codex/style-switcher`) contains all six registered themes with one
 | 04 · Porcelain / Oxblood | `src/styles/themes/04.css` |
 | Nocturne | `src/styles/themes/nocturne.css` |
 | Vector | `src/styles/themes/vector.css` |
+| Risograph | `src/styles/themes/risograph.css` |
 
 All themes live together on `codex/style-switcher`. Work directly on that branch when adding or editing themes: **stay on the same branch; do not create another branch, worktree, or separate checkout.** Commit each addition to `codex/style-switcher`.
 

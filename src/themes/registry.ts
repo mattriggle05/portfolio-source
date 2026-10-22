@@ -5,6 +5,8 @@ import vector from '../styles/themes/vector.css?url';
 import nocturne from '../styles/themes/nocturne.css?url';
 import porcelain from '../styles/themes/04.css?url';
 
+import risograph from '../styles/themes/risograph.css?url';
+
 export interface Theme {
   /** Stable URL key; keep existing IDs when renaming a theme. */
   id: string;
@@ -22,6 +24,7 @@ export const themes: readonly Theme[] = [
   { id: '04', label: '04 · Porcelain / Oxblood', stylesheet: porcelain, portrait: '/images/themes/04/portrait-placeholder.svg', portraitAlt: 'Illustrated placeholder landscape; decorative porcelain artwork is supplied by the theme' },
   { id: 'nocturne', label: 'Nocturne', stylesheet: nocturne, portrait: '/images/themes/nocturne/portrait.svg', portraitAlt: 'Illustrated copper crescent moon above layered desert dunes in a charcoal night sky' },
   { id: 'vector', label: 'Vector', stylesheet: vector, portrait: '/images/themes/vector/portrait.svg', portraitAlt: 'Green wireframe towers on a black coordinate grid with surveying marks' },
+  { id: 'risograph', label: 'Risograph', stylesheet: risograph, portrait: '/images/themes/risograph/portrait.svg', portraitAlt: 'Two-color geometric print of vermilion sun discs and cobalt architectural arches on warm cream paper' },
 ];
 
 if (!themes.length || new Set(themes.map(theme => theme.id)).size !== themes.length ||
