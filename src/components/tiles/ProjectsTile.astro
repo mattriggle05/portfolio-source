@@ -3,10 +3,14 @@ import type { TileProps } from "./types";
 
 interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
-const projects = ['portfolio-source', 'Project placeholder 02', 'Project placeholder 03', 'Project placeholder 04'];
+const projects = ['portfolio-source', 'Project placeholder 02', 'Project placeholder 03', 'Project placeholder 04', 'Project placeholder 05', 'Project placeholder 06'];
 ---
 <article class:list={[className, "stack-tile"]} style={{ gridArea }} aria-labelledby="stack-title">
       <h2 class="eyebrow" id="stack-title">03 / PROJECTS</h2>
-      <ul>{projects.map((project) => <li><button class="project-button" type="button" aria-label={`${project} (placeholder)`}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6a2 2 0 0 1 0-4h14M8 7h8M8 10h5" /></svg><span>{project}</span><span class="project-arrow" aria-hidden="true">↗</span></button></li>)}</ul>
+      <ul>{projects.map((project, index) => <li class:list={{ "additional-project": index >= 4 }}><button class="project-button" type="button" aria-label={`${project} (placeholder)`}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6a2 2 0 0 1 0-4h14M8 7h8M8 10h5" /></svg><span>{project}</span><span class="project-arrow" aria-hidden="true">↗</span></button></li>)}</ul>
       <p class="stack-caption">SELECTED REPOSITORIES</p>
     </article>
+
+<style>
+  :global(html:not([data-style="stillwater"])) .additional-project { display: none; }
+</style>

@@ -205,4 +205,15 @@ button.signature-open:hover { background: #edf5fc; border-color: #edf5fc; }
   .signature-copy p { font-size: 7px; line-height: 1.5; }
   .location-tile .location-caption p { font-size: 15px; }
 }
+/* Six equal repository rows fill the existing tile at every breakpoint. */
+.stack-tile .stack-caption { display: none; }
+.stack-tile ul { height: 100%; margin: 0; grid-template-rows: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.stack-tile li { min-height: 0; }
+.stack-tile button.project-button { height: 100%; min-height: 0; }
+@media (max-width: 900px) { .stack-tile ul { gap: 5px; } }
+@media (max-width: 700px) {
+  .stack-tile ul { gap: 4px; }
+  .stack-tile button.project-button { padding: 2px 4px; }
+}
+
 }
