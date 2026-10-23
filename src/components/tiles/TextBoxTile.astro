@@ -4,11 +4,20 @@ import type { TileProps } from "./types";
 interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
 ---
+
 <article class:list={[className, "paragraph-tile"]} style={{ gridArea }}>
-      <h1>A place for a few words.</h1>
-      <p>A space to introduce the person behind the work: what sparks their curiosity, how they approach a problem, and what they enjoy building. Share a little of the thinking behind the projects, the lessons along the way, and the ideas worth exploring next.</p>
-    </article>
+  <h1>Hi, I'm Matthew Riggle 👋</h1>
+  <p>
+    I am a Computer Science and Data Science student at UW–Madison <b>graduating in May 2028</b>.
+    Currently, I build full-stack applications At the Morgridge Institute for
+    Research that support researchers nationwide. In the past I have had experience automating workflows at Epic and
+    developing personal projects in keyboard optimization and Rust-powered web
+    applications.
+  </p>
+</article>
 
 <style>
-  .paragraph-tile h1 { margin-top: 0; }
+  .paragraph-tile h1 {
+    margin-top: 0;
+  }
 </style>
