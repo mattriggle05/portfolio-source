@@ -317,9 +317,14 @@ button.project-button {
   font-size: 15px;
 }
 .signature-project {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  /* Keep the preview/copy balance independent of title and description length. */
+  grid-template-rows: minmax(0, 58fr) minmax(0, 42fr);
   overflow: hidden;
+}
+.signature-copy {
+  min-height: 0;
+  overflow: auto;
 }
 .signature-preview {
   flex: 1;
