@@ -3,7 +3,7 @@ import type { TileProps } from "./types";
 
 interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
-const columns = ["Language", "Editor", "Framework", "AI platform", "OS"];
+const columns = ["Language", "Editor", "Framework", "AI Platform", "OS"];
 const rows = [
   { label: ["Most", "Experienced"], description: "Most experienced", technologies: [
     { name: "TypeScript", logo: "typescript", href: "https://www.typescriptlang.org/" }, { name: "VS Code", logo: "vscode", href: "https://code.visualstudio.com/" },
