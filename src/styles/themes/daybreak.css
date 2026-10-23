@@ -1,6 +1,6 @@
 /* Daybreak — porcelain surfaces, blue accents, and quiet editorial typography. */
-html[data-style="daybreak"], html[data-style="daybreak"] body { background: #edf2f7; }
-html[data-style="daybreak"] body { background: radial-gradient(ellipse at 30% 0, #ffffff, transparent 75%), #edf2f7; }
+html[data-style="daybreak"], html[data-style="daybreak"] body { background: #dce3ea; }
+html[data-style="daybreak"] body { background: radial-gradient(ellipse at 30% 0, #e5eaf0, transparent 75%), #dce3ea; }
 .concept {
   --ink: #233c56;
   --muted: #536b82;
