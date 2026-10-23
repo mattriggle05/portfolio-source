@@ -5,13 +5,26 @@ interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
 ---
 <article class:list={[className, "signature-project"]} style={{ gridArea }} aria-labelledby="signature-title">
-      <div class="signature-preview" aria-label="Reserved project image area"></div>
+      <div class="signature-preview">
+        <img src="/images/solar-system.png" alt="Solar system visualization with planets and their orbits around the Sun" width="2548" height="1542" />
+      </div>
       <div class="signature-copy">
-        <div class="signature-heading"><h2 id="signature-title">Something worth exploring.</h2><button class="signature-open" type="button" aria-label="Open signature project (placeholder)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div>
+        <span class="eyebrow signature-eyebrow">Check out...</span>
+        <div class="signature-heading"><h2 id="signature-title">Natal Chart Solver</h2><button class="signature-open" type="button" aria-label="Open signature project (placeholder)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div>
         <p>A space for a project, what it does, and the interesting part of building it.</p>
       </div>
     </article>
 
 <style>
-  .signature-project .signature-preview { background: inherit; }
+  .signature-eyebrow { display: block; margin-bottom: 6px; }
+  .signature-project .signature-preview { background: #060e1b; overflow: hidden; container-type: size; }
+  .signature-preview img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Offset the source's Sun (47.9% down) to the preview's center. */
+    object-position: 49.5% calc(50% + max(1.28cqw, 2.12cqh));
+  }
 </style>
