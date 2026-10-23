@@ -180,7 +180,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #d8e9f5; outline-offs
 .resume-tile .resume-icon { border-radius: 50%; background: #bfd5e8; color: #182b3c; border-color: #bfd5e8; }
 .resume-tile .resume-icon:hover { background: #edf5fc; color: #102439; border-color: #edf5fc; }
 button.technology-logo { border-radius: 50%; background: transparent; border-color: transparent; color: #cbd9e5; }
-button.technology-logo:hover { background: #3b556c; border-color: #8fadc5; color: #f0d4ac; }
+button.technology-logo:hover { background: #3b556c; border-color: #8fadc5; color: #bfd5e8; }
 .location-tile { background: #25384b; }
 .location-tile .location-caption p { font-family: Georgia, serif; font-size: 21px; }
 .signature-preview { background: #21374c url('/images/themes/stillwater/landscape.svg') center / cover no-repeat; border-bottom: 1px solid var(--edge); }
