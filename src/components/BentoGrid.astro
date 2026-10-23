@@ -1,60 +1,23 @@
 ---
-import "../styles/global.css";
-import TextTile from "./tiles/TextBoxTile.astro";
+import TextBoxTile from "./tiles/TextBoxTile.astro";
 import ImageTile from "./tiles/ImageTile.astro";
+import ProjectsTile from "./tiles/ProjectsTile.astro";
 import LocationTile from "./tiles/LocationTile.astro";
+import ContactTile from "./tiles/ContactTile.astro";
+import TechnologyTile from "./tiles/TechnologyTile.astro";
+import ResumeTile from "./tiles/ResumeTile.astro";
+import SignatureProjectTile from "./tiles/SignatureProjectTile.astro";
 ---
 
-<div class="bento-grid">
-  <TextTile gridArea="tx" className="tile" />
-  <ImageTile gridArea="im" className="tile" />
-  <LocationTile gridArea="lo" className="tile" />
-</div>
-
-<style>
-  .bento-grid {
-    display: grid;
-    width: calc(300px + 50vw);
-    height: 60vh;
-    gap: 12px;
-    grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    grid-template-areas:
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx im im im im im im"
-      "tx tx tx tx tx tx tx tx .  .  lo lo lo lo";
-  }
-
-  .bento-grid :global(.tile) {
-    background: var(--main-bg);
-
-    border-radius: var(--tile-border-radius);
-    /* border: 1px var(--tile-border) solid; */
-
-    box-shadow:
-      0 0px 10px 2px rgba(0, 0, 0, 0.5),
-      inset 0px 0px 10px 2px var(--tile-border);
-
-    /* box-shadow:
-      0px 0px 10px 0px var(--tile-shadow),
-      inset 0px 0px 5px 0px var(--tile-shadow); */
-    text-shadow: 0px 1px 0px var(--text-shadow);
-    background: linear-gradient(var(--tile-bg), var(--tile-bg-2));
-
-    overflow: hidden;
-
-    font-family: var(--font);
-    text-align: center;
-    color: var(--text-color);
-    font-weight: bold;
-  }
-</style>
+<main class="concept">
+  <section class="bento-grid" aria-label="Bento concept with placeholder content">
+    <TextBoxTile gridArea="1 / 1 / 4 / 7" className="tile" />
+    <ImageTile gridArea="1 / 7 / 5 / 10" className="tile" />
+    <ProjectsTile gridArea="1 / 10 / 5 / 13" className="tile" />
+    <LocationTile gridArea="5 / 10 / 8 / 13" className="tile" />
+    <ContactTile gridArea="4 / 5 / 6 / 7" className="tile" />
+    <TechnologyTile gridArea="6 / 5 / 8 / 10" className="tile" />
+    <ResumeTile gridArea="5 / 7 / 6 / 10" className="tile" />
+    <SignatureProjectTile gridArea="4 / 1 / 8 / 5" className="tile" />
+  </section>
+</main>

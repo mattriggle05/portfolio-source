@@ -1,0 +1,17 @@
+---
+import type { TileProps } from "./types";
+
+interface Props extends TileProps {}
+const { gridArea, className = "tile" } = Astro.props;
+---
+<article class:list={[className, "signature-project"]} style={{ gridArea }} aria-labelledby="signature-title">
+      <div class="signature-preview" aria-label="Reserved project image area"></div>
+      <div class="signature-copy">
+        <div class="signature-heading"><h2 id="signature-title">Something worth exploring.</h2><button class="signature-open" type="button" aria-label="Open signature project (placeholder)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div>
+        <p>A space for a project, what it does, and the interesting part of building it.</p>
+      </div>
+    </article>
+
+<style>
+  .signature-project .signature-preview { background: inherit; }
+</style>
