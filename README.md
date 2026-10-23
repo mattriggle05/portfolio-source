@@ -26,4 +26,4 @@ npm run preview
 - `src/styles/layout.css`: shared dimensions, alignment, and reserved image slots.
 - `src/styles/portfolio.css`: the primary portfolio appearance.
 
-The layout retains its 640px minimum viewport width. Repository lists scroll within their tile at compact widths. Image areas are empty pending actual images. The portfolio-source repository arrow links to GitHub; the other project entries, contact actions, technology choices, and résumé download remain placeholders.
+The layout retains its 640px minimum viewport width. Repository lists scroll within their tile at compact widths. Image areas are empty pending actual images. The portfolio-source repository arrow links to GitHub; the other project entries, contact actions, and technology choices remain placeholders. The résumé control opens `public/Matthew Riggle - Resume.pdf` in a new browser tab; its relative update label uses the source PDF’s modification date recorded in `ResumeTile.astro`. Update that date when replacing the PDF.
