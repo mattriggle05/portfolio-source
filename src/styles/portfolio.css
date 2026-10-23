@@ -30,7 +30,7 @@ padding: 56px 0;
 .photo-tile::after { background: linear-gradient(transparent, #0b192de8); }
 .photo-tile .eyebrow { color: #bbd0eb; }
 .photo-tile figcaption > span:last-child { letter-spacing: -.02em; }
-.stack-tile { padding: 22px 18px; }
+.stack-tile { padding: 22px 15.5px; }
 .stack-tile ul { padding: 0; }
 .stack-caption { color: var(--muted); letter-spacing: .1em; }
 button {
@@ -83,7 +83,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
   .paragraph-tile { padding: 16px; }
   .paragraph-tile h1 { font-size: 23px; margin: 14px 0 9px; }
   .paragraph-tile p { font-size: 10px; line-height: 1.65; }
-  .stack-tile { padding: 14px 10px; }
+  .stack-tile { padding: 14px 4px; }
   .stack-tile ul { gap: 5px; margin: 10px 0; }
   .project-card { min-height: 32px; padding: 6px; gap: 5px; }
   .project-button > span:first-of-type { font-size: 8px; }
@@ -112,7 +112,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
   .paragraph-tile { padding: 12px; }
   .paragraph-tile h1 { font-size: 19px; margin: 10px 0 7px; }
   .paragraph-tile p { font-size: 8px; line-height: 1.5; }
-  .stack-tile { padding: 10px 8px; }
+  .stack-tile { padding: 10px 4px; }
   .stack-tile ul { gap: 4px; margin: 7px 0; }
   .project-card { min-height: 29px; padding: 4px; gap: 4px; }
   .project-button svg { width: 12px; height: 12px; }
