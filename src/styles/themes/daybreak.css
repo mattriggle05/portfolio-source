@@ -1,0 +1,137 @@
+/* Daybreak — porcelain surfaces, blue accents, and quiet editorial typography. */
+html[data-style="daybreak"], html[data-style="daybreak"] body { background: #edf2f7; }
+html[data-style="daybreak"] body { background: radial-gradient(ellipse at 30% 0, #ffffff, transparent 75%), #edf2f7; }
+.concept {
+  --ink: #233c56;
+  --muted: #536b82;
+  --edge: #cbd7e3;
+  --blue: #32649e;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  padding: 56px 0;
+  & a { color: inherit; }
+  & ::selection { background: #c9def4; color: #163d68; }
+  .tile { border: 1px solid var(--edge); border-radius: 18px; background: #fcfdff; box-shadow: inset 0 1px 0 #fff, 0 8px 24px #365b7c0d, 0 2px 3px #365b7c05; }
+  .eyebrow { color: var(--muted); font-weight: 600; letter-spacing: .1em; }
+  .paragraph-tile { padding: 26px; background: #fcfdff; }
+  .paragraph-tile h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 34px; font-weight: 400; line-height: 1.15; letter-spacing: -.045em; margin: 0 0 13px; }
+  .paragraph-tile p { font-size: 12px; line-height: 1.75; color: #4b6278; }
+  .photo-tile { background: #f3f7fc; }
+  .project-card { border: 1px solid #cddbe9; border-radius: 9px; background: #f4f8fd; }
+  .project-card > svg { color: #55789e; }
+  .project-name { color: #254e7c; }
+  .project-description { color: #536b82; }
+  button { font-family: inherit; color: var(--ink); background: #eaf2fc; border: 1px solid #c0d2e7; border-radius: 9px; padding: 8px; transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease; }
+  button:hover { background: #32649e; border-color: #32649e; color: #fff; }
+  button:active { background: #234d7c; }
+  button:focus-visible, a:focus-visible { outline: 2px solid #245b9b; outline-offset: 3px; }
+  .contact-compact-tile { padding: 10px; background: #e3edf8; }
+  .contact-compact-tile .button-grid button { background: #dce8f5; border-color: #b9ccdf; color: #345b85; border-radius: 9px; box-shadow: inset 0 1px 3px #365b7c20, 0 1px 0 #ffffffa0; }
+  .contact-compact-tile .button-grid button:hover { background: #32649e; border-color: #32649e; color: #fff; box-shadow: inset 0 1px 2px #12325225, 0 1px 0 #ffffffa0; }
+  .contact-compact-tile .button-grid button:active { background: #234d7c; box-shadow: inset 0 3px 5px #102b4535; }
+  .resume-tile { padding: 10px 14px; background: #e8f0fa; }
+  .resume-tile .resume-icon { background: #32649e; border-color: #32649e; color: #fff; }
+  .resume-tile .resume-icon:hover { background: #204b7c; border-color: #204b7c; }
+  .resume-filename { font-weight: 600; letter-spacing: -.035em; }
+  .resume-updated { color: #536b82; font-size: 8px; }
+  .new-feature-tile { padding: 12px 15px; }
+  .technology-table thead th { padding: 0 2px 6px; color: #536b82; font-weight: 600; }
+  .technology-table tbody th { padding: 3px 0; font-size: 8px; font-weight: 400; color: #536b82; }
+  .technology-table tbody td { padding: 3px; }
+  .technology-table tbody tr { border-top: 1px solid #dce5ef; }
+  button.technology-logo { padding: 0; border-radius: 50%; background: transparent; border-color: transparent; color: #4b6278; }
+  button.technology-logo:hover { background: #e5eef9; border-color: #aac4e0; color: #245b9b; }
+  .technology-logo .technology-tooltip { display: none; padding: 7px 9px; border: 1px solid #c3d4e5; border-radius: 7px; background: #254e7c; color: #fff; }
+  .technology-logo:hover .technology-tooltip, .technology-logo:focus .technology-tooltip { display: block; }
+  .location-tile { padding: 18px 20px; background: #f3f7fc; }
+  .location-caption p { margin-top: 5px; font-family: Georgia, serif; font-size: 21px; letter-spacing: -.03em; }
+  .signature-project { background: #fcfdff; }
+  .signature-preview { border-bottom: 1px solid var(--edge); }
+  .signature-copy { padding: 17px 19px; }
+  .signature-heading h2 { font-family: Georgia, serif; font-size: 22px; font-weight: 400; letter-spacing: -.055em; }
+  .signature-copy p { margin-top: 9px; color: #536b82; }
+  button.signature-open { padding: 6px; border-radius: 9px; background: #32649e; border-color: #32649e; color: #fff; }
+  button.signature-open:hover { background: #204b7c; border-color: #204b7c; }
+@media (max-width: 900px) {
+  .paragraph-tile { padding: 16px; }
+  .paragraph-tile h1 { font-size: 23px; margin: 14px 0 9px; }
+  .paragraph-tile p { font-size: 10px; line-height: 1.65; }
+  .stack-tile { padding: 14px 10px; }
+  .stack-tile ul { gap: 5px; margin: 10px 0; }
+  .project-card { min-height: 32px; padding: 6px; gap: 5px; }
+  .project-button > span:first-of-type { font-size: 8px; }
+  .signature-copy { padding: 12px; }
+  .signature-heading h2 { font-size: 15px; }
+  .signature-copy p { font-size: 9px; }
+  .new-feature-tile { padding: 8px; }
+  .technology-table thead td { width: 60px; }
+  .technology-table thead th { font-size: 6px; }
+  .technology-table tbody th { font-size: 7px; }
+  button.technology-logo { width: 27px; height: 27px; }
+  .resume-tile { padding: 6px; gap: 7px; }
+  .resume-tile .resume-icon { width: 28px; height: 28px; }
+  .resume-tile .resume-filename { font-size: 12px; }
+  .resume-updated { font-size: 7px; }
+  .contact-compact-tile { padding: 6px; }
+  .contact-compact-tile .button-grid button { padding: 3px; gap: 3px; }
+  .contact-compact-tile .button-grid svg { width: 15px; height: 15px; }
+  .contact-compact-tile .button-grid button > span:last-child { font-size: 6px; }
+  .location-tile { padding: 14px; }
+}
+@media (max-width: 700px) {
+  .tile { border-radius: 16px; }
+  .eyebrow { font-size: 7px; }
+  .paragraph-tile { padding: 12px; }
+  .paragraph-tile h1 { font-size: 19px; margin: 10px 0 7px; }
+  .paragraph-tile p { font-size: 8px; line-height: 1.5; }
+  .stack-tile { padding: 10px 8px; }
+  .stack-tile ul { gap: 4px; margin: 7px 0; }
+  .project-card { min-height: 29px; padding: 4px; gap: 4px; }
+  .project-button svg { width: 12px; height: 12px; }
+  .project-button > span:first-of-type { font-size: 6px; }
+  .project-button .project-arrow { font-size: 10px; }
+  .stack-caption { font-size: 5px; }
+  .new-feature-tile { padding: 6px; }
+  .technology-table thead td { width: 49px; }
+  .technology-table thead th { font-size: 5px; padding-bottom: 3px; letter-spacing: 0; }
+  .technology-table tbody th { font-size: 6px; }
+  .technology-table tbody td { padding: 1px 0; }
+  button.technology-logo { width: 21px; height: 21px; border-radius: 7px; }
+  .technology-logo > span:first-child { font-size: 14px; }
+  .resume-tile { padding: 3px 6px; gap: 5px; }
+  .resume-tile .resume-icon { width: 23px; height: 23px; border-radius: 8px; }
+  .resume-icon svg { width: 16px; height: 16px; }
+  .resume-tile .resume-filename { font-size: 10px; }
+  .resume-tile .resume-details { gap: 3px; }
+  .resume-updated { font-size: 6px; }
+  .signature-copy { padding: 10px; }
+  .signature-heading h2 { font-size: 13px; }
+  .signature-copy p { font-size: 7px; line-height: 1.5; margin-top: 6px; }
+  button.signature-open { width: 23px; height: 23px; }
+  .signature-label { font-size: 6px; top: 12px; left: 12px; }
+  .signature-preview-note { font-size: 5px; left: 12px; bottom: 7px; }
+  .photo-tile figcaption { bottom: 16px; left: 12px; }
+  .photo-tile .eyebrow { font-size: 6px; }
+  .photo-tile figcaption > span:last-child { font-size: 11px; }
+  .location-tile { padding: 12px; }
+  .location-tile .location-caption p { font-size: 12px; }
+}
+@media (max-width: 900px) {
+  .paragraph-tile h1 { font-size: 25px; margin: 0 0 8px; }
+  .paragraph-tile p { font-size: 10px; line-height: 1.6; }
+  .signature-copy { padding: 10px 12px; }
+  .signature-heading h2 { font-size: 16px; }
+  .signature-copy p { font-size: 8px; margin-top: 6px; }
+}
+@media (max-width: 700px) {
+  .paragraph-tile h1 { font-size: 21px; margin: 0 0 6px; }
+  .paragraph-tile p { font-size: 9px; line-height: 1.45; }
+  .signature-copy { padding: 8px 10px; }
+  .signature-heading h2 { font-size: 15px; }
+  .signature-copy p { font-size: 7px; line-height: 1.5; }
+  .location-tile .location-caption p { font-size: 15px; }
+  button.technology-logo { border-radius: 50%; }
+}
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
+}

@@ -1,3 +1,4 @@
+import daybreak from '../styles/themes/daybreak.css?url';
 import stillwater from '../styles/themes/stillwater.css?url';
 import bathysphere from '../styles/themes/bathysphere.css?url';
 import azure from '../styles/themes/azure.css?url';
@@ -31,6 +32,7 @@ export const themes: readonly Theme[] = [
   { id: 'azure', label: 'Azure Soft', stylesheet: azure, portrait: '/images/themes/azure/portrait.svg', portraitAlt: 'Sculptural blue ribbon looping through a pale blue sky beneath a white sun' },
   { id: 'bathysphere', label: 'Bathysphere', stylesheet: bathysphere, portrait: '/images/themes/bathysphere/portrait.svg', portraitAlt: 'Blue glass sphere with a luminous orbit inside a metallic deep-sea porthole' },
   { id: 'stillwater', label: 'Stillwater', stylesheet: stillwater, portrait: '/images/themes/stillwater/portrait.svg', portraitAlt: 'Pale moon over layered blue-gray mountains with a softly grained sky' },
+  { id: 'daybreak', label: 'Daybreak', stylesheet: daybreak, portrait: '/images/themes/daybreak/portrait.svg', portraitAlt: 'Empty pale blue portrait area reserved for a future image' },
 ];
 
 if (!themes.length || new Set(themes.map(theme => theme.id)).size !== themes.length ||

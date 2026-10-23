@@ -1,6 +1,6 @@
 # Portfolio style comparison
 
-This branch (`codex/style-switcher`) contains all ten registered themes with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme without reloading; the URL records the choice (for example, `?style=01`, `?style=nocturne`, or `?style=vector`) and restores it on reload. Invalid or missing choices default to Field Atlas.
+This branch (`codex/style-switcher`) contains all eleven registered themes with one shared page and layout. Run `npm run dev` and use the **Style concept** selector above the page. Selection changes the theme without reloading; the URL records the choice (for example, `?style=01`, `?style=nocturne`, or `?style=vector`) and restores it on reload. Invalid or missing choices default to Field Atlas.
 
 | Style | Theme file |
 | --- | --- |
@@ -14,6 +14,7 @@ This branch (`codex/style-switcher`) contains all ten registered themes with one
 | Azure Soft | `src/styles/themes/azure.css` |
 | Bathysphere | `src/styles/themes/bathysphere.css` |
 | Stillwater | `src/styles/themes/stillwater.css` |
+| Daybreak | `src/styles/themes/daybreak.css` |
 
 All themes live together on `codex/style-switcher`. Work directly on that branch when adding or editing themes: **stay on the same branch; do not create another branch, worktree, or separate checkout.** Commit each addition to `codex/style-switcher`.
 
@@ -64,3 +65,5 @@ Suggested model instruction:
 Validate changes with `npm run build` and `npx astro check`, then inspect the rendered page.
 
 Stillwater (`?style=stillwater`) combines Blue Hour’s mountain artwork and muted blues, Field Atlas’s editorial introduction and circular technology hovers, Porcelain / Oxblood’s 18px card corners and featured-project spacing, and subtle inset highlights. All themes omit the introduction/projects numbering labels and repository caption, and show four taller repository placeholders with bold names and short descriptions within the unchanged grid geometry.
+
+Daybreak (`?style=daybreak`) is a light interpretation of the refined Stillwater direction: porcelain surfaces, restrained blue accents, editorial serif headings, 18px card corners, recessed contact controls, and strong hover fills. It retains the shared empty image slots, four repository cards with separate arrow actions, and centered technology headings.
