@@ -68,8 +68,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid #bedcff; }
 .technology-table tbody th { padding: 3px 0; font-weight: 500; color: #bbcce2; }
 .technology-table tbody td { padding: 3px 0; color: #dce8fa; }
 .technology-table tbody tr { border-top: 1px solid #a5c6ff12; }
-button.technology-logo { padding: 0; border-radius: 11px; background: #b1cefa08; border-color: transparent; }
-button.technology-logo:hover { background: #96bff323; border-color: #b8d7ff65; }
+.technology-logo { border: 1px solid transparent; cursor: pointer; transition: background-color .18s ease, border-color .18s ease, color .18s ease; padding: 0; border-radius: 11px; background: #b1cefa08; border-color: transparent; }
+.technology-logo:hover { background: #96bff323; border-color: #b8d7ff65; }
 .technology-logo .technology-tooltip { padding: 7px 10px; border: 1px solid #7395bf; border-radius: 8px; background: #101e31; color: #e0edff; letter-spacing: .02em; }
 .signature-project { background: #203249; }
 .signature-preview { background: radial-gradient(ellipse at 50% 55%, #4e7eb52e, transparent 70%), #16283e; border-bottom: 1px solid var(--edge); }
@@ -94,7 +94,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
   .technology-table thead td { width: 60px; }
   .technology-table thead th { font-size: 6px; }
   .technology-table tbody th { font-size: 7px; }
-  button.technology-logo { width: 27px; height: 27px; }
+  .technology-logo { width: 27px; height: 27px; }
   .resume-tile { padding: 6px; gap: 7px; }
   .resume-tile .resume-icon { width: 28px; height: 28px; }
   .resume-tile .resume-filename { font-size: 12px; }
@@ -124,7 +124,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
   .technology-table thead th { font-size: 5px; padding-bottom: 3px; letter-spacing: 0; }
   .technology-table tbody th { font-size: 6px; }
   .technology-table tbody td { padding: 1px 0; }
-  button.technology-logo { width: 21px; height: 21px; border-radius: 7px; }
+  .technology-logo { width: 21px; height: 21px; border-radius: 7px; }
   .technology-logo > span:first-child { font-size: 14px; }
   .resume-tile { padding: 3px 6px; gap: 5px; }
   .resume-tile .resume-icon { width: 23px; height: 23px; border-radius: 8px; }
@@ -147,7 +147,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
 /* Hidden tooltip text must not enlarge the table's scrollable bounds. */
 .technology-logo .technology-tooltip { display: none; }
 .technology-logo:hover .technology-tooltip,
-.technology-logo:focus .technology-tooltip { display: block; }
+.technology-logo:focus-visible .technology-tooltip { display: block; }
 @media (max-width: 700px) {
   .project-card { min-height: 26px; }
 }
@@ -179,8 +179,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid #d8e9f5; outline-offs
 .resume-tile { background: linear-gradient(110deg, #384e65, #2b4057); }
 .resume-tile .resume-icon { border-radius: 50%; background: #bfd5e8; color: #182b3c; border-color: #bfd5e8; }
 .resume-tile .resume-icon:hover { background: #edf5fc; color: #102439; border-color: #edf5fc; }
-button.technology-logo { border-radius: 50%; background: transparent; border-color: transparent; color: #cbd9e5; }
-button.technology-logo:hover { background: #3b556c; border-color: #8fadc5; color: #bfd5e8; }
+.technology-logo { border-radius: 50%; background: transparent; border-color: transparent; color: #cbd9e5; }
+.technology-logo:hover { background: #3b556c; border-color: #8fadc5; color: #bfd5e8; }
 .location-tile { background: #25384b; }
 .location-tile .location-caption p { font-family: Georgia, serif; font-size: 21px; }
 .signature-preview { background: #21374c  center / cover no-repeat; border-bottom: 1px solid var(--edge); }

@@ -191,7 +191,11 @@ button.project-button {
 .technology-table tbody th {
   vertical-align: middle;
 }
-button.technology-logo {
+.technology-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   position: relative;
   gap: 0;
 }
@@ -208,7 +212,7 @@ button.technology-logo {
   pointer-events: none;
 }
 .technology-logo:hover .technology-tooltip,
-.technology-logo:focus .technology-tooltip {
+.technology-logo:focus-visible .technology-tooltip {
   visibility: visible;
   opacity: 1;
 }
@@ -230,7 +234,7 @@ button.technology-logo {
 .technology-table thead th {
   padding-bottom: 8px;
 }
-button.technology-logo {
+.technology-logo {
   width: 38px;
   height: 38px;
 }
