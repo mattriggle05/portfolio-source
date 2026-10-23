@@ -4,20 +4,97 @@ import type { TileProps } from "./types";
 interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
 ---
-<article class:list={[className, "signature-project"]} style={{ gridArea }} aria-labelledby="signature-title">
-      <div class="signature-preview">
-        <img src="/images/solar-system.png" alt="Solar system visualization with planets and their orbits around the Sun" width="2548" height="1542" />
-      </div>
-      <div class="signature-copy">
+
+<article
+  class:list={[className, "signature-project"]}
+  style={{ gridArea }}
+  aria-labelledby="signature-title"
+>
+  <div class="signature-preview">
+    <img
+      src="/images/solar-system.png"
+      alt="Solar system visualization with planets and their orbits around the Sun"
+      width="2548"
+      height="1542"
+    />
+  </div>
+  <div class="signature-copy">
+    <div class="signature-heading">
+      <div class="signature-title-group">
         <span class="eyebrow signature-eyebrow">Check out...</span>
-        <div class="signature-heading"><h2 id="signature-title">Natal Chart Solver</h2><button class="signature-open" type="button" aria-label="Open signature project (placeholder)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div>
-        <p>A space for a project, what it does, and the interesting part of building it.</p>
-      </div>
-    </article>
+        <h2 id="signature-title">Natal Chart Solver</h2>
+      </div><button
+        class="signature-open"
+        type="button"
+        aria-label="Open signature project (placeholder)"
+        ><svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"></path></svg
+        ></button
+      >
+    </div>
+    <p>
+      A planetary alignment solver powered by a Rust search engine compiled to
+      WebAssembly, with parallel Web Workers and a React and TypeScript
+      interface.
+    </p>
+  </div>
+</article>
 
 <style>
-  .signature-eyebrow { display: block; margin-bottom: 6px; }
-  .signature-project .signature-preview { background: #060e1b; overflow: hidden; container-type: size; }
+  .signature-project .signature-copy {
+    padding: 9px 18px 12px;
+    border-top: 1px solid var(--edge);
+  }
+  .signature-project .signature-eyebrow {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 9px;
+    line-height: 1.2;
+    font-weight: 300;
+    letter-spacing: .04em;
+    color: #b9cad9;
+  }
+  .signature-project .signature-heading h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: -.02em;
+  }
+  .signature-project .signature-copy p {
+    max-width: none;
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #c0ced9;
+  }
+  .signature-project .signature-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: stretch;
+  }
+  .signature-project .signature-open {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1;
+  }
+  @media (max-width: 900px) {
+    .signature-project .signature-copy { padding: 8px 12px 10px; }
+    .signature-project .signature-heading h2 { font-size: 18px; }
+    .signature-project .signature-copy p { font-size: 10px; }
+  }
+  .signature-project .signature-preview {
+    background: #060e1b;
+    overflow: hidden;
+    container-type: size;
+    border-bottom: 0;
+  }
   .signature-preview img {
     position: absolute;
     inset: 0;
