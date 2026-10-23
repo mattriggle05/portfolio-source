@@ -27,7 +27,3 @@ npm run preview
 - `src/styles/portfolio.css`: the primary portfolio appearance.
 
 The layout retains its 640px minimum viewport width. Repository lists scroll within their tile at compact widths. Image areas are empty pending actual images. The portfolio-source repository arrow links to GitHub; the other project entries, contact actions, technology choices, and résumé download remain placeholders.
-
-## Design history
-
-The `style-switcher` branch preserves the theme comparison work. This branch contains the single primary design without a theme selector, registry, or alternate theme assets.
