@@ -57,14 +57,14 @@ const { gridArea, className = "tile" } = Astro.props;
     font-size: 9px;
     line-height: 1.2;
     font-weight: 300;
-    letter-spacing: .04em;
+    letter-spacing: 0.04em;
     color: #b9cad9;
   }
   .signature-project .signature-heading h2 {
     font-size: 22px;
     line-height: 1.2;
     font-weight: 400;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
   }
   .signature-project .signature-copy p {
     max-width: none;
@@ -85,9 +85,15 @@ const { gridArea, className = "tile" } = Astro.props;
     aspect-ratio: 1;
   }
   @media (max-width: 900px) {
-    .signature-project .signature-copy { padding: 8px 12px 10px; }
-    .signature-project .signature-heading h2 { font-size: 18px; }
-    .signature-project .signature-copy p { font-size: 10px; }
+    .signature-project .signature-copy {
+      padding: 8px 12px 10px;
+    }
+    .signature-project .signature-heading h2 {
+      font-size: 18px;
+    }
+    .signature-project .signature-copy p {
+      font-size: 10px;
+    }
   }
   .signature-project .signature-preview {
     background: #060e1b;

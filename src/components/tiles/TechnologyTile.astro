@@ -5,48 +5,145 @@ interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
 const columns = ["Language", "Editor", "Framework", "AI Platform", "OS"];
 const rows = [
-  { label: ["Most", "Experienced"], description: "Most experienced", technologies: [
-    { name: "TypeScript", logo: "typescript", href: "https://www.typescriptlang.org/" }, { name: "VS Code", logo: "vscode", href: "https://code.visualstudio.com/" },
-    { name: "React", logo: "react", href: "https://react.dev/" }, { name: "Claude", logo: "claude", href: "https://claude.com/" }, { name: "macOS", logo: "macos", href: "https://www.apple.com/macos/" },
-  ] },
-  { label: ["Personal", "Favorite"], description: "Personal favorite", technologies: [
-    { name: "Rust", logo: "rust", href: "https://rust-lang.org/" }, { name: "Neovim", logo: "neovim", href: "https://neovim.io/" },
-    { name: "Astro", logo: "astro", href: "https://astro.build/" }, { name: "Arena.ai", logo: "arena", href: "https://arena.ai/" }, { name: "Ubuntu", logo: "ubuntu", href: "https://ubuntu.com/" },
-  ] },
+  {
+    label: ["Most", "Experienced"],
+    description: "Most experienced",
+    technologies: [
+      {
+        name: "TypeScript",
+        logo: "typescript",
+        href: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "VS Code",
+        logo: "vscode",
+        href: "https://code.visualstudio.com/",
+      },
+      { name: "React", logo: "react", href: "https://react.dev/" },
+      { name: "Claude", logo: "claude", href: "https://claude.com/" },
+      { name: "macOS", logo: "macos", href: "https://www.apple.com/macos/" },
+    ],
+  },
+  {
+    label: ["Personal", "Favorite"],
+    description: "Personal favorite",
+    technologies: [
+      { name: "Rust", logo: "rust", href: "https://rust-lang.org/" },
+      { name: "Neovim", logo: "neovim", href: "https://neovim.io/" },
+      { name: "Astro", logo: "astro", href: "https://astro.build/" },
+      { name: "Arena.ai", logo: "arena", href: "https://arena.ai/" },
+      { name: "Ubuntu", logo: "ubuntu", href: "https://ubuntu.com/" },
+    ],
+  },
 ];
 ---
-<article class:list={[className, "new-feature-tile"]} style={{ gridArea }} aria-label="Technology experience and favorites">
-  <table class="technology-table" aria-label="Technology experience and preferences">
+
+<article
+  class:list={[className, "new-feature-tile"]}
+  style={{ gridArea }}
+  aria-label="Technology experience and favorites"
+>
+  <table
+    class="technology-table"
+    aria-label="Technology experience and preferences"
+  >
     <thead>
       <tr><td></td>{columns.map((column) => <th scope="col">{column}</th>)}</tr>
     </thead>
     <tbody>
-      {rows.map((row) => (
-        <tr>
-          <th scope="row">{row.label[0]}<br />{row.label[1]}</th>
-          {row.technologies.map((technology) => (
-            <td>
-              <a class="technology-logo" href={technology.href} aria-label={`${row.description}: ${technology.name}`}>
-                <img class:list={["technology-image", `logo-${technology.logo}`]} src={`/logos/${technology.logo}.svg`} width="28" height="28" alt="" />
-                <span class="technology-tooltip">{technology.name}</span>
-              </a>
-            </td>
-          ))}
-        </tr>
-      ))}
+      {
+        rows.map((row) => (
+          <tr>
+            <th scope="row">
+              {row.label[0]}
+              <br />
+              {row.label[1]}
+            </th>
+            {row.technologies.map((technology) => (
+              <td>
+                <a
+                  class="technology-logo"
+                  href={technology.href}
+                  aria-label={`${row.description}: ${technology.name}`}
+                >
+                  <img
+                    class:list={["technology-image", `logo-${technology.logo}`]}
+                    src={`/logos/${technology.logo}.svg`}
+                    width="28"
+                    height="28"
+                    alt=""
+                  />
+                  <span class="technology-tooltip">{technology.name}</span>
+                </a>
+              </td>
+            ))}
+          </tr>
+        ))
+      }
     </tbody>
   </table>
 </article>
 
 <style>
-  .technology-table thead td { width: 54px; }
-  .technology-table thead th { text-align: center; font-size: 9px; }
-  .technology-table .technology-logo { margin-inline: auto; }
-  .technology-image { display: block; width: 28px; height: 28px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.85; }
-  .logo-typescript { transform: translate(-0.2px, -0.2px) scale(0.8); }
-  .technology-image.logo-astro { width: 26px; height: 26px; transform: translateY(1px); }
-  .logo-vscode, .logo-neovim { transform: scale(0.85); }
-  .logo-arena { color-scheme: dark; transform: translateY(1px) scale(0.9); }
-  @media (max-width: 900px) { .technology-table thead td { width: 42px; } .technology-table thead th { font-size: 8px; } .technology-image { width: 24px; height: 24px; } .logo-typescript { transform: translate(-0.2px, -0.2px) scale(0.7); } }
-  @media (max-width: 700px) { .technology-table thead td { width: 34px; } .technology-table thead th { font-size: 6px; } .technology-table .technology-logo { width: 28px; height: 28px; } }
+  .technology-table thead td {
+    width: 54px;
+  }
+  .technology-table thead th {
+    text-align: center;
+    font-size: 9px;
+  }
+  .technology-table .technology-logo {
+    margin-inline: auto;
+  }
+  .technology-image {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+  .logo-typescript {
+    transform: translate(-0.2px, -0.2px) scale(0.8);
+  }
+  .technology-image.logo-astro {
+    width: 26px;
+    height: 26px;
+    transform: translateY(1px);
+  }
+  .logo-vscode,
+  .logo-neovim {
+    transform: scale(0.85);
+  }
+  .logo-arena {
+    color-scheme: dark;
+    transform: translateY(1px) scale(0.9);
+  }
+  @media (max-width: 900px) {
+    .technology-table thead td {
+      width: 42px;
+    }
+    .technology-table thead th {
+      font-size: 8px;
+    }
+    .technology-image {
+      width: 24px;
+      height: 24px;
+    }
+    .logo-typescript {
+      transform: translate(-0.2px, -0.2px) scale(0.7);
+    }
+  }
+  @media (max-width: 700px) {
+    .technology-table thead td {
+      width: 34px;
+    }
+    .technology-table thead th {
+      font-size: 6px;
+    }
+    .technology-table .technology-logo {
+      width: 28px;
+      height: 28px;
+    }
+  }
 </style>
