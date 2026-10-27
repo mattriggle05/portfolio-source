@@ -8,9 +8,12 @@ const { gridArea, className = "tile" } = Astro.props;
 const resumeUpdated = "2026-10-22";
 ---
 <article class:list={[className, "resume-tile"]} style={{ gridArea }} aria-label="Résumé">
-      <a class="resume-icon" href={`${import.meta.env.BASE_URL}Matthew%20Riggle%20-%20Resume.pdf`} target="_blank" rel="noopener noreferrer" aria-label="Open Matthew Riggle’s resume (PDF) in a new tab"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8ZM14 2v6h6M8 13h8M8 17h6" /></svg></a>
-      <span class="resume-details"><span class="eyebrow resume-eyebrow">Read more...</span><span class="resume-filename">Matthew Riggle - Resume.pdf</span><span class="resume-updated">Last updated: <time datetime={resumeUpdated} data-resume-updated title={resumeUpdated}>{formatResumeAge(resumeUpdated)}</time></span></span>
-    </article>
+  <a class="resume-icon" href={`${import.meta.env.BASE_URL}Matthew%20Riggle%20-%20Resume.pdf`} target="_blank" rel="noopener noreferrer" aria-label="Open Matthew Riggle’s résumé (PDF) in a new tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8ZM14 2v6h6M8 13h8M8 17h6" /></svg></a>
+  <span class="resume-details">
+    <span class="resume-filename">View My Resume</span>
+    <span class="resume-updated">PDF · Updated <time datetime={resumeUpdated} data-resume-updated title={resumeUpdated}>{formatResumeAge(resumeUpdated)}</time></span>
+  </span>
+</article>
 
 <script>
   import { formatResumeAge } from "../../utils/resumeAge";
@@ -28,20 +31,24 @@ const resumeUpdated = "2026-10-22";
 </script>
 
 <style>
-  .resume-tile.resume-tile { padding: 10px 10px 10px 12px; gap: 5px; }
-  .resume-tile .resume-details { container-type: inline-size; flex: 1; min-width: 0; gap: 2px; }
-  .resume-tile .resume-filename { font-size: min(16px, 8cqi); white-space: nowrap; }
-  .resume-eyebrow { font-size: 8px; line-height: 1.1; }
-  .resume-tile a.resume-icon { width: 42.2px; height: 42.2px; border-radius: 9px; }
-  .resume-icon svg { width: 60%; height: 60%; }
+  .resume-tile.resume-tile { padding: 12px 16px 12px 14px; gap: 12px; text-decoration: none; }
+  .resume-tile .resume-details { flex: 1; min-width: 0; gap: 6px; }
+  .resume-tile .resume-filename { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 16px; line-height: 1.2; white-space: nowrap; }
+  .resume-tile .resume-icon { width: 42.2px; height: 42.2px; border: 1px solid #bfd5e8; border-radius: 9px; background: #bfd5e8; color: #182b3c; }
+  .resume-icon svg { width: 23px; height: 23px; }
+  .resume-tile .resume-icon:hover { filter: brightness(1.1); }
+  .resume-tile .resume-icon:focus-visible { outline: 2px solid #c6daed; outline-offset: 3px; }
   @media (max-width: 900px) {
-    .resume-tile a.resume-icon { width: 37.4px; height: 37.4px; }
-    .resume-tile.resume-tile { padding: 6px 6px 6px 0; gap: 4px; }
+    .resume-tile.resume-tile { padding: 8px 10px 8px 8px; gap: 8px; }
+    .resume-tile .resume-filename { font-size: 14px; }
+    .resume-tile .resume-icon { width: 37.4px; height: 37.4px; }
+    .resume-tile .resume-updated { font-size: 8px; }
   }
   @media (max-width: 700px) {
-    .resume-tile.resume-tile { padding: 6px 6px 6px 0; gap: 3px; }
-    .resume-tile .resume-details { gap: 1px; }
-    .resume-eyebrow { font-size: 6px; }
-    .resume-tile a.resume-icon { border-radius: 7px; }
+    .resume-tile.resume-tile { padding: 6px 8px 6px 6px; gap: 6px; }
+    .resume-tile .resume-details { gap: 4px; }
+    .resume-tile .resume-filename { font-size: 12px; }
+    .resume-icon svg { width: 18px; height: 22px; }
+    .resume-tile .resume-updated { font-size: 7px; }
   }
 </style>
