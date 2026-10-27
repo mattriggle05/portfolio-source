@@ -38,10 +38,11 @@ const buttons = [
 >
   <div class="button-grid">
     {
-      [...buttons.slice(1), buttons[0]].map(({ label, filled, path }) => (
+      [...buttons.slice(1), buttons[0]].map(({ label, filled, path, url }) => (
         <button
           type="button"
           aria-label={label}
+          data-url={label === "Copy Email" ? undefined : url}
           data-copy-email={
             label === "Copy Email" ? "example@example.com" : undefined
           }
@@ -67,6 +68,16 @@ const buttons = [
 </article>
 
 <script>
+  document
+    .querySelectorAll<HTMLButtonElement>(
+      ".contact-compact-tile button[data-url]",
+    )
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.dataset.url)
+          window.open(button.dataset.url, "_blank", "noopener,noreferrer");
+      });
+    });
   document
     .querySelectorAll<HTMLButtonElement>("[data-copy-email]")
     .forEach((button) => {
