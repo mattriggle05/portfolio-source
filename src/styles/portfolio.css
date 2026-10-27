@@ -33,7 +33,7 @@ padding: 56px 0;
 .stack-tile { padding: 22px 15.5px; }
 .stack-tile ul { padding: 0; }
 .stack-caption { color: var(--muted); letter-spacing: .1em; }
-button {
+button, .signature-open {
   transition: background .18s ease, border-color .18s ease, color .18s ease;
   border-radius: 12px;
   font-family: inherit;
@@ -44,8 +44,8 @@ button {
 }
 button > span:first-child { color: var(--blue); }
 button > span:last-child { letter-spacing: .02em; }
-button:hover { background: #96bff323; border-color: #b8d7ff65; color: #fff; }
-button:active { background: #96bff337; }
+button:hover, .signature-open:hover { background: #96bff323; border-color: #b8d7ff65; color: #fff; }
+button:active, .signature-open:active { background: #96bff337; }
 button:focus-visible, a:focus-visible { outline: 2px solid #bedcff; }
 .project-card { padding: 10px; border-radius: 11px; }
 .project-button svg, .project-button .project-arrow { color: #a1bfe8; }
@@ -77,7 +77,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #bedcff; }
 .signature-copy { padding: 20px; }
 .signature-heading h2 { font-weight: 500; letter-spacing: -.03em; }
 .signature-copy p { margin-top: 9px; color: #b4c6de; }
-button.signature-open { padding: 6px; border-radius: 50%; }
+.signature-open { padding: 6px; border-radius: 50%; }
 /* Compact type and padding retain the original geometry on narrow screens. */
 @media (max-width: 900px) {
   .paragraph-tile { padding: 16px; }
@@ -105,7 +105,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
   .contact-compact-tile .button-grid button > span:last-child { font-size: 6px; }
   .location-tile { padding: 14px; }
 }
-@media (prefers-reduced-motion: reduce) { button { transition: none; } }
+@media (prefers-reduced-motion: reduce) { button, .signature-open { transition: none; } }
 @media (max-width: 700px) {
   .tile { border-radius: 16px; }
   .eyebrow { font-size: 7px; }
@@ -135,7 +135,7 @@ button.signature-open { padding: 6px; border-radius: 50%; }
   .signature-copy { padding: 10px; }
   .signature-heading h2 { font-size: 13px; }
   .signature-copy p { font-size: 7px; line-height: 1.5; margin-top: 6px; }
-  button.signature-open { width: 23px; height: 23px; }
+  .signature-open { width: 23px; height: 23px; }
   .signature-label { font-size: 6px; top: 12px; left: 12px; }
   .signature-preview-note { font-size: 5px; left: 12px; bottom: 7px; }
   .photo-tile figcaption { bottom: 16px; left: 12px; }
@@ -160,10 +160,10 @@ button.signature-open { padding: 6px; border-radius: 50%; }
 .photo-tile img { filter: saturate(.65); }
 .photo-tile::after { background: linear-gradient(transparent, #132536ed); }
 .photo-tile figcaption > span:last-child { font-family: Georgia, serif; font-style: italic; color: #eef4f8; }
-button { border-radius: 9px; background: #ffffff05; border-color: #a7bfd343; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+button, .signature-open { border-radius: 9px; background: #ffffff05; border-color: #a7bfd343; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
 button > span:first-child { color: inherit; }
-button:hover { background: #bfd5e8; color: #182b3c; border-color: #dbe9f4; }
-button:active { background: #9fbcd3; }
+button:hover, .signature-open:hover { background: #bfd5e8; color: #182b3c; border-color: #dbe9f4; }
+button:active, .signature-open:active { background: #9fbcd3; }
 button:focus-visible, a:focus-visible { outline: 2px solid #d8e9f5; outline-offset: 3px; }
 .project-card { border: 1px solid #91abc050; border-radius: 7px; background: #15263840; padding: 8px; }
 .project-button > span:first-of-type, .project-button svg, .project-button .project-arrow { color: inherit; }
@@ -189,8 +189,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid #d8e9f5; outline-offs
 .signature-copy { padding: 17px 19px; }
 .signature-heading h2 { font-family: Georgia, serif; font-size: 22px; font-weight: 400; letter-spacing: -.055em; }
 .signature-copy p { margin-top: 9px; color: #b9cad9; }
-button.signature-open { background: #bfd5e8; color: #182b3c; border-color: #bfd5e8; border-radius: 9px; }
-button.signature-open:hover { background: #edf5fc; border-color: #edf5fc; }
+.signature-open { background: #bfd5e8; color: #182b3c; border-color: #bfd5e8; border-radius: 9px; }
+.signature-open:hover { background: #edf5fc; border-color: #edf5fc; }
 @media (max-width: 900px) {
   .paragraph-tile h1 { font-size: 25px; margin: 13px 0 8px; }
   .paragraph-tile p { font-size: 12px; line-height: 1.65; }

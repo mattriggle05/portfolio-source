@@ -102,7 +102,7 @@ figure {
   height: 100%;
   display: grid;
 }
-button {
+button, .signature-open {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -364,7 +364,7 @@ button.project-button {
   line-height: 1.65;
   max-width: 245px;
 }
-button.signature-open {
+.signature-open {
   flex-shrink: 0;
   width: 31px;
   height: 31px;

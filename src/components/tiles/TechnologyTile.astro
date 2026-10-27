@@ -64,7 +64,9 @@ const rows = [
                 <a
                   class="technology-logo"
                   href={technology.href}
-                  aria-label={`${row.description}: ${technology.name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${row.description}: ${technology.name} (opens in a new tab)`}
                 >
                   <img
                     class:list={["technology-image", `logo-${technology.logo}`]}

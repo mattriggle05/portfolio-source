@@ -21,12 +21,14 @@ const { gridArea, className = "tile" } = Astro.props;
   <div class="signature-copy">
     <div class="signature-heading">
       <div class="signature-title-group">
-        <span class="eyebrow signature-eyebrow">Check out...</span>
+        <span class="eyebrow signature-eyebrow">CHECK OUT</span>
         <h2 id="signature-title">Natal Chart Solver</h2>
-      </div><button
+      </div><a
         class="signature-open"
-        type="button"
-        aria-label="Open signature project (placeholder)"
+        href="https://mattriggle05.github.io/natal-chart-solver/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Natal Chart Solver (opens in a new tab)"
         ><svg
           viewBox="0 0 24 24"
           fill="none"
@@ -35,7 +37,7 @@ const { gridArea, className = "tile" } = Astro.props;
           stroke-linecap="round"
           stroke-linejoin="round"
           aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"></path></svg
-        ></button
+        ></a
       >
     </div>
     <p>
@@ -53,12 +55,12 @@ const { gridArea, className = "tile" } = Astro.props;
   }
   .signature-project .signature-eyebrow {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     font-size: 9px;
     line-height: 1.2;
-    font-weight: 300;
+    /* font-weight: 300; */
     letter-spacing: 0.04em;
-    color: #b9cad9;
+    /* color: #b9cad9; */
   }
   .signature-project .signature-heading h2 {
     font-size: 22px;
