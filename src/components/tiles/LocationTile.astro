@@ -5,10 +5,17 @@ interface Props extends TileProps {}
 const { gridArea, className = "tile" } = Astro.props;
 ---
 <article class:list={[className, "location-tile"]} style={{ gridArea }} aria-label="Location: Madison, Wisconsin">
-      <div class="location-globe-space" aria-hidden="true"></div>
+      <div class="location-globe-space" aria-hidden="true">
+        <img src="/images/location-midwest.svg" alt="" width="290" height="235" />
+      </div>
       <div class="location-caption"><span class="eyebrow">BASED IN</span><p>Madison, WI</p></div>
     </article>
 
 <style>
-  .location-tile .location-globe-space { background: none; }
+  .location-tile.location-tile { padding: 0; overflow: hidden; background: #71889a; }
+  .location-tile .location-globe-space { position: absolute; inset: 0; background: none; opacity: 1; }
+  .location-globe-space img { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+  .location-tile .location-caption { position: relative; margin-top: auto; padding: 60px 22px 18px; background: linear-gradient(to bottom, #25384b00, #25384be6 55%, #25384b 85%); }
+  @media (max-width: 900px) { .location-tile .location-caption { padding: 60px 14px 14px; } }
+  @media (max-width: 700px) { .location-tile .location-caption { padding: 60px 12px 12px; } }
 </style>
