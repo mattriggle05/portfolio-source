@@ -1,0 +1,76 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"a"> & HTMLAttributes<"button"> & {
+  variant?: "filled" | "inset" | "ghost";
+};
+const { href, variant = "filled", class: className, ...attributes } = Astro.props;
+const Tag = href ? "a" : "button";
+---
+<Tag
+  href={href}
+  type={href ? undefined : "button"}
+  target={href ? "_blank" : undefined}
+  rel={href ? "noopener noreferrer" : undefined}
+  {...attributes}
+  class:list={["action", variant, className]}
+><slot /></Tag>
+
+<style>
+  .action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 6px;
+    border: 1px solid var(--color-accent);
+    border-radius: 9px;
+    background: var(--color-accent);
+    color: var(--color-background);
+    font-family: inherit;
+    cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+  .action:hover {
+    background: var(--color-accent-light);
+    border-color: var(--color-accent-light);
+  }
+  .action:active {
+    background: color-mix(in srgb, var(--color-accent) 80%, var(--color-surface));
+  }
+  .inset,
+  .ghost {
+    background: var(--color-surface-dark);
+    border-color: var(--color-edge);
+    color: var(--color-text);
+  }
+  .inset {
+    box-shadow: inset 0 1px 3px
+      color-mix(in srgb, var(--color-background) 70%, transparent);
+  }
+  .ghost {
+    border-radius: 50%;
+    background: transparent;
+    border-color: transparent;
+  }
+  .inset:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent-light);
+    color: var(--color-background);
+  }
+  .ghost:hover {
+    background: color-mix(in srgb, var(--color-surface) 75%, var(--color-accent));
+    border-color: var(--color-edge);
+    color: var(--color-accent);
+  }
+  .action:disabled {
+    cursor: wait;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .action {
+      transition: none;
+    }
+  }
+</style>

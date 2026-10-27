@@ -1,3 +1,67 @@
 @import "tailwindcss";
-@import "./layout.css" layer(layout);
-@import "./portfolio.css";
+
+:root {
+  color-scheme: dark;
+  --color-background: #101a26;
+  --color-surface: #293b4d;
+  --color-accent: #bfd5e8;
+  --color-text: #e4ebf1;
+  --color-muted: color-mix(
+    in srgb,
+    var(--color-text) 75%,
+    var(--color-surface)
+  );
+  --color-edge: color-mix(in srgb, var(--color-accent) 25%, transparent);
+  --color-surface-dark: color-mix(
+    in srgb,
+    var(--color-surface) 75%,
+    var(--color-background)
+  );
+  --color-accent-light: color-mix(in srgb, var(--color-accent) 40%, white);
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
+  font-synthesis: none;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 640px;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  background:
+    radial-gradient(
+      ellipse at 35% 10%,
+      color-mix(in srgb, var(--color-accent) 15%, transparent),
+      transparent 70%
+    ),
+    var(--color-background);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+p,
+figure {
+  margin: 0;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-accent-light);
+  outline-offset: 3px;
+}
+::selection {
+  background: var(--color-accent);
+  color: var(--color-background);
+}

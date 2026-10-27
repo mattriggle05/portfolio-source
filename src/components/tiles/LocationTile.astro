@@ -1,33 +1,43 @@
 ---
 import type { TileProps } from "./types";
+import Eyebrow from "../Eyebrow.astro";
+import Tile from "../Tile.astro";
 
-interface Props extends TileProps {}
-const { gridArea, className = "tile" } = Astro.props;
+type Props = TileProps;
+const { gridArea, className } = Astro.props;
 ---
 
-<article
+<Tile
   class:list={[className, "location-tile"]}
-  style={{ gridArea }}
+  gridArea={gridArea}
   aria-label="Location: Madison, Wisconsin"
 >
   <div class="location-globe-space" aria-hidden="true">
     <img src="/images/location-midwest.svg" alt="" width="290" height="235" />
   </div>
   <div class="location-caption">
-    <span class="eyebrow">BASED IN</span><p>Madison, WI</p>
+    <Eyebrow class="location-eyebrow">BASED IN</Eyebrow><p>Madison, WI</p>
   </div>
-</article>
+</Tile>
 
 <style>
-  .location-tile.location-tile {
+  .location-tile {
     padding: 0;
     overflow: hidden;
-    background: #71889a;
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
   }
   .location-tile .location-globe-space {
+    /* Transparent water in the SVG takes its color from this map layer. */
+    --map-water: color-mix(
+      in srgb,
+      var(--color-accent) 50%,
+      var(--color-surface)
+    );
     position: absolute;
     inset: 0;
-    background: none;
+    background: var(--map-water);
     opacity: 1;
   }
   .location-globe-space img {
@@ -43,30 +53,36 @@ const { gridArea, className = "tile" } = Astro.props;
     padding: 47px 22px 18px;
     background: linear-gradient(
       to bottom,
-      rgba(37, 56, 75, 0) 20.5px,
-      rgba(37, 56, 75, 0.0237) 23.44px,
-      rgba(37, 56, 75, 0.0604) 26.38px,
-      rgba(37, 56, 75, 0.1044) 29.31px,
-      rgba(37, 56, 75, 0.1539) 32.25px,
-      rgba(37, 56, 75, 0.208) 35.19px,
-      rgba(37, 56, 75, 0.266) 38.12px,
-      rgba(37, 56, 75, 0.3276) 41.06px,
-      rgba(37, 56, 75, 0.3923) 44px,
-      rgba(37, 56, 75, 0.4599) 46.94px,
-      rgba(37, 56, 75, 0.5302) 49.88px,
-      rgba(37, 56, 75, 0.603) 52.81px,
-      rgba(37, 56, 75, 0.6782) 55.75px,
-      rgba(37, 56, 75, 0.7555) 58.69px,
-      rgba(37, 56, 75, 0.835) 61.62px,
-      rgba(37, 56, 75, 0.9166) 64.56px,
-      rgba(37, 56, 75, 1) 67.5px
+      color-mix(in srgb, var(--color-surface) 0%, transparent) 20.5px,
+      color-mix(in srgb, var(--color-surface) 2.37%, transparent) 23.44px,
+      color-mix(in srgb, var(--color-surface) 6.04%, transparent) 26.38px,
+      color-mix(in srgb, var(--color-surface) 10.44%, transparent) 29.31px,
+      color-mix(in srgb, var(--color-surface) 15.39%, transparent) 32.25px,
+      color-mix(in srgb, var(--color-surface) 20.8%, transparent) 35.19px,
+      color-mix(in srgb, var(--color-surface) 26.6%, transparent) 38.12px,
+      color-mix(in srgb, var(--color-surface) 32.76%, transparent) 41.06px,
+      color-mix(in srgb, var(--color-surface) 39.23%, transparent) 44px,
+      color-mix(in srgb, var(--color-surface) 45.99%, transparent) 46.94px,
+      color-mix(in srgb, var(--color-surface) 53.02%, transparent) 49.88px,
+      color-mix(in srgb, var(--color-surface) 60.3%, transparent) 52.81px,
+      color-mix(in srgb, var(--color-surface) 67.82%, transparent) 55.75px,
+      color-mix(in srgb, var(--color-surface) 75.55%, transparent) 58.69px,
+      color-mix(in srgb, var(--color-surface) 83.5%, transparent) 61.62px,
+      color-mix(in srgb, var(--color-surface) 91.66%, transparent) 64.56px,
+      color-mix(in srgb, var(--color-surface) 100%, transparent) 67.5px
     );
   }
-  .location-caption .eyebrow {
+  .location-eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.17em;
     position: relative;
     top: 10px;
   }
   .location-caption p {
+    margin-top: 5px;
+    font-family: var(--font-display);
+    font-size: 21px;
+    letter-spacing: -0.02em;
     position: relative;
     top: 4px;
   }
@@ -76,6 +92,9 @@ const { gridArea, className = "tile" } = Astro.props;
     }
   }
   @media (max-width: 700px) {
+    .location-caption p {
+      font-size: 15px;
+    }
     .location-tile .location-caption {
       padding: 47px 12px 12px;
     }

@@ -1,15 +1,13 @@
 ---
 import type { TileProps } from "./types";
+import Icon from "../Icon.astro";
+import Action from "../Action.astro";
+import Tile from "../Tile.astro";
 
-interface Props extends TileProps {}
-const { gridArea, className = "tile" } = Astro.props;
+type Props = TileProps;
+const { gridArea, className } = Astro.props;
+const email = "mattriggle05@gmail.com";
 const buttons = [
-  {
-    label: "Copy Email",
-    filled: false,
-    url: undefined,
-    path: "M9 9h12v12H9zM15 9V3H3v12h6",
-  },
   {
     label: "GitHub",
     filled: true,
@@ -25,59 +23,45 @@ const buttons = [
   {
     label: "Email",
     filled: false,
-    url: "mailto:mattriggle05@gmail.com",
+    url: `mailto:${email}`,
     path: "M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm-1 2 9 7 9-7",
+  },
+  {
+    label: "Copy Email",
+    filled: false,
+    url: undefined,
+    path: "M9 9h12v12H9zM15 9V3H3v12h6",
   },
 ];
 ---
 
-<article
+<Tile
   class:list={[className, "contact-compact-tile"]}
-  style={{ gridArea }}
+  gridArea={gridArea}
   aria-label="Compact social and contact buttons"
 >
   <div class="button-grid">
     {
-      [...buttons.slice(1), buttons[0]].map(({ label, filled, path, url }) => (
-        <button
-          type="button"
-          aria-label={label}
-          data-url={label === "Copy Email" ? undefined : url}
-          data-copy-email={
-            label === "Copy Email" ? "mattriggle05@gmail.com" : undefined
-          }
+      buttons.map(({ label, filled, path, url }) => (
+        <Action
+          variant="inset"
+          class="contact-action"
+          aria-label={url ? `${label} (opens in a new tab)` : label}
+          href={url}
+          data-copy-email={url ? undefined : email}
         >
           <span aria-hidden="true">
-            <svg
-              viewBox="0 0 24 24"
-              fill={filled ? "currentColor" : "none"}
-              stroke={filled ? "none" : "currentColor"}
-              stroke-width="1.7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d={path} />
-            </svg>
+            <Icon path={path} filled={filled} />
           </span>
           <span data-button-label>{label}</span>
-        </button>
+        </Action>
       ))
     }
   </div>
   <span class="copy-status" role="status" aria-live="polite"></span>
-</article>
+</Tile>
 
 <script>
-  document
-    .querySelectorAll<HTMLButtonElement>(
-      ".contact-compact-tile button[data-url]",
-    )
-    .forEach((button) => {
-      button.addEventListener("click", () => {
-        if (button.dataset.url)
-          window.open(button.dataset.url, "_blank", "noopener,noreferrer");
-      });
-    });
   document
     .querySelectorAll<HTMLButtonElement>("[data-copy-email]")
     .forEach((button) => {
@@ -112,6 +96,51 @@ const buttons = [
 </script>
 
 <style>
+  .contact-compact-tile {
+    padding: 10px;
+    background: var(--color-surface-dark);
+  }
+  .button-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .contact-action {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+  }
+  .contact-action svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+  [data-button-label] {
+    font-size: 7px;
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 900px) {
+    .contact-compact-tile {
+      padding: 6px;
+    }
+    .contact-action {
+      padding: 3px;
+      gap: 3px;
+    }
+    .contact-action svg {
+      width: 15px;
+      height: 15px;
+    }
+    [data-button-label] {
+      font-size: 6px;
+    }
+  }
+
   .copy-status {
     position: absolute;
     width: 1px;

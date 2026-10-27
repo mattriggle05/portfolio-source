@@ -12,15 +12,42 @@ import SignatureProjectTile from "./tiles/SignatureProjectTile.astro";
 <main class="concept">
   <section
     class="bento-grid"
-    aria-label="Bento concept with placeholder content"
+    aria-label="Portfolio overview"
   >
-    <TextBoxTile gridArea="1 / 1 / 4 / 7" className="tile" />
-    <ImageTile gridArea="1 / 7 / 5 / 10" className="tile" />
-    <ProjectsTile gridArea="4 / 10 / 8 / 13" className="tile" />
-    <LocationTile gridArea="1 / 10 / 4 / 13" className="tile" />
-    <ContactTile gridArea="4 / 5 / 6 / 7" className="tile" />
-    <TechnologyTile gridArea="6 / 5 / 8 / 10" className="tile" />
-    <ResumeTile gridArea="5 / 7 / 6 / 10" className="tile" />
-    <SignatureProjectTile gridArea="4 / 1 / 8 / 5" className="tile" />
+    <TextBoxTile gridArea="1 / 1 / 4 / 7" />
+    <ImageTile gridArea="1 / 7 / 5 / 10" />
+    <ProjectsTile gridArea="4 / 10 / 8 / 13" />
+    <LocationTile gridArea="1 / 10 / 4 / 13" />
+    <ContactTile gridArea="4 / 5 / 6 / 7" />
+    <TechnologyTile gridArea="6 / 5 / 8 / 10" />
+    <ResumeTile gridArea="5 / 7 / 6 / 10" />
+    <SignatureProjectTile gridArea="4 / 1 / 8 / 5" />
   </section>
 </main>
+
+<style>
+  .concept {
+    width: min(960px, calc(100% - 112px));
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(7, minmax(0, 1fr));
+    aspect-ratio: 960 / 554.1667;
+    gap: 14px;
+  }
+  @media (max-width: 1072px) {
+    .bento-grid {
+      width: 100%;
+      height: 720px;
+      aspect-ratio: auto;
+    }
+  }
+  @media (max-width: 700px) {
+    .bento-grid {
+      height: 780px;
+    }
+  }
+</style>

@@ -1,8 +1,10 @@
 ---
 import type { TileProps } from "./types";
+import Action from "../Action.astro";
+import Tile from "../Tile.astro";
 
-interface Props extends TileProps {}
-const { gridArea, className = "tile" } = Astro.props;
+type Props = TileProps;
+const { gridArea, className } = Astro.props;
 const columns = ["Language", "Editor", "Framework", "AI Platform", "OS"];
 const rows = [
   {
@@ -38,9 +40,9 @@ const rows = [
 ];
 ---
 
-<article
-  class:list={[className, "new-feature-tile"]}
-  style={{ gridArea }}
+<Tile
+  class:list={[className, "technology-tile"]}
+  gridArea={gridArea}
   aria-label="Technology experience and favorites"
 >
   <table
@@ -61,11 +63,10 @@ const rows = [
             </th>
             {row.technologies.map((technology) => (
               <td>
-                <a
+                <Action
+                  variant="ghost"
                   class="technology-logo"
                   href={technology.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   aria-label={`${row.description}: ${technology.name} (opens in a new tab)`}
                 >
                   <img
@@ -76,7 +77,7 @@ const rows = [
                     alt=""
                   />
                   <span class="technology-tooltip">{technology.name}</span>
-                </a>
+                </Action>
               </td>
             ))}
           </tr>
@@ -84,9 +85,65 @@ const rows = [
       }
     </tbody>
   </table>
-</article>
+</Tile>
 
 <style>
+  .technology-tile {
+    padding: 14px 18px;
+  }
+  .technology-table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: left;
+  }
+  thead th {
+    padding-bottom: 6px;
+    font-weight: 500;
+    color: var(--color-muted);
+  }
+  tbody th {
+    padding: 3px 0;
+    font-size: 9px;
+    font-weight: 500;
+    vertical-align: middle;
+    color: var(--color-muted);
+  }
+  tbody td {
+    padding: 3px 0;
+  }
+  tbody tr {
+    border-top: 1px solid var(--color-edge);
+  }
+  .technology-logo {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+  }
+  .technology-tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 7px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    white-space: nowrap;
+    z-index: 5;
+    pointer-events: none;
+    padding: 7px 10px;
+    border: 1px solid var(--color-edge);
+    border-radius: 8px;
+    background: var(--color-background);
+    color: var(--color-text);
+    letter-spacing: 0.02em;
+  }
+  .technology-logo:hover .technology-tooltip,
+  .technology-logo:focus-visible .technology-tooltip {
+    display: block;
+  }
+
   .technology-table thead td {
     width: 54px;
   }
@@ -122,6 +179,17 @@ const rows = [
     transform: translateY(1px) scale(0.9);
   }
   @media (max-width: 900px) {
+    .technology-tile {
+      padding: 8px;
+    }
+    tbody th {
+      font-size: 7px;
+    }
+    .technology-logo {
+      width: 27px;
+      height: 27px;
+    }
+
     .technology-table thead td {
       width: 42px;
     }
@@ -137,6 +205,19 @@ const rows = [
     }
   }
   @media (max-width: 700px) {
+    .technology-tile {
+      padding: 6px;
+    }
+    thead th {
+      padding-bottom: 3px;
+    }
+    tbody th {
+      font-size: 6px;
+    }
+    tbody td {
+      padding: 1px 0;
+    }
+
     .technology-table thead td {
       width: 34px;
     }

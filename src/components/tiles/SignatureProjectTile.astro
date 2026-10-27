@@ -1,13 +1,17 @@
 ---
 import type { TileProps } from "./types";
+import Icon from "../Icon.astro";
+import Action from "../Action.astro";
+import Eyebrow from "../Eyebrow.astro";
+import Tile from "../Tile.astro";
 
-interface Props extends TileProps {}
-const { gridArea, className = "tile" } = Astro.props;
+type Props = TileProps;
+const { gridArea, className } = Astro.props;
 ---
 
-<article
+<Tile
   class:list={[className, "signature-project"]}
-  style={{ gridArea }}
+  gridArea={gridArea}
   aria-labelledby="signature-title"
 >
   <div class="signature-preview">
@@ -21,23 +25,13 @@ const { gridArea, className = "tile" } = Astro.props;
   <div class="signature-copy">
     <div class="signature-heading">
       <div class="signature-title-group">
-        <span class="eyebrow signature-eyebrow">CHECK OUT</span>
+        <Eyebrow class="signature-eyebrow">CHECK OUT</Eyebrow>
         <h2 id="signature-title">Natal Chart Solver</h2>
-      </div><a
+      </div><Action
         class="signature-open"
         href="https://mattriggle05.github.io/natal-chart-solver/"
-        target="_blank"
-        rel="noopener noreferrer"
         aria-label="Open Natal Chart Solver (opens in a new tab)"
-        ><svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"></path></svg
-        ></a
+        ><Icon path="M6 18 18 6M6 6h12v12" strokeWidth={1.6} /></Action
       >
     </div>
     <p>
@@ -46,62 +40,77 @@ const { gridArea, className = "tile" } = Astro.props;
       interface.
     </p>
   </div>
-</article>
+</Tile>
 
 <style>
-  .signature-project .signature-copy {
-    padding: 9px 18px 12px;
-    border-top: 1px solid var(--edge);
+  .signature-project {
+    display: grid;
+    grid-template-rows: minmax(0, 58fr) minmax(0, 42fr);
+    overflow: hidden;
   }
-  .signature-project .signature-eyebrow {
+  .signature-preview {
+    min-height: 0;
+    position: relative;
+    background: var(--color-background);
+    overflow: hidden;
+    container-type: size;
+    border-bottom: 0;
+  }
+  .signature-copy {
+    min-height: 0;
+    overflow: auto;
+    padding: 9px 18px 12px;
+    border-top: 1px solid var(--color-edge);
+  }
+  .signature-heading {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: stretch;
+  }
+  h2 {
+    font-family: var(--font-display);
+  }
+  .signature-open svg {
+    width: 17px;
+    height: 17px;
+  }
+  .signature-eyebrow {
     display: block;
     margin-bottom: 4px;
     font-size: 9px;
     line-height: 1.2;
-    /* font-weight: 300; */
     letter-spacing: 0.04em;
-    /* color: #b9cad9; */
   }
-  .signature-project .signature-heading h2 {
+  .signature-heading h2 {
     font-size: 22px;
     line-height: 1.2;
     font-weight: 400;
     letter-spacing: -0.02em;
   }
-  .signature-project .signature-copy p {
+  .signature-copy p {
     max-width: none;
     margin-top: 8px;
     font-size: 11px;
     line-height: 1.5;
     font-weight: 400;
-    color: #c0ced9;
+    color: var(--color-muted);
   }
-  .signature-project .signature-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: stretch;
-  }
-  .signature-project .signature-open {
-    width: auto;
-    height: 100%;
-    aspect-ratio: 1;
+  .signature-open {
+    width: 40px;
+    height: 40px;
+    align-self: center;
   }
   @media (max-width: 900px) {
-    .signature-project .signature-copy {
+    .signature-copy {
       padding: 8px 12px 10px;
     }
-    .signature-project .signature-heading h2 {
+    .signature-heading h2 {
       font-size: 18px;
     }
-    .signature-project .signature-copy p {
+    .signature-copy p {
       font-size: 10px;
     }
-  }
-  .signature-project .signature-preview {
-    background: #060e1b;
-    overflow: hidden;
-    container-type: size;
-    border-bottom: 0;
   }
   .signature-preview img {
     position: absolute;

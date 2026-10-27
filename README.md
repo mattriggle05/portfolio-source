@@ -23,7 +23,11 @@ npm run preview
 - `src/layouts/BaseLayout.astro`: document metadata and global stylesheet.
 - `src/components/BentoGrid.astro`: eight portfolio tiles on a 12-column, 7-row grid.
 - `src/components/tiles/`: introduction, portrait slot, repositories, location, contacts, technology table, résumé, and featured project.
-- `src/styles/layout.css`: shared dimensions, alignment, and reserved image slots.
-- `src/styles/portfolio.css`: the primary portfolio appearance.
+- `src/components/Tile.astro`: shared tile surface and grid placement.
+- `src/components/Action.astro`: native links/buttons with shared interaction states and reduced-motion support.
+- `src/components/Icon.astro` and `Eyebrow.astro`: shared SVG and label presentation.
+- `src/styles/global.css`: document defaults, four base colors, derived color tokens, and fonts.
 
-The layout retains its 640px minimum viewport width. Repository lists scroll within their tile at compact widths. Image areas are empty pending actual images. The portfolio-source repository arrow links to GitHub; the other project entries, contact actions, and technology choices remain placeholders. The résumé control opens `public/Matthew Riggle - Resume.pdf` in a new browser tab; its relative update label uses the source PDF’s modification date recorded in `ResumeTile.astro`. Update that date when replacing the PDF.
+Component-specific styles live in each component’s scoped `<style>` block. Use the shared color tokens and `color-mix()` for new shades or transparency rather than introducing literal colors. Keep grid geometry in `BentoGrid.astro` and shared control behavior in `Action.astro`.
+
+The layout retains its 640px minimum viewport width. Repository lists scroll within their tile at compact widths. Portrait, location, and featured-project images live in `public/images/`. Repository, contact, technology, and featured-project controls use native links; copying the email address uses the Clipboard API with an accessible status message. The résumé control opens `public/Matthew Riggle - Resume.pdf` in a new browser tab; its relative update label uses the source PDF’s modification date recorded in `ResumeTile.astro`. Update that date when replacing the PDF.

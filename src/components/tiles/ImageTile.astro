@@ -1,24 +1,29 @@
 ---
 import type { TileProps } from "./types";
+import Tile from "../Tile.astro";
 
-interface Props extends TileProps {}
-const { gridArea, className = "tile" } = Astro.props;
+type Props = TileProps;
+const { gridArea, className } = Astro.props;
 ---
 
-<figure class:list={[className, "photo-tile"]} style={{ gridArea }}>
+<Tile as="figure" class:list={[className, "photo-tile"]} gridArea={gridArea}>
   <img
     src="/images/portrait.png"
     alt="Portrait of Matthew Riggle"
     width="1229"
     height="1280"
   />
-</figure>
+</Tile>
 
 <style>
-  figure.photo-tile {
-    background-image: none;
+  .photo-tile {
+    overflow: hidden;
   }
-  figure.photo-tile::after {
-    content: none;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.65);
   }
 </style>
