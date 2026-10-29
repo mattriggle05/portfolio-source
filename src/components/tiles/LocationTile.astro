@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { TileProps } from "./types";
 import Eyebrow from "../Eyebrow.astro";
 import Tile from "../Tile.astro";
@@ -13,7 +14,7 @@ const { gridArea, className } = Astro.props;
   aria-label="Location: Madison, Wisconsin"
 >
   <div class="location-globe-space" aria-hidden="true">
-    <img src="/images/location-midwest.svg" alt="" width="290" height="235" />
+    <Image src="/images/location-midwest.svg" alt="" width={290} height={235} />
   </div>
   <div class="location-caption">
     <Eyebrow class="location-eyebrow">BASED IN</Eyebrow><p>Madison, WI</p>

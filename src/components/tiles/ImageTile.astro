@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import portrait from "../../assets/images/portrait.png";
 import type { TileProps } from "./types";
 import Tile from "../Tile.astro";
 
@@ -7,11 +9,10 @@ const { gridArea, className } = Astro.props;
 ---
 
 <Tile as="figure" class:list={[className, "photo-tile"]} gridArea={gridArea}>
-  <img
-    src="/images/portrait.png"
+  <Image
+    src={portrait}
     alt="Portrait of Matthew Riggle"
-    width="1229"
-    height="1280"
+    loading="eager"
   />
 </Tile>
 

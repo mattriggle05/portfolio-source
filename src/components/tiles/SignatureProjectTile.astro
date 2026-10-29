@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import solarSystem from "../../assets/images/solar-system.png";
 import type { TileProps } from "./types";
 import Icon from "../Icon.astro";
 import Action from "../Action.astro";
@@ -15,11 +17,9 @@ const { gridArea, className } = Astro.props;
   aria-labelledby="signature-title"
 >
   <div class="signature-preview">
-    <img
-      src="/images/solar-system.png"
+    <Image
+      src={solarSystem}
       alt="Solar system visualization with planets and their orbits around the Sun"
-      width="2548"
-      height="1542"
     />
   </div>
   <div class="signature-copy">
