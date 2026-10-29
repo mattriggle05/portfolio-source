@@ -6,7 +6,6 @@ import Tile from "../Tile.astro";
 
 type Props = TileProps;
 const { gridArea, className } = Astro.props;
-const email = "mattriggle05@gmail.com";
 const buttons = [
   {
     label: "GitHub",
@@ -22,14 +21,12 @@ const buttons = [
   },
   {
     label: "Email",
-    filled: false,
-    url: `mailto:${email}`,
+    emailAction: "mailto",
     path: "M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm-1 2 9 7 9-7",
   },
   {
     label: "Copy Email",
-    filled: false,
-    url: undefined,
+    emailAction: "copy",
     path: "M9 9h12v12H9zM15 9V3H3v12h6",
   },
 ];
@@ -42,15 +39,15 @@ const buttons = [
 >
   <div class="button-grid">
     {
-      buttons.map(({ label, filled, path, url }) => (
+      buttons.map(({ label, filled, path, url, emailAction }) => (
         <Action
           variant="inset"
           class="contact-action"
-          aria-label={url ? `${label} (opens in a new tab)` : label}
+          aria-label={url ? `${label} (opens in a new tab)` : undefined}
           href={url}
-          data-copy-email={url ? undefined : email}
+          data-email-action={emailAction}
         >
-          <span aria-hidden="true">
+          <span>
             <Icon path={path} filled={filled} />
           </span>
           <span data-button-label>{label}</span>
@@ -58,38 +55,41 @@ const buttons = [
       ))
     }
   </div>
-  <span class="copy-status" role="status" aria-live="polite"></span>
+  <span class="copy-status" role="status"></span>
 </Tile>
 
 <script>
+  const encodedEmail = "bWF0dHJpZ2dsZTA1QGdtYWlsLmNvbQ==";
+
   document
-    .querySelectorAll<HTMLButtonElement>("[data-copy-email]")
+    .querySelectorAll<HTMLButtonElement>('[data-email-action="mailto"]')
     .forEach((button) => {
+      button.addEventListener("click", () => {
+        window.location.href = `mailto:${atob(encodedEmail)}`;
+      });
+    });
+
+  document
+    .querySelectorAll<HTMLButtonElement>('[data-email-action="copy"]')
+    .forEach((button) => {
+      const label = button.querySelector<HTMLElement>("[data-button-label]");
+      const status = button.closest("article")?.querySelector<HTMLElement>("[role=status]");
+      if (!label || !status) return;
+
       button.addEventListener("click", async () => {
-        const label = button.querySelector<HTMLElement>("[data-button-label]");
-        if (!label) return;
         button.disabled = true;
         try {
-          await navigator.clipboard.writeText(button.dataset.copyEmail!);
+          await navigator.clipboard.writeText(atob(encodedEmail));
           label.textContent = "Copied!";
-          button.setAttribute("aria-label", "Email copied");
-          button
-            .closest("article")!
-            .querySelector("[role=status]")!.textContent =
-            "Email copied to clipboard";
+          status.textContent = "Email copied to clipboard";
         } catch {
           label.textContent = "Try again";
-          button
-            .closest("article")!
-            .querySelector("[role=status]")!.textContent =
-            "Could not Copy Email. Try again.";
-          button.setAttribute("aria-label", "Could not Copy Email. Try again");
+          status.textContent = "Could not Copy Email. Try again.";
         } finally {
           button.disabled = false;
         }
         window.setTimeout(() => {
           label.textContent = "Copy Email";
-          button.setAttribute("aria-label", "Copy Email");
         }, 2000);
       });
     });
