@@ -6,10 +6,12 @@ const { class: className, ...attributes } = Astro.props;
 <span {...attributes} class:list={["eyebrow", className]}><slot /></span>
 <style>
   .eyebrow {
+    /* Shared typography for all eyebrows; tile styles handle positioning only. */
+    font-family: var(--font-body);
     color: var(--color-muted);
-    font-size: 9px;
+    font-size: 8px;
     line-height: 1.5;
     font-weight: 600;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.17em;
   }
 </style>
